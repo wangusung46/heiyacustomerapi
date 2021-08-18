@@ -1,0 +1,17 @@
+SET SERVER_PORT=8082
+SET GOPAY_BASEURL=https://api.sandbox.midtrans.com/v2
+SET GOPAY_SERVER_KEY=SB-Mid-server-yFx2k3a545GM7dFA9mLbKZ1u
+SET GOPAY_PAYMENT_TYPE=gopay
+SET GOPAY_ENABLE_CALLBACK=false
+SET GOPAY_CALLBACK_URL=http://localhost:8082/v1/hw/settlement
+SET SCHEDULER_INTERVAL=3000
+SET HW_API_BASEURL_1=http://www.gjvending.net:8003/api
+SET HW_API_BASEURL_2=http://www.gjvending.net:8004/api
+SET HW_WHITELISTED_IPADDRESSES=192.168.0.102,192.168.0.103,192.168.0.104
+SET JPA_ENABLE_LAZY=true
+SET JPA_DIALECT=org.hibernate.dialect.MySQLDialect
+SET JPA_TIMEZONE=UTC
+SET "DB_URL=jdbc:mysql://localhost:3306/hwcustomerserverapi_db?serverTimezone=UTC&useLegacyDatetimeCode=false"
+SET DB_DRIVER=com.mysql.cj.jdbc.Driver
+SET DB_USERNAME=root
+SET DB_PASSWORD=
