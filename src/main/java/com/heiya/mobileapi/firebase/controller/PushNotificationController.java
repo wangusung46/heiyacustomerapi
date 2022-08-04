@@ -6,6 +6,7 @@ import com.heiya.mobileapi.firebase.dto.request.PushNotificationDTORequest;
 import com.heiya.mobileapi.firebase.dto.request.PushOrderNotificationDTORequest;
 import com.heiya.mobileapi.firebase.dto.response.PushNotificationDTOResponse;
 import com.heiya.mobileapi.firebase.service.PushNotificationService;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,7 @@ public class PushNotificationController {
 //
 //    }
 
+    @ApiOperation("Send Notification Manual")
     @PostMapping(value = "/notification/payment/checkpayment", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doSendPaymentTokenNotification(@RequestBody PushOrderNotificationDTORequest request) throws JsonProcessingException {
         LOGGER.info("\n\n======== START PushNotificationController.doSendTokenCheckExpirePickup");

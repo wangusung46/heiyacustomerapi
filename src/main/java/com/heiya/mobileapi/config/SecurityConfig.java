@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.heiya.mobileapi.config;
 
@@ -21,44 +21,42 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-	
-	@Value("${spring.api.security.username}")
-	private String apiUsername;
-	
-	@Value("${spring.api.security.password}")
-	private String apiPassword;
-	
-	@Override
-    protected void configure(HttpSecurity http) throws Exception 
-    {
-		http.httpBasic()
-	        .and()
-	        .authorizeRequests()
-	        .antMatchers("/**")
-	        .authenticated();
-		
-		http.csrf().disable();
+
+    @Value("${spring.api.security.username}")
+    private String apiUsername;
+
+    @Value("${spring.api.security.password}")
+    private String apiPassword;
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.httpBasic()
+                .and()
+                .authorizeRequests()
+                .antMatchers("/**")
+                .authenticated();
+
+        http.csrf().disable();
     }
-	
-	@Override
-	public void configure(WebSecurity web) throws Exception {
-	    web.ignoring().antMatchers(
-	    		"/v1/payment/xendit/status/callback",
-	    		"/v1/payment/dana/status/callback",
-	    		"/v1/payment/linkaja/status/callback",
-	    		"/v1/payment/gopay/status/callback");
-	}
-  
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers(
+                "/v1/payment/xendit/status/callback",
+                "/v1/payment/dana/status/callback",
+                "/v1/payment/linkaja/status/callback",
+                "/v1/payment/gopay/status/callback");
+    }
+
     @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) 
-            throws Exception 
-    {
+    public void configureGlobal(AuthenticationManagerBuilder auth)
+            throws Exception {
         auth.inMemoryAuthentication()
-            .withUser(apiUsername)
-            .password(encoder().encode(apiPassword))
-            .roles("USER");
+                .withUser(apiUsername)
+                .password(encoder().encode(apiPassword))
+                .roles("USER");
     }
-    
+
     @Bean
     public BCryptPasswordEncoder encoder() {
         return new BCryptPasswordEncoder();

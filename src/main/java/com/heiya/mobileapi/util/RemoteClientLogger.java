@@ -22,7 +22,7 @@ public class RemoteClientLogger extends HandlerInterceptorAdapter {
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-		if (!request.getRemoteAddr().equals("127.0.0.1") && !request.getRemoteAddr().equals("45.130.229.168")) {
+		if (!request.getRemoteAddr().equals("127.0.0.1") && !request.getRemoteAddr().equals("37.44.244.137")) {
 			LOGGER.info(">>>> API Request from IP Address : " + request.getRemoteAddr());
 		}
 		return true;

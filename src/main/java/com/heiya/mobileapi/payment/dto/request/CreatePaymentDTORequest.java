@@ -23,7 +23,7 @@ public class CreatePaymentDTORequest {
 	
 	@JsonProperty("phone")
 	private String phone; //ini sebagai ID customer
-	
+
 	@JsonProperty("ewallet_type")
 	private String ewalletType;
 	

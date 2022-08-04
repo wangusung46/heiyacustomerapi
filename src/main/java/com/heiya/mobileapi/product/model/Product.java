@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.heiya.mobileapi.product.model;
 
@@ -22,50 +22,49 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name="product")
+@Table(name = "product")
 public class Product {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	private long id;
-	
-	@Column(name="operator_id")
-	private String operatorId;
-	
-	@Column(name="model_id")
-	private int modelId;
-	
-	@Column(name="goods_id")
-	private int goodsId;
-	
-	@Column(name="product_name")
-	private String productName;
-	
-	@Column(name="goods_url")
-	private String goodsUrl;
-	
-	@Column(name="goods_protocol")
-	private int goodsProtocol;
-	
-	@Column(name="product_desc")
-	private String productDesc;
-	
-	@Column(name="taste_id")
-	private int tasteId;
-	
-	@Column(name="taste_name")
-	private String tasteName;
-	
-	@Column(name="taste_url")
-	private String tasteUrl;
-	
-	@Column(name="price")
-	private BigDecimal price;
-	
-	/*@Column(name="discount")
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private long id;
+
+    @Column(name = "operator_id")
+    private String operatorId;
+
+    @Column(name = "model_id")
+    private int modelId;
+
+    @Column(name = "goods_id")
+    private int goodsId;
+
+    @Column(name = "product_name")
+    private String productName;
+
+    @Column(name = "goods_url")
+    private String goodsUrl;
+
+    @Column(name = "goods_protocol")
+    private int goodsProtocol;
+
+    @Column(name = "product_desc")
+    private String productDesc;
+
+    @Column(name = "taste_id")
+    private int tasteId;
+
+    @Column(name = "taste_name")
+    private String tasteName;
+
+    @Column(name = "taste_url")
+    private String tasteUrl;
+
+    @Column(name = "price")
+    private BigDecimal price;
+
+    /*@Column(name="discount")
 	private int discount;*/
-	
-	@Column(name="is_active")
-	private String isActive;
+    @Column(name = "is_active")
+    private String isActive;
 }

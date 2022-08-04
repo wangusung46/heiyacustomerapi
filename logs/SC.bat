@@ -1,0 +1,2 @@
+Powershell.exe -executionpolicy remotesigned -File cd C:\Users\User\Documents\NetBeansProjects\heiyacustomerapi\logs
+Powershell.exe -executionpolicy remotesigned -File gci -Filter app.log | sort LastWriteTime | select -last 1 | Get-Content -Wait -Tail 30
