@@ -38,6 +38,7 @@ public class GlobalConstants {
     public static final String CLIENT_IP_WHITELIST = "client_ip_whitelist";
 
     public static final String PAY_GW_XENDIT_URL = "pay_gateway_xendit_url";
+    public static final String PAY_GW_XENDIT_URL_NEW = "pay_gateway_xendit_url_new";
     public static final String PAY_GW_XENDIT_KEY = "pay_gateway_xendit_key";
     public static final String PAY_GW_XENDIT_QRTYPE = "pay_gateway_xendit_qrtype";
     public static final String PAY_GW_XENDIT_CALLBACKURL = "pay_gateway_xendit_callbackurl";
@@ -66,11 +67,16 @@ public class GlobalConstants {
     public static final String MOBILE = "mobile";
     public static final String OPERATE_CODE = "heiya_operate_code";
     public static final String ORDER_SOURCE = "userDefined";
+    public static final String CHANNEL_TYPE = "channel_type";
     public static final String EWALLET_TYPE_GOPAY = "GOPAY";
     public static final String EWALLET_TYPE_OVO = "OVO";
     public static final String EWALLET_TYPE_DANA = "DANA";
     public static final String EWALLET_TYPE_LINKAJA = "LINKAJA";
     public static final String EWALLET_TYPE_SHOPEEPAY = "SHOPEEPAY";
+    public static final String EWALLET_TYPE_OVO_NEW = "ID_OVO";
+    public static final String EWALLET_TYPE_DANA_NEW = "ID_DANA";
+    public static final String EWALLET_TYPE_LINKAJA_NEW = "ID_LINKAJA";
+    public static final String EWALLET_TYPE_SHOPEEPAY_NEW = "ID_SHOPEEPAY";
     public static final String PRODUCT_IMG_URL = "product_images_path";
     public static final String PAY_GW_DANA_CALLBACKURL = "pay_gateway_xendit_dana_callbackurl";
     public static final String PAY_GW_LINKAJA_CALLBACKURL = "pay_gateway_xendit_linkaja_callbackurl";

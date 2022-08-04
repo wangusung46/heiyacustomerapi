@@ -38,9 +38,11 @@ import com.heiya.mobileapi.product.dto.response.MachineDetailDTOResponse;
 import com.heiya.mobileapi.product.dto.response.MachineDetailListDTOResponse;
 import com.heiya.mobileapi.product.dto.response.MachineInfoDTOResponse;
 import com.heiya.mobileapi.product.dto.response.ProductDTOResponse;
+import com.heiya.mobileapi.product.dto.response.ProductDTOResponsev2;
 import com.heiya.mobileapi.product.dto.response.ProductDetailDTOResponse;
 import com.heiya.mobileapi.product.dto.response.ProductImageDTOResponse;
 import com.heiya.mobileapi.product.dto.response.ProductListDTOResponse;
+import com.heiya.mobileapi.product.dto.response.ProductListDTOResponsev2;
 import com.heiya.mobileapi.product.dto.response.TasteDTOResponse;
 import com.heiya.mobileapi.product.dto.response.TasteListDTOResponse;
 import com.heiya.mobileapi.product.model.Banner;
@@ -53,6 +55,9 @@ import com.heiya.mobileapi.product.repository.DiscountRepository;
 import com.heiya.mobileapi.product.repository.MachineRepository;
 import com.heiya.mobileapi.product.repository.ProductImagesRepository;
 import com.heiya.mobileapi.product.repository.ProductRepository;
+import com.heiya.mobileapi.product.dto.response.PriceDTOResponse;
+import java.text.ParseException;
+import org.springframework.web.client.RestClientException;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -147,7 +152,6 @@ public class ProductServiceImpl implements ProductService {
             response.setResultCode("400");
             response.setResultMsg("Banner saving failed");
             LOGGER.info("======== END ProductServiceImpl.saveNewBanner() failed due to : " + e.getMessage());
-            e.printStackTrace();
         }
         return response;
     }
@@ -165,12 +169,11 @@ public class ProductServiceImpl implements ProductService {
             response.setSuccess(true);
             response.setResultCode("200");
             response.setResultMsg("Successfully deleted");
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             response.setSuccess(false);
             response.setResultCode("400");
             response.setResultMsg("Banner failed to be deleted");
             LOGGER.info("======== END ProductServiceImpl.deleteBanner() failed due to : " + e.getMessage());
-            e.printStackTrace();
         }
         return response;
     }
@@ -235,6 +238,120 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public ProductListDTOResponsev2 getAllProductsv2() throws Exception {
+        ProductListDTOResponsev2 response = new ProductListDTOResponsev2();
+        LOGGER.info("======== START ProductServiceImpl.getAllProductsv2()");
+        List<PriceDTOResponse> productList = productRepo.findAvailableProductsv2();
+
+        if (productList != null && !productList.isEmpty()) {
+            response.setSuccess(true);
+            response.setResultCode("200");
+            response.setResultMsg("Successfully retrieved");
+
+            List<ProductDTOResponsev2> productResList = new ArrayList<ProductDTOResponsev2>();
+            for (PriceDTOResponse product : productList) {
+                ProductDTOResponsev2 productRes = new ProductDTOResponsev2();
+                productRes.setProductId(product.getId());
+                productRes.setGoodsId(product.getGoodsId());
+                productRes.setProductName(product.getProductName());
+                productRes.setProductDesc(product.getProductDesc());
+                productRes.setPriceMin(product.getPriceMin());
+                productRes.setPriceMax(product.getPriceMax());
+                productRes.setModelId(product.getModelId());
+
+                //Set discount
+                DiscountDTOResponse discRes = this.getProductDiscount(product.getGoodsId());
+                if (discRes != null && discRes.getResultCode().equals("200")) {
+                    productRes.setDiscount(String.valueOf(discRes.getDiscount()).concat("%"));
+                } else {
+                    productRes.setDiscount("0");
+                }
+
+                productRes.setIsActive("Y");
+
+                List<ProductImages> productImageList = productImagesRepo.findByProductId(product.getId()); //get product image list first based on the id
+                if (!productImageList.isEmpty()) {
+                    for (ProductImages prodImg : productImageList) {
+                        if (prodImg.getIsMain() != null && "Y".equals(prodImg.getIsMain())) {
+                            productRes.setProductImagePath(prodImg.getImagePath());
+                        } else {
+                            productRes.setProductImagePath(productImageList.get(0).getImagePath());
+                        }
+                    }
+                } else {
+                    productRes.setProductImagePath(product.getGoodsUrl()); //use default image from Goods URL field
+                }
+
+                productResList.add(productRes);
+            }
+            response.setProductList(productResList);
+            LOGGER.info("======== END ProductServiceImpl.getAllProductsv2() - Product response : " + mapper.writeValueAsString(response));
+        } else {
+            response.setSuccess(false);
+            response.setResultCode("404");
+            response.setResultMsg("There are no any products available right now");
+            LOGGER.info("======== END ProductServiceImpl.getAllProductsv2() - No products available");
+        }
+        return response;
+    }
+
+    @Override
+    public ProductListDTOResponse getAllProductsByMachineId(Long machineId) throws Exception {
+        ProductListDTOResponse response = new ProductListDTOResponse();
+        LOGGER.info("======== START ProductServiceImpl.getAllProductsByMachineId()");
+        List<Product> productList = productRepo.findByIdMachine(machineId);
+
+        if (productList != null && !productList.isEmpty()) {
+            response.setSuccess(true);
+            response.setResultCode("200");
+            response.setResultMsg("Successfully retrieved");
+
+            List<ProductDTOResponse> productResList = new ArrayList<ProductDTOResponse>();
+            for (Product product : productList) {
+                ProductDTOResponse productRes = new ProductDTOResponse();
+                productRes.setProductId(product.getId());
+                productRes.setGoodsId(product.getGoodsId());
+                productRes.setProductName(product.getProductName());
+                productRes.setProductDesc(product.getProductDesc());
+                productRes.setPrice(product.getPrice());
+
+                //Set discount
+                DiscountDTOResponse discRes = this.getProductDiscount(product.getGoodsId());
+                if (discRes != null && discRes.getResultCode().equals("200")) {
+                    productRes.setDiscount(String.valueOf(discRes.getDiscount()).concat("%"));
+                } else {
+                    productRes.setDiscount("0");
+                }
+
+                productRes.setIsActive(product.getIsActive());
+
+                List<ProductImages> productImageList = productImagesRepo.findByProductId(product.getId()); //get product image list first based on the id
+                if (!productImageList.isEmpty()) {
+                    for (ProductImages prodImg : productImageList) {
+                        if (prodImg.getIsMain() != null && "Y".equals(prodImg.getIsMain())) {
+                            productRes.setProductImagePath(prodImg.getImagePath());
+                        } else {
+                            productRes.setProductImagePath(productImageList.get(0).getImagePath());
+                        }
+                    }
+                } else {
+                    productRes.setProductImagePath(product.getGoodsUrl()); //use default image from Goods URL field
+                }
+
+                productResList.add(productRes);
+            }
+            response.setProductList(productResList);
+            LOGGER.info("======== END ProductServiceImpl.getAllProductsByMachineId() - Product response : " + mapper.writeValueAsString(response));
+        } else {
+            response.setSuccess(false);
+            response.setResultCode("404");
+            response.setResultMsg("There are no any products available right now");
+            LOGGER.info("======== END ProductServiceImpl.getAllProductsByMachineId() - No products available");
+        }
+        return response;
+    }
+
+    @Override
     public ProductDetailDTOResponse getProductById(Long productId) throws Exception {
         ProductDetailDTOResponse response = new ProductDetailDTOResponse();
         LOGGER.info("======== START ProductServiceImpl.getProductById()");
@@ -277,7 +394,7 @@ public class ProductServiceImpl implements ProductService {
             } else { //just for dummy to set images, in order to not be null
                 ProductImageDTOResponse productImageRes = new ProductImageDTOResponse();
                 productImageRes.setProductId(response.getProductId());
-                productImageRes.setImagePath("http://45.130.229.168/appresources/images/products/01_Long_Black.jpg");
+                productImageRes.setImagePath("http://myheiya.id/appresources/images/products/01_Long_Black.jpg");
                 productImageRes.setIsMain("Y");
                 productImageResList.add(productImageRes);
             }
@@ -288,6 +405,64 @@ public class ProductServiceImpl implements ProductService {
             response.setResultCode("404");
             response.setResultMsg("Product not found");
             LOGGER.info("======== END ProductServiceImpl.getProductById() - Product not found");
+        }
+        return response;
+    }
+
+    @Override
+    public ProductDetailDTOResponse getProductByProductIdAndMachineId(Integer goodsId, Long machineId) throws Exception {
+        ProductDetailDTOResponse response = new ProductDetailDTOResponse();
+        LOGGER.info("======== START ProductServiceImpl.getProductByProductIdAndMachineId()");
+        Optional<Product> product = productRepo.findByGoodsIdAndIdMachine(goodsId, machineId);
+
+        if (product != null && product.isPresent()) {
+            response.setSuccess(true);
+            response.setResultCode("200");
+            response.setResultMsg("Successfully retrieved");
+
+            response.setProductId(product.get().getId());
+            response.setGoodsId(product.get().getGoodsId());
+            response.setProductName(product.get().getProductName());
+            response.setProductDesc(product.get().getProductDesc());
+            response.setPrice(product.get().getPrice());
+
+            //Set discount
+            DiscountDTOResponse discRes = this.getProductDiscount(product.get().getGoodsId());
+            if (discRes != null && discRes.getResultCode().equals("200")) {
+                BigDecimal oriAmount = product.get().getPrice();
+                BigDecimal discInPercent = new BigDecimal(discRes.getDiscount());
+                BigDecimal discAmount = (oriAmount.multiply(discInPercent)).divide(new BigDecimal(100));
+                response.setDiscount(discAmount);
+            } else {
+                response.setDiscount(new BigDecimal(0));
+            }
+
+            response.setIsActive(product.get().getIsActive());
+
+            List<ProductImageDTOResponse> productImageResList = new ArrayList<ProductImageDTOResponse>();
+            List<ProductImages> productImageList = productImagesRepo.findByProductId(product.get().getId()); //get product image list first based on the id
+            if (productImageList != null && !productImageList.isEmpty()) {
+                for (ProductImages prodImages : productImageList) {
+                    ProductImageDTOResponse productImageRes = new ProductImageDTOResponse();
+                    productImageRes.setProductId(prodImages.getProductId());
+                    productImageRes.setImagePath(prodImages.getImagePath());
+                    productImageRes.setIsMain(prodImages.getIsMain());
+                    productImageResList.add(productImageRes);
+                }
+            } else { //just for dummy to set images, in order to not be null
+                ProductImageDTOResponse productImageRes = new ProductImageDTOResponse();
+                productImageRes.setProductId(response.getProductId());
+                productImageRes.setImagePath("http://myheiya.id/appresources/images/products/01_Long_Black.jpg");
+                productImageRes.setIsMain("Y");
+                productImageResList.add(productImageRes);
+            }
+            response.setProductImageList(productImageResList);
+            LOGGER.info("======== END ProductServiceImpl.getProductByProductIdAndMachineId() - Product response : " + mapper.writeValueAsString(response));
+        } else {
+            response.setSuccess(false);
+            response.setResultCode("404");
+            response.setResultMsg("Product not found");
+            LOGGER.info("======== END ProductServiceImpl.getProductByProductIdAndMachineId() - Product not found");
         }
         return response;
     }
@@ -324,7 +499,6 @@ public class ProductServiceImpl implements ProductService {
             response.setResultCode("400");
             response.setResultMsg("Product saving failed");
             LOGGER.info("======== END ProductServiceImpl.saveNewProduct() failed due to : " + e.getMessage());
-            e.printStackTrace();
         }
         return response;
     }
@@ -342,12 +516,11 @@ public class ProductServiceImpl implements ProductService {
             response.setSuccess(true);
             response.setResultCode("200");
             response.setResultMsg("Product is successfully deleted");
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             response.setSuccess(false);
             response.setResultCode("400");
             response.setResultMsg("Product failed to be deleted");
             LOGGER.info("======== END ProductServiceImpl.deleteProduct() failed due to : " + e.getMessage());
-            e.printStackTrace();
         }
         return response;
     }
@@ -475,12 +648,11 @@ public class ProductServiceImpl implements ProductService {
             response.setResultMsg("All products & machines are successfully syncronized");
 
             LOGGER.info("======== END ProductServiceImpl.syncMiniInformation() - Product sync success!!!");
-        } catch (Exception e) {
+        } catch (JsonProcessingException | ParseException | RestClientException e) {
             response.setSuccess(false);
             response.setResultCode("400");
             response.setResultMsg("Product sync failed");
             LOGGER.info("======== END ProductServiceImpl.syncMiniInformation() : " + e.getMessage());
-            e.printStackTrace();
         }
         return response;
     }
@@ -515,6 +687,36 @@ public class ProductServiceImpl implements ProductService {
         return response;
     }
 
+    @Override
+    public TasteListDTOResponse getTasteByProductIdv2(Integer goodsId, Long machineId) throws Exception {
+        TasteListDTOResponse response = new TasteListDTOResponse();
+        LOGGER.info("======== START ProductServiceImpl.getTasteByProductIdv2()");
+        List<Product> productList = productRepo.findTasteListByGoodsIdv2(goodsId, machineId);
+
+        if (productList != null && !productList.isEmpty()) {
+            response.setSuccess(true);
+            response.setResultCode("200");
+            response.setResultMsg("Successfully retrieved");
+
+            List<TasteDTOResponse> tasteResList = new ArrayList<TasteDTOResponse>();
+            for (Product product : productList) {
+                TasteDTOResponse tasteRes = new TasteDTOResponse();
+                tasteRes.setTasteId(product.getTasteId());
+                tasteRes.setTasteName(product.getTasteName());
+                tasteRes.setGoodsProtocol(product.getGoodsProtocol());
+                tasteResList.add(tasteRes);
+            }
+            response.setTasteList(tasteResList);
+            LOGGER.info("======== END ProductServiceImpl.getTasteByProductIdv2() - Taste response : " + mapper.writeValueAsString(response));
+        } else {
+            response.setSuccess(false);
+            response.setResultCode("404");
+            response.setResultMsg("The product doesn't has taste");
+            LOGGER.info("======== END ProductServiceImpl.getTasteByProductIdv2() - The product doesn't has taste");
+        }
+        return response;
+    }
+
     /* 
 	 * PRODUCT IMAGE PORTION
      */
@@ -540,7 +742,6 @@ public class ProductServiceImpl implements ProductService {
             response.setResultCode("400");
             response.setResultMsg("Product image saving failed");
             LOGGER.info("======== END ProductServiceImpl.saveNewProductImage() failed due to : " + e.getMessage());
-            e.printStackTrace();
         }
         return response;
     }
@@ -552,7 +753,8 @@ public class ProductServiceImpl implements ProductService {
     public MachineDetailListDTOResponse getMachineLocationByProductId(Long productId) throws Exception {
         MachineDetailListDTOResponse response = new MachineDetailListDTOResponse();
         LOGGER.info("======== START ProductServiceImpl.getMachineLocationByProductId() with productId : " + productId);
-        List<Machine> machineList = productRepo.findMachineDetailByProductId(productId);
+//        List<Machine> machineList = productRepo.findMachineDetailByProductId(productId);
+        List<Machine> machineList = machineRepo.findMachineByStatus();
 
         if (machineList != null && !machineList.isEmpty()) {
             response.setSuccess(true);
@@ -583,10 +785,11 @@ public class ProductServiceImpl implements ProductService {
     }
     
     @Override
-    public MachineDetailListDTOResponse getMachineLocationByStatus() throws Exception {
+    public MachineDetailListDTOResponse getMachineLocationByProductIdV2(Integer goodsId) throws Exception {
         MachineDetailListDTOResponse response = new MachineDetailListDTOResponse();
-        LOGGER.info("======== START ProductServiceImpl.getMachineLocationByProductId() with status : Y");
-        List<Machine> machineList = machineRepo.findMachineByStatus();
+        LOGGER.info("======== START ProductServiceImpl.getMachineLocationByProductId() with Goods Id : " + goodsId);
+        List<Machine> machineList = machineRepo.findMachineByStatusByGoodsId(goodsId);
+//        List<Machine> machineList = machineRepo.findMachineByStatus();
 
         if (machineList != null && !machineList.isEmpty()) {
             response.setSuccess(true);

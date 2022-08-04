@@ -1,0 +1,109 @@
+2021-09-11 12:17:58,713 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on LAPTOP-GKV7MAH7 with PID 11576 (C:\Users\User\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by User in C:\Users\User\Documents\NetBeansProjects\heiyacustomerapi)
+2021-09-11 12:17:58,725 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-09-11 12:17:58,726 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2021-09-11 12:18:00,661 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-11 12:18:00,956 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 277ms. Found 12 JPA repository interfaces.
+2021-09-11 12:18:02,537 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (https)
+2021-09-11 12:18:02,733 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3911 ms
+2021-09-11 12:18:05,188 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-11 12:18:06,482 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-11 12:18:07,256 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2021-09-11 12:18:08,000 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2021-09-11 12:18:08,032 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2021-09-11 12:18:08,318 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2021-09-11 12:18:08,318 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2021-09-11 12:18:08,319 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2021-09-11 12:18:08,319 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2021-09-11 12:18:08,407 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3731e8b6, org.springframework.security.web.context.SecurityContextPersistenceFilter@31c0c7e5, org.springframework.security.web.header.HeaderWriterFilter@344a065a, org.springframework.security.web.authentication.logout.LogoutFilter@2e057637, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4cb58e8b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78ea700f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@cea67b1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@565efd7d, org.springframework.security.web.session.SessionManagementFilter@2aeb7c4c, org.springframework.security.web.access.ExceptionTranslationFilter@6719f206, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5895c065]
+2021-09-11 12:18:09,649 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2021-09-11 12:18:10,553 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (https) with context path ''
+2021-09-11 12:18:10,556 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 12.728 seconds (JVM running for 13.511)
+2021-09-11 12:18:10,559 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_291\jre
+2021-09-11 12:19:05,457 INFO org.springframework.web.servlet.DispatcherServlet [https-jsse-nio-8083-exec-6] Initializing Servlet 'dispatcherServlet'
+2021-09-11 12:19:05,469 INFO org.springframework.web.servlet.DispatcherServlet [https-jsse-nio-8083-exec-6] Completed initialization in 12 ms
+2021-09-11 12:19:05,817 INFO com.heiya.mobileapi.payment.controller.PaymentController [https-jsse-nio-8083-exec-6] 
+
+======== START PaymentController.doCreateEwalletPayment
+2021-09-11 12:19:05,817 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [https-jsse-nio-8083-exec-6] ======== START PaymentServiceImpl.createXenditEWalletPayment() with request : CreatePaymentDTORequest(externalId= , amount=1, phone=081248666660, ewalletType=OVO, goodsId=21, tasteId=5, goodsProtocol=54, productName=Taro Latte, machineCode=786401190000)
+2021-09-11 12:19:05,858 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [https-jsse-nio-8083-exec-6] ======== REQUEST PaymentServiceImpl.createXenditEWalletPayment(): {"external_id":"operator20210911051905822Z","amount":1,"phone":"081248666660","ewallet_type":"OVO","goodsId":21,"tasteId":5,"goodsProtocol":54,"productName":"Taro Latte","machineCode":"786401190000"}
+2021-09-11 12:19:07,266 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [https-jsse-nio-8083-exec-6] ======== RESPONSE PaymentServiceImpl.createXenditEWalletPayment() - XenditCreatePaymentDTOResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","amount":1,"business_id":"60c0c4482470d2492c7f182d","created":"2021-09-11T05:19:34.321Z","ewallet_type":"OVO","external_id":"operator20210911051905822Z","phone":"081248666660","status":"PENDING","checkout_url":null,"error_code":null,"message":null}
+2021-09-11 12:19:07,267 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [https-jsse-nio-8083-exec-6] ======== START ProductServiceImpl.getProductDiscount()
+2021-09-11 12:19:07,273 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [https-jsse-nio-8083-exec-6] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2021-09-11 12:19:07,323 DEBUG com.heiya.mobileapi.payment.service.PaymentServiceImpl [https-jsse-nio-8083-exec-6] ======== RESPONSE PaymentServiceImpl.createXenditEWalletPayment() - BaseHWResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","amount":1,"business_id":"60c0c4482470d2492c7f182d","created":"2021-09-11T05:19:34.321Z","ewallet_type":"OVO","external_id":"operator20210911051905822Z","phone":"081248666660","status":"PENDING","checkout_url":null,"error_code":null,"message":null}
+2021-09-11 12:19:07,324 INFO com.heiya.mobileapi.payment.controller.PaymentController [https-jsse-nio-8083-exec-6] ======== COMPLETED PaymentController.doCreateEwalletPayment
+2021-09-11 12:19:09,196 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PaymentServiceImpl.callbackStatusByXendit() with request : {"event":null,"id":"60c0c4482470d2492c7f182d","external_id":"operator20210911051905822Z","business_id":"60c0c4482470d2492c7f182d","phone":null,"ewallet_type":"OVO","amount":"1","created":"2021-09-11T05:19:34.329Z","status":"COMPLETED","failure_code":null,"payment_status":null,"transaction_date":null,"callback_authentication_token":null,"items":null}
+2021-09-11 12:19:09,202 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START ProductServiceImpl.getProductDiscount()
+2021-09-11 12:19:09,204 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2021-09-11 12:19:09,216 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PaymentServiceImpl.callbackStatusByXendit() Order request to HW: {"order_no":"operator20210911051905822Z","order_type":"normal","operate_code":"G6019009-2","payment_time":"2021-09-11 05:19:34","original_amount":"","deposit_amount":"","payment_amount":"1","machine_code":"786401190000","order_source":"userDefined","detail":[{"tasteid":"5","name":"Taro Latte","goodid":"21","orderGoodsNo":"operate20210911051909212Z_DPGT","brewingCode":"","orderPrice":"1"}]}
+2021-09-11 12:19:09,899 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== RESPONSE PaymentServiceImpl.callbackStatusByXendit() - BaseHWResponse: {"success":0,"resultCode":"200","resultMsg":"ok","result":"ok","extInfo":null}
+2021-09-11 12:19:09,938 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== PaymentServiceImpl.callbackStatusByXendit() - Payment order no operator20210911051905822Z has been updated to DB with status: settlement
+2021-09-11 12:19:09,940 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PaymentServiceImpl.callbackStatusByXendit()
+2021-09-11 12:19:09,940 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== [SCHEDULER] PaymentServiceImpl.checkAndUpdateTransactionStatus() - Payment order no operator20210911051905822Z has been updated to DB with status: pending
+2021-09-11 12:20:35,096 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2021-09-11 12:20:35,098 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20210911051905822Z","customerName":"Riyad Kurniawan Gusung"}
+2021-09-11 12:20:35,102 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Gusung Your order Taro Latte expire on Sep 12, 2021 12:19:34 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2021-09-11 12:20:35,489 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] com.google.firebase.messaging.FirebaseMessagingException: SenderId mismatch
+2021-09-11 12:20:35,496 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2021-09-11 12:21:40,577 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on LAPTOP-GKV7MAH7 with PID 5592 (C:\Users\User\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by User in C:\Users\User\Documents\NetBeansProjects\heiyacustomerapi)
+2021-09-11 12:21:40,581 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2021-09-11 12:21:40,582 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2021-09-11 12:21:42,208 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-11 12:21:42,536 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 312ms. Found 12 JPA repository interfaces.
+2021-09-11 12:21:44,082 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (https)
+2021-09-11 12:21:44,337 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3687 ms
+2021-09-11 12:21:46,494 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-11 12:21:47,660 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-11 12:21:48,408 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2021-09-11 12:21:49,013 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2021-09-11 12:21:49,035 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2021-09-11 12:21:49,274 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2021-09-11 12:21:49,274 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2021-09-11 12:21:49,275 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2021-09-11 12:21:49,275 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2021-09-11 12:21:49,341 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a35ae82, org.springframework.security.web.context.SecurityContextPersistenceFilter@6a3e633a, org.springframework.security.web.header.HeaderWriterFilter@40db6136, org.springframework.security.web.authentication.logout.LogoutFilter@6fbcc078, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2e9dcdd3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6fc6f68f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e406cbe, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ab21633, org.springframework.security.web.session.SessionManagementFilter@77db231c, org.springframework.security.web.access.ExceptionTranslationFilter@23d23d98, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10830d50]
+2021-09-11 12:21:50,451 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2021-09-11 12:21:51,089 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2021-09-11 12:21:51,124 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20210911051905822Z","customerName":"Riyad Kurniawan Gusung"}
+2021-09-11 12:21:51,130 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Gusung Your order Taro Latte expire on Sep 12, 2021 12:19:34 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2021-09-11 12:21:51,481 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (https) with context path ''
+2021-09-11 12:21:51,484 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 11.644 seconds (JVM running for 12.358)
+2021-09-11 12:21:51,487 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_291\jre
+2021-09-11 12:21:51,726 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== END FCMService.sendMessageToToken() - Sent message to token. Device token: dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H, projects/app-api-heiya/messages/0:1631337738968204%fcc0b45afcc0b45a message {
+  "notification": {
+    "title": "Please take your order",
+    "body": "Hallo Riyad Kurniawan Gusung Your order Taro Latte expire on Sep 12, 2021 12:19:34 PM"
+  },
+  "androidConfig": {
+    "collapseKey": "CHECK_PICKUP",
+    "priority": "high",
+    "ttl": "120s",
+    "notification": {
+      "color": "#FFFF00",
+      "sound": "default",
+      "tag": "CHECK_PICKUP"
+    }
+  },
+  "apnsConfig": {
+    "payload": {
+      "aps": {
+        "category": "CHECK_PICKUP",
+        "thread-id": "CHECK_PICKUP"
+      }
+    }
+  },
+  "token": "dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"
+}
+2021-09-11 12:21:51,728 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== END PushNotificationServiceImpl.sendPushNotificationWithOrderNo() - Send Notification Successfully with response : {"success":true,"resultCode":"200","resultMsg":"Send Notification To 29 Successfully"}
+2021-09-11 12:21:51,728 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup

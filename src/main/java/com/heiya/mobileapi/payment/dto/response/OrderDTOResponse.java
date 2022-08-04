@@ -2,6 +2,7 @@ package com.heiya.mobileapi.payment.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.heiya.mobileapi.dto.response.BaseResponse;
+import javax.persistence.Column;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -46,4 +47,16 @@ public class OrderDTOResponse {
 	
 	@JsonProperty("expiryTime")
 	private String expiryTime;
+        
+        @JsonProperty("id")
+	private Long id;
+	
+	@JsonProperty("firstName")
+	private String firstName;
+	
+	@JsonProperty("lastName")
+	private String lastName;
+	
+	@JsonProperty("mobileNo")
+	private String mobileNo;
 }

@@ -23,6 +23,7 @@ import com.heiya.mobileapi.product.dto.response.BannerListDTOResponse;
 import com.heiya.mobileapi.product.dto.response.MachineDetailListDTOResponse;
 import com.heiya.mobileapi.product.dto.response.ProductDetailDTOResponse;
 import com.heiya.mobileapi.product.dto.response.ProductListDTOResponse;
+import com.heiya.mobileapi.product.dto.response.ProductListDTOResponsev2;
 import com.heiya.mobileapi.product.dto.response.TasteListDTOResponse;
 import com.heiya.mobileapi.product.service.ProductService;
 
@@ -46,7 +47,7 @@ public class ProductController {
     @GetMapping(value = "/promotions", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doListPromo() throws JsonProcessingException {
         LOGGER.info("\n\n======== START ProductController.doListPromo");
-        BannerListDTOResponse response = null;
+        BannerListDTOResponse response = new BannerListDTOResponse();
 
         try {
             response = prodService.getCurrentPromotionBanner();
@@ -68,7 +69,7 @@ public class ProductController {
             response = prodService.saveBanner(null, request); //no need to pass bannerId for saving
             LOGGER.info("======== COMPLETED CustomerController.doAddNewPromo");
             return ResponseEntity.ok(response);
-        } catch (Exception e) {
+        } catch (JsonProcessingException e) {
             LOGGER.error(e.getMessage(), e);
             return ResponseEntity.badRequest().body(e.getMessage());
         }
@@ -84,7 +85,7 @@ public class ProductController {
             response = prodService.saveBanner(bannerId, request);
             LOGGER.info("======== COMPLETED CustomerController.doUpdatePromo");
             return ResponseEntity.ok(response);
-        } catch (Exception e) {
+        } catch (JsonProcessingException e) {
             LOGGER.error(e.getMessage(), e);
             return ResponseEntity.badRequest().body(e.getMessage());
         }
@@ -100,7 +101,7 @@ public class ProductController {
             response = prodService.deleteBanner(bannerId);
             LOGGER.info("======== COMPLETED CustomerController.doDeletePromo with bannerId : " + bannerId);
             return ResponseEntity.ok(response);
-        } catch (Exception e) {
+        } catch (JsonProcessingException e) {
             LOGGER.error(e.getMessage(), e);
             return ResponseEntity.badRequest().body(e.getMessage());
         }
@@ -115,6 +116,38 @@ public class ProductController {
         try {
             response = prodService.getAllProducts();
             LOGGER.info("======== COMPLETED ProductController.doListProducts");
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    
+    @ApiOperation("V2 - Get List of Product - Provide list of all products for mobile app to be displayed on home screen")
+    @GetMapping(value = "products", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> doListProductsv2() throws JsonProcessingException {
+        LOGGER.info("\n\n======== START ProductController.doListProductsv2");
+        ProductListDTOResponsev2 response = null;
+
+        try {
+            response = prodService.getAllProductsv2();
+            LOGGER.info("======== COMPLETED ProductController.doListProductsv2");
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    
+    @ApiOperation("V2 - Get List of Product- Provide list of all products for mobile app to be displayed on home screen")
+    @GetMapping(value = "machines/{machineId}/products", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> doListProductsByMachineId(@PathVariable Long machineId) throws JsonProcessingException {
+        LOGGER.info("\n\n======== START ProductController.doListProductsByMachineId");
+        ProductListDTOResponse response = null;
+
+        try {
+            response = prodService.getAllProductsByMachineId(machineId);
+            LOGGER.info("======== COMPLETED ProductController.doListProductsByMachineId");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
@@ -137,6 +170,22 @@ public class ProductController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+    
+    @ApiOperation("V2 - Get Product by Product ID and Machine ID V2 - Provide detail info of a product for mobile app to be displayed on order screen")
+    @GetMapping(value = "products/{goodsId}/machines/{machineId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> doGetProductByProductIdAndMachineId(@PathVariable Integer goodsId, @PathVariable Long machineId) throws JsonProcessingException {
+        LOGGER.info("\n\n======== START ProductController.doGetProductByProductIdAndMachineId");
+        ProductDetailDTOResponse response = null;
+
+        try {
+            response = prodService.getProductByProductIdAndMachineId(goodsId, machineId);
+            LOGGER.info("======== COMPLETED ProductController.doGetProductByProductIdAndMachineId");
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 
     @ApiOperation("Add New Product - Save new product for mobile app to be displayed on home screen")
     @PostMapping(value = "/addProduct", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -148,7 +197,7 @@ public class ProductController {
             response = prodService.saveProduct(null, request); //no need to pass productId for saving
             LOGGER.info("======== COMPLETED CustomerController.doAddProduct");
             return ResponseEntity.ok(response);
-        } catch (Exception e) {
+        } catch (JsonProcessingException e) {
             LOGGER.error(e.getMessage(), e);
             return ResponseEntity.badRequest().body(e.getMessage());
         }
@@ -164,7 +213,7 @@ public class ProductController {
             response = prodService.saveProduct(productId, request); //need to pass productId for updating
             LOGGER.info("======== COMPLETED CustomerController.doUpdateProduct");
             return ResponseEntity.ok(response);
-        } catch (Exception e) {
+        } catch (JsonProcessingException e) {
             LOGGER.error(e.getMessage(), e);
             return ResponseEntity.badRequest().body(e.getMessage());
         }
@@ -180,7 +229,7 @@ public class ProductController {
             response = prodService.deleteProduct(productId);
             LOGGER.info("======== COMPLETED CustomerController.doDeleteProduct with productId : " + productId);
             return ResponseEntity.ok(response);
-        } catch (Exception e) {
+        } catch (JsonProcessingException e) {
             LOGGER.error(e.getMessage(), e);
             return ResponseEntity.badRequest().body(e.getMessage());
         }
@@ -196,12 +245,12 @@ public class ProductController {
             response = prodService.saveNewProductImage(request);
             LOGGER.info("======== COMPLETED CustomerController.doAddProductImage");
             return ResponseEntity.ok(response);
-        } catch (Exception e) {
+        } catch (JsonProcessingException e) {
             LOGGER.error(e.getMessage(), e);
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-
+    
     @ApiOperation("Get Machine Detail by Product - Query all machine locations by product ID to be displayed on product detail screen.")
     @GetMapping(value = "/query/machine/{productId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doGetMachineLocationByProductId(@PathVariable Long productId) throws JsonProcessingException {
@@ -209,7 +258,23 @@ public class ProductController {
         MachineDetailListDTOResponse response = null;
 
         try {
-            //response = prodService.getMachineLocationByProductId(productId); //no need to filter by product id
+            response = prodService.getMachineLocationByProductId(productId); //no need to filter by product id
+//            response = prodService.getActiveMachineList(); //find by machine status
+            LOGGER.info("======== COMPLETED ProductController.doGetMachineLocationByProductId");
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    
+    @ApiOperation("V2 - Get Machine Detail by Product V2 - Query all machine locations by product ID to be displayed on product detail screen.")
+    @GetMapping(value = "machines", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> doGetAllMachineLocation() throws JsonProcessingException {
+        LOGGER.info("\n\n======== START ProductController.doGetMachineLocationByProductId");
+        MachineDetailListDTOResponse response = null;
+
+        try {
             response = prodService.getActiveMachineList(); //find by machine status
             LOGGER.info("======== COMPLETED ProductController.doGetMachineLocationByProductId");
             return ResponseEntity.ok(response);
@@ -219,16 +284,14 @@ public class ProductController {
         }
     }
     
-    @ApiOperation("Get Machine Detail by Status - Query all machine locations by status to be displayed on product detail screen.")
-    @GetMapping(value = "/query/machine", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> doGetMachineLocationByStatus() throws JsonProcessingException {
-        LOGGER.info("\n\n======== START ProductController.doGetMachineLocationByProductId");
-        MachineDetailListDTOResponse response = new MachineDetailListDTOResponse();
-
+    @ApiOperation("V2 - Get Machine Detail by Status - Query all machine locations by status to be displayed on product detail screen.")
+    @GetMapping(value = "products/{goodsId}/machines", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> doGetMachineLocationByGoodsId(@PathVariable Integer goodsId) throws JsonProcessingException {
+        LOGGER.info("\n\n======== START ProductController.doGetMachineLocationByStatus");
+        MachineDetailListDTOResponse response = null;
         try {
-            //response = prodService.getMachineLocationByProductId(productId); //no need to filter by product id
-            response = prodService.getMachineLocationByStatus(); //find by machine status
-            LOGGER.info("======== COMPLETED ProductController.doGetMachineLocationByProductId");
+            response = prodService.getMachineLocationByProductIdV2(goodsId); //no need to filter by product id
+            LOGGER.info("======== COMPLETED ProductController.doGetMachineLocationByStatus");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
@@ -261,6 +324,36 @@ public class ProductController {
         try {
             response = prodService.getTasteByProductId(goodsId);
             LOGGER.info("======== COMPLETED ProductController.doTasteByProductId");
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    
+    @ApiOperation("V2 - Get Product by Product ID and Machine ID - Provide detail info of a product for mobile app to be displayed on order screen")
+    @GetMapping(value = "machines/{machineId}/products/{goodsId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> doGetProductByMachineIdAndProductId(@PathVariable Integer goodsId, @PathVariable Long machineId) throws JsonProcessingException {
+        LOGGER.info("\n\n======== START ProductController.doGetProductByProductIdAndMachineId");
+        try {
+            ProductDetailDTOResponse response = prodService.getProductByProductIdAndMachineId(goodsId, machineId);
+            LOGGER.info("======== COMPLETED ProductController.doGetProductByProductIdAndMachineId");
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    
+    @ApiOperation("V2 - Get List of Taste by Product - It will return tastes of product for customer to choose in order detail.")
+    @GetMapping(value = "/query/taste/{goodsId}/{machineId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> doTasteByProductIdv2(@PathVariable Integer goodsId, @PathVariable Long machineId) throws JsonProcessingException {
+        LOGGER.info("\n\n======== START ProductController.doTasteByProductIdv2");
+        TasteListDTOResponse response = null;
+
+        try {
+            response = prodService.getTasteByProductIdv2(goodsId, machineId);
+            LOGGER.info("======== COMPLETED ProductController.doTasteByProductIdv2");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);

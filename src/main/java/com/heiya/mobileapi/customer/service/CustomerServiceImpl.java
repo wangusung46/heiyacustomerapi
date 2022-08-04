@@ -83,14 +83,27 @@ public class CustomerServiceImpl implements CustomerService {
                 customerRepo.save(customer);
 
                 if (token == null) {
-                    LOGGER.info("======== CustomerServiceImpl.performCustomerLogin() - Get New Token:" + request.getIdToken());
+                    LOGGER.info("======== CustomerServiceImpl.performCustomerLogin() - Get New Token : " + request.getIdToken());
                     Token newToken = new Token();
                     newToken.setIdCustomer(customer.getId());
                     newToken.setIdToken(request.getIdToken());
                     newToken.setMobileNo(request.getMobileNo());
                     newToken.setIsLoggedin(true);
                     tokenRepository.save(newToken);
+                } else{
+                    LOGGER.info("======== CustomerServiceImpl.performCustomerLogin() - Set Loggedin : " + true);
+                    token.setIsLoggedin(true);
+                    tokenRepository.save(token);
                 }
+                
+//                System.out.println(token.getIsLoggedin());
+//                
+//                if (token = null && token.getIsLoggedin() == false) {
+//                    LOGGER.info("======== CustomerServiceImpl.performCustomerLogin() - Set Loggedin:" + token.getIsLoggedin());
+//                    Token newToken = new Token();
+//                    newToken.setIsLoggedin(true);
+//                    tokenRepository.save(newToken);
+//                }
 
                 response.setSuccess(true);
                 response.setResultCode("200");
@@ -122,6 +135,11 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerLoginDTOResponse performCustomerLogout(String mobileNo, String idToken) throws Exception {
         CustomerLoginDTOResponse response = new CustomerLoginDTOResponse();
         LOGGER.info("======== START CustomerServiceImpl.performCustomerLogout() with mobile no " + mobileNo);
+
+        if (mobileNo.startsWith("+62")) {
+            mobileNo = mobileNo.replace("+62", "0");
+        }
+
         Customer customer = customerRepo.findByMobileNo(mobileNo);
         Token token = tokenRepository.findByIdTokenAndIdCustomer(idToken, customer.getId());
 
@@ -504,55 +522,56 @@ public class CustomerServiceImpl implements CustomerService {
         String iosVersion = crudService.getGlobalConfigParamByKey(GlobalConstants.VERSION_MOBILE_IOS);
 //        String onDevice = "ANDROID";
 //        String onDevice = "IOS";
-        LOGGER.info("======== START CustomerServiceImpl.performCheckMobileVersion() with aplication version : " + version + " on " + onDevice);
-        if (onDevice.equals("ANDROID")) {
-
-            if (version.equals(androidVersion)) {
+        LOGGER.info("======== START CustomerServiceImpl.performCheckMobileVersion() with aplication version : " + version + " on " + mapper.writeValueAsString(device));
+        switch (onDevice) {
+            case "ANDROID":
+                if (version.equals(androidVersion)) {
+                    response.setDevicePlatform(onDevice);
+                    response.setMobileVersion(version);
+                    response.setExistMobileVersion("Android Version : " + androidVersion);
+                    response.setSuccess(true);
+                    response.setResultCode("200");
+                    response.setResultMsg("Successfully update HEIYA version to " + androidVersion);
+                    LOGGER.info("======== COMPLETE CustomerServiceImpl.performCheckMobileVersion() with aplication version : " + version + " on " + onDevice);
+                } else {
+                    response.setDevicePlatform(onDevice);
+                    response.setMobileVersion(version);
+                    response.setExistMobileVersion("Android Version : " + androidVersion);
+                    response.setSuccess(false);
+                    response.setResultCode("404");
+                    response.setResultMsg("Please update HEIYA version to " + androidVersion);
+                    LOGGER.warn("======== COMPLETE CustomerServiceImpl.performCheckMobileVersion() with aplication version : " + version + " on " + onDevice + " update to version " + androidVersion);
+                }
+                break;
+            case "IOS":
+                if (version.equals(iosVersion)) {
+                    response.setDevicePlatform(onDevice);
+                    response.setMobileVersion(version);
+                    response.setExistMobileVersion("IOS Version : " + iosVersion);
+                    response.setSuccess(true);
+                    response.setResultCode("200");
+                    response.setResultMsg("Successfully update HEIYA version to " + iosVersion);
+                    LOGGER.info("======== COMPLETE CustomerServiceImpl.performCheckMobileVersion() with aplication version : " + version + " on " + onDevice);
+                } else {
+                    response.setDevicePlatform(onDevice);
+                    response.setMobileVersion(version);
+                    response.setExistMobileVersion("IOS Version : " + iosVersion);
+                    response.setSuccess(false);
+                    response.setResultCode("404");
+                    response.setResultMsg("Please update HEIYA version to " + iosVersion);
+                    LOGGER.warn("======== COMPLETE CustomerServiceImpl.performCheckMobileVersion() with aplication version : " + version + " on " + onDevice + " update to version " + iosVersion);
+                }
+                break;
+            default:
+                String desktopVersion = "Desktop User";
                 response.setDevicePlatform(onDevice);
-                response.setMobileVersion(version);
-                response.setExistMobileVersion("Android Version : " + androidVersion);
+                response.setMobileVersion(null);
+                response.setExistMobileVersion("Android Version : " + androidVersion + " and " + "IOS Version : " + iosVersion);
                 response.setSuccess(true);
                 response.setResultCode("200");
-                response.setResultMsg("Successfully update HEIYA version to " + androidVersion);
-                LOGGER.info("======== COMPLETE CustomerServiceImpl.performCheckMobileVersion() with aplication version : " + version + " on " + onDevice);
-            } else {
-                response.setDevicePlatform(onDevice);
-                response.setMobileVersion(version);
-                response.setExistMobileVersion("Android Version : " + androidVersion);
-                response.setSuccess(false);
-                response.setResultCode("404");
-                response.setResultMsg("Please update HEIYA version to " + androidVersion);
-                LOGGER.warn("======== COMPLETE CustomerServiceImpl.performCheckMobileVersion() with aplication version : " + version + " on " + onDevice + " update to version " + androidVersion);
-            }
-        } else if (onDevice.equals("IOS")) {
-
-            if (version.equals(iosVersion)) {
-                response.setDevicePlatform(onDevice);
-                response.setMobileVersion(version);
-                response.setExistMobileVersion("IOS Version : " + iosVersion);
-                response.setSuccess(true);
-                response.setResultCode("200");
-                response.setResultMsg("Successfully update HEIYA version to " + iosVersion);
-                LOGGER.info("======== COMPLETE CustomerServiceImpl.performCheckMobileVersion() with aplication version : " + version + " on " + onDevice);
-            } else {
-                response.setDevicePlatform(onDevice);
-                response.setMobileVersion(version);
-                response.setExistMobileVersion("IOS Version : " + iosVersion);
-                response.setSuccess(false);
-                response.setResultCode("404");
-                response.setResultMsg("Please update HEIYA version to " + iosVersion);
-                LOGGER.warn("======== COMPLETE CustomerServiceImpl.performCheckMobileVersion() with aplication version : " + version + " on " + onDevice + " update to version " + iosVersion);
-            }
-        } else {
-            String desktopVersion = "Desktop User";
-            response.setDevicePlatform(onDevice);
-            response.setMobileVersion(null);
-            response.setExistMobileVersion("Android Version : " + androidVersion + " and " + "IOS Version : " + iosVersion);
-            response.setSuccess(true);
-            response.setResultCode("200");
-            response.setResultMsg(desktopVersion);
-            LOGGER.info("======== COMPLETE CustomerServiceImpl.performCheckMobileVersion() with desktop version");
-
+                response.setResultMsg(desktopVersion);
+                LOGGER.info("======== COMPLETE CustomerServiceImpl.performCheckMobileVersion() with desktop version");
+                break;
         }
 
         return response;

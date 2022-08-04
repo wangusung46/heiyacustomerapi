@@ -105,6 +105,9 @@ public class Transaction {
 
     @Column(name = "payment_status")
     private String paymentStatus;
+    
+//    @Column(name = "callback")
+//    private Boolean callback = false;
 
     @Column(name = "settlement_time")
     @Temporal(TemporalType.TIMESTAMP)

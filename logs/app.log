@@ -1,0 +1,449 @@
+2022-08-03 20:45:39,916 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 4668 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2022-08-03 20:45:39,950 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-08-03 20:45:39,951 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2022-08-03 20:45:41,572 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-03 20:45:41,934 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 352ms. Found 12 JPA repository interfaces.
+2022-08-03 20:45:43,374 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2022-08-03 20:45:43,568 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3525 ms
+2022-08-03 20:45:48,031 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-03 20:45:49,394 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-03 20:45:50,208 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2022-08-03 20:45:51,065 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2022-08-03 20:45:51,086 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2022-08-03 20:45:51,264 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2022-08-03 20:45:51,265 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2022-08-03 20:45:51,265 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2022-08-03 20:45:51,265 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2022-08-03 20:45:51,327 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2051a0ec, org.springframework.security.web.context.SecurityContextPersistenceFilter@2befb16f, org.springframework.security.web.header.HeaderWriterFilter@5ffdd510, org.springframework.security.web.authentication.logout.LogoutFilter@41abee65, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5e34a84b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2aeb7c4c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21ba0d33, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@79631db0, org.springframework.security.web.session.SessionManagementFilter@9825465, org.springframework.security.web.access.ExceptionTranslationFilter@320ba79f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5401c6a8]
+2022-08-03 20:45:52,530 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2022-08-03 20:45:52,575 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2022-08-03 20:45:52,618 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 13.517 seconds (JVM running for 14.154)
+2022-08-03 20:45:52,621 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2022-08-03 20:59:34,562 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 11172 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2022-08-03 20:59:34,578 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-08-03 20:59:34,579 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2022-08-03 20:59:36,975 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-03 20:59:37,344 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 348ms. Found 12 JPA repository interfaces.
+2022-08-03 20:59:39,405 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (https)
+2022-08-03 20:59:39,717 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 5030 ms
+2022-08-03 20:59:42,849 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-03 20:59:44,269 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-03 20:59:45,416 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2022-08-03 20:59:46,287 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2022-08-03 20:59:46,316 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2022-08-03 20:59:46,586 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2022-08-03 20:59:46,586 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2022-08-03 20:59:46,587 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2022-08-03 20:59:46,587 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2022-08-03 20:59:46,671 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1fd35a92, org.springframework.security.web.context.SecurityContextPersistenceFilter@6a5c2d2d, org.springframework.security.web.header.HeaderWriterFilter@ae74eef, org.springframework.security.web.authentication.logout.LogoutFilter@6dc2e473, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@126a9a77, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33c9f1ac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5acd7d1c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40db6136, org.springframework.security.web.session.SessionManagementFilter@1906f982, org.springframework.security.web.access.ExceptionTranslationFilter@727f36dd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@afb7b03]
+2022-08-03 20:59:48,049 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2022-08-03 20:59:48,619 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-03 20:59:48,624 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat server
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:215)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.heiya.mobileapi.HeiyaCustomerApplication.main(HeiyaCustomerApplication.java:23)
+Caused by: java.lang.IllegalArgumentException: standardService.connector.startFailed
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:231)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:278)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197)
+	... 10 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1038)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	... 12 common frames omitted
+Caused by: java.lang.IllegalArgumentException: C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\heiya.jks (The system cannot find the file specified)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:99)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:71)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:217)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1141)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1227)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:592)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1035)
+	... 14 common frames omitted
+Caused by: java.io.FileNotFoundException: C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\heiya.jks (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+	at org.apache.catalina.startup.CatalinaBaseConfigurationSource.getResource(CatalinaBaseConfigurationSource.java:116)
+	at org.apache.tomcat.util.net.SSLUtilBase.getStore(SSLUtilBase.java:198)
+	at org.apache.tomcat.util.net.SSLHostConfigCertificate.getCertificateKeystore(SSLHostConfigCertificate.java:206)
+	at org.apache.tomcat.util.net.SSLUtilBase.getKeyManagers(SSLUtilBase.java:283)
+	at org.apache.tomcat.util.net.SSLUtilBase.createSSLContext(SSLUtilBase.java:247)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:97)
+	... 20 common frames omitted
+2022-08-03 20:59:48,635 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Shutting down Quartz Scheduler
+2022-08-03 20:59:48,655 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-03 21:05:56,309 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 6528 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2022-08-03 21:05:56,317 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-08-03 21:05:56,317 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2022-08-03 21:05:57,872 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-03 21:05:58,237 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 352ms. Found 12 JPA repository interfaces.
+2022-08-03 21:05:59,802 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (https)
+2022-08-03 21:05:59,997 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3544 ms
+2022-08-03 21:06:02,632 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-03 21:06:03,879 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-03 21:06:04,735 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2022-08-03 21:06:05,467 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2022-08-03 21:06:05,493 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2022-08-03 21:06:05,827 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2022-08-03 21:06:05,827 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2022-08-03 21:06:05,827 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2022-08-03 21:06:05,827 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2022-08-03 21:06:05,927 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@64e89bb2, org.springframework.security.web.context.SecurityContextPersistenceFilter@6ee1ddcf, org.springframework.security.web.header.HeaderWriterFilter@21ba0d33, org.springframework.security.web.authentication.logout.LogoutFilter@441016d6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@75c0cd39, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@70aa03c0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41abee65, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15fe020d, org.springframework.security.web.session.SessionManagementFilter@40db6136, org.springframework.security.web.access.ExceptionTranslationFilter@cd93621, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@31b91435]
+2022-08-03 21:06:07,117 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2022-08-03 21:06:07,752 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-03 21:06:07,757 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat server
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:215)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.heiya.mobileapi.HeiyaCustomerApplication.main(HeiyaCustomerApplication.java:23)
+Caused by: java.lang.IllegalArgumentException: standardService.connector.startFailed
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:231)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:278)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197)
+	... 10 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1038)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	... 12 common frames omitted
+Caused by: java.lang.IllegalArgumentException: C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\heiya.p12 (The system cannot find the file specified)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:99)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:71)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:217)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1141)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1227)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:592)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1035)
+	... 14 common frames omitted
+Caused by: java.io.FileNotFoundException: C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\heiya.p12 (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+	at org.apache.catalina.startup.CatalinaBaseConfigurationSource.getResource(CatalinaBaseConfigurationSource.java:116)
+	at org.apache.tomcat.util.net.SSLUtilBase.getStore(SSLUtilBase.java:198)
+	at org.apache.tomcat.util.net.SSLHostConfigCertificate.getCertificateKeystore(SSLHostConfigCertificate.java:206)
+	at org.apache.tomcat.util.net.SSLUtilBase.getKeyManagers(SSLUtilBase.java:283)
+	at org.apache.tomcat.util.net.SSLUtilBase.createSSLContext(SSLUtilBase.java:247)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:97)
+	... 20 common frames omitted
+2022-08-03 21:06:07,777 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Shutting down Quartz Scheduler
+2022-08-03 21:06:07,887 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-03 21:08:59,528 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 2080 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2022-08-03 21:08:59,533 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-08-03 21:08:59,533 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2022-08-03 21:09:01,231 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-03 21:09:01,507 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 251ms. Found 12 JPA repository interfaces.
+2022-08-03 21:09:02,911 WARN org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:heiya.p12'
+2022-08-03 21:09:02,927 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-03 21:09:02,927 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:heiya.p12'
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:156)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.heiya.mobileapi.HeiyaCustomerApplication.main(HeiyaCustomerApplication.java:23)
+Caused by: org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:heiya.p12'
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSslKeyStore(SslConnectorCustomizer.java:128)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSsl(SslConnectorCustomizer.java:88)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.customize(SslConnectorCustomizer.java:57)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:339)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:317)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:183)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153)
+	... 8 common frames omitted
+Caused by: java.io.FileNotFoundException: class path resource [heiya.p12] cannot be resolved to URL because it does not exist
+	at org.springframework.util.ResourceUtils.getURL(ResourceUtils.java:137)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSslKeyStore(SslConnectorCustomizer.java:125)
+	... 15 common frames omitted
+2022-08-03 21:12:03,835 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 4944 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2022-08-03 21:12:03,840 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-08-03 21:12:03,840 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2022-08-03 21:12:05,359 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-03 21:12:05,606 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 240ms. Found 12 JPA repository interfaces.
+2022-08-03 21:12:07,025 WARN org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:heiya.p12'
+2022-08-03 21:12:07,039 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-03 21:12:07,044 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:heiya.p12'
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:156)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.heiya.mobileapi.HeiyaCustomerApplication.main(HeiyaCustomerApplication.java:23)
+Caused by: org.springframework.boot.web.server.WebServerException: Could not load key store 'classpath:heiya.p12'
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSslKeyStore(SslConnectorCustomizer.java:128)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSsl(SslConnectorCustomizer.java:88)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.customize(SslConnectorCustomizer.java:57)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:339)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:317)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:183)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153)
+	... 8 common frames omitted
+Caused by: java.io.FileNotFoundException: class path resource [heiya.p12] cannot be resolved to URL because it does not exist
+	at org.springframework.util.ResourceUtils.getURL(ResourceUtils.java:137)
+	at org.springframework.boot.web.embedded.tomcat.SslConnectorCustomizer.configureSslKeyStore(SslConnectorCustomizer.java:125)
+	... 15 common frames omitted
+2022-08-03 21:21:27,310 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 1100 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2022-08-03 21:21:27,315 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-08-03 21:21:27,316 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2022-08-03 21:21:28,955 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-03 21:21:29,251 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 271ms. Found 12 JPA repository interfaces.
+2022-08-03 21:21:30,676 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (https)
+2022-08-03 21:21:30,897 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3484 ms
+2022-08-03 21:21:33,349 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-03 21:21:34,659 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-03 21:21:35,443 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2022-08-03 21:21:36,232 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2022-08-03 21:21:36,247 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2022-08-03 21:21:36,632 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2022-08-03 21:21:36,632 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2022-08-03 21:21:36,633 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2022-08-03 21:21:36,633 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2022-08-03 21:21:36,685 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d75f90e, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d98364c, org.springframework.security.web.header.HeaderWriterFilter@31c0c7e5, org.springframework.security.web.authentication.logout.LogoutFilter@37b80ec7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3be369fc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1fd35a92, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2435c6ae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2212e291, org.springframework.security.web.session.SessionManagementFilter@7d483ebe, org.springframework.security.web.access.ExceptionTranslationFilter@2aeb7c4c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@33089426]
+2022-08-03 21:21:37,855 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2022-08-03 21:21:38,324 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-03 21:21:38,329 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat server
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:215)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.heiya.mobileapi.HeiyaCustomerApplication.main(HeiyaCustomerApplication.java:23)
+Caused by: java.lang.IllegalArgumentException: standardService.connector.startFailed
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:231)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:278)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197)
+	... 10 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1038)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	... 12 common frames omitted
+Caused by: java.lang.IllegalArgumentException: C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\heiya.p12 (The system cannot find the file specified)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:99)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.initialiseSsl(AbstractJsseEndpoint.java:71)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:217)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1141)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1227)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:592)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1035)
+	... 14 common frames omitted
+Caused by: java.io.FileNotFoundException: C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\heiya.p12 (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+	at org.apache.catalina.startup.CatalinaBaseConfigurationSource.getResource(CatalinaBaseConfigurationSource.java:116)
+	at org.apache.tomcat.util.net.SSLUtilBase.getStore(SSLUtilBase.java:198)
+	at org.apache.tomcat.util.net.SSLHostConfigCertificate.getCertificateKeystore(SSLHostConfigCertificate.java:206)
+	at org.apache.tomcat.util.net.SSLUtilBase.getKeyManagers(SSLUtilBase.java:283)
+	at org.apache.tomcat.util.net.SSLUtilBase.createSSLContext(SSLUtilBase.java:247)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.createSSLContext(AbstractJsseEndpoint.java:97)
+	... 20 common frames omitted
+2022-08-03 21:21:38,344 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Shutting down Quartz Scheduler
+2022-08-03 21:21:38,355 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-03 21:21:38,397 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [heiyamobile-api-quartz-job_Worker-1] Communications link failure
+
+The last packet successfully received from the server was 45 milliseconds ago. The last packet sent successfully to the server was 74 milliseconds ago.
+2022-08-03 21:21:38,407 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] Error creating bean with name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': Could not bind properties to 'DataSourceProperties' : prefix=spring.datasource, ignoreInvalidFields=false, ignoreUnknownFields=true; nested exception is java.lang.IllegalStateException: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1a677343 has been closed already
+2022-08-03 21:21:38,407 ERROR com.heiya.mobileapi.payment.controller.PaymentController [heiyamobile-api-quartz-job_Worker-1] null
+java.lang.NullPointerException: null
+	at com.heiya.mobileapi.payment.controller.PaymentController.doCheckTransactionStatusNotification(PaymentController.java:485)
+	at com.heiya.mobileapi.job.PickupOrderJob.execute(PickupOrderJob.java:39)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+2022-08-03 21:41:10,464 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 6100 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2022-08-03 21:41:10,469 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-08-03 21:41:10,469 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2022-08-03 21:41:12,023 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-03 21:41:12,318 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 269ms. Found 12 JPA repository interfaces.
+2022-08-03 21:41:13,845 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (https)
+2022-08-03 21:41:14,034 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3493 ms
+2022-08-03 21:41:16,674 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-03 21:41:18,028 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-03 21:41:18,909 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2022-08-03 21:41:19,729 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2022-08-03 21:41:19,746 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2022-08-03 21:41:19,969 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2022-08-03 21:41:19,969 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2022-08-03 21:41:19,969 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2022-08-03 21:41:19,973 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2022-08-03 21:41:20,029 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ea8ff31, org.springframework.security.web.context.SecurityContextPersistenceFilter@2435c6ae, org.springframework.security.web.header.HeaderWriterFilter@cea67b1, org.springframework.security.web.authentication.logout.LogoutFilter@2ed84be9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4e26040f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@77db231c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e057637, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ba36c83, org.springframework.security.web.session.SessionManagementFilter@70aa03c0, org.springframework.security.web.access.ExceptionTranslationFilter@4fd63c43, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2314cd97]
+2022-08-03 21:41:21,224 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2022-08-03 21:41:21,993 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (https) with context path ''
+2022-08-03 21:41:21,993 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 12.343 seconds (JVM running for 13.014)
+2022-08-03 21:41:22,004 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2022-08-03 21:42:25,984 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 3940 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2022-08-03 21:42:25,989 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-08-03 21:42:25,989 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2022-08-03 21:42:27,644 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-03 21:42:27,864 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 206ms. Found 12 JPA repository interfaces.
+2022-08-03 21:42:29,264 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (https)
+2022-08-03 21:42:29,497 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3368 ms
+2022-08-03 21:42:32,084 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-03 21:42:33,393 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-03 21:42:34,147 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2022-08-03 21:42:34,971 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2022-08-03 21:42:35,019 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2022-08-03 21:42:35,248 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2022-08-03 21:42:35,248 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2022-08-03 21:42:35,248 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2022-08-03 21:42:35,248 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2022-08-03 21:42:35,304 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@169d4aba, org.springframework.security.web.context.SecurityContextPersistenceFilter@297dff3a, org.springframework.security.web.header.HeaderWriterFilter@6b630d4b, org.springframework.security.web.authentication.logout.LogoutFilter@75c0cd39, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7455204c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e057637, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e34a84b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@612bb755, org.springframework.security.web.session.SessionManagementFilter@41abee65, org.springframework.security.web.access.ExceptionTranslationFilter@5ced0537, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5ba36c83]
+2022-08-03 21:42:36,436 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2022-08-03 21:42:37,344 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (https) with context path ''
+2022-08-03 21:42:37,344 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 12.13 seconds (JVM running for 12.847)
+2022-08-03 21:42:37,358 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2022-08-03 21:49:42,432 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 8924 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2022-08-03 21:49:42,437 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-08-03 21:49:42,438 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2022-08-03 21:49:44,149 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-03 21:49:44,454 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 290ms. Found 12 JPA repository interfaces.
+2022-08-03 21:49:46,020 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (https)
+2022-08-03 21:49:46,233 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3682 ms
+2022-08-03 21:49:48,958 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-03 21:49:50,481 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-03 21:49:51,315 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2022-08-03 21:49:52,132 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2022-08-03 21:49:52,157 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2022-08-03 21:49:52,405 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2022-08-03 21:49:52,408 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2022-08-03 21:49:52,409 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2022-08-03 21:49:52,410 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2022-08-03 21:49:52,493 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@359fa722, org.springframework.security.web.context.SecurityContextPersistenceFilter@1870b9b8, org.springframework.security.web.header.HeaderWriterFilter@4205d5d0, org.springframework.security.web.authentication.logout.LogoutFilter@574f9e36, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1bf10539, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9825465, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@912747d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@27b7204, org.springframework.security.web.session.SessionManagementFilter@344a065a, org.springframework.security.web.access.ExceptionTranslationFilter@22172b00, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6d7677d8]
+2022-08-03 21:49:53,816 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2022-08-03 21:49:54,660 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (https) with context path ''
+2022-08-03 21:49:54,663 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 13.063 seconds (JVM running for 13.851)
+2022-08-03 21:49:54,666 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2022-08-03 21:54:42,187 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 7940 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2022-08-03 21:54:42,191 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-08-03 21:54:42,192 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2022-08-03 21:54:43,993 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-03 21:54:44,295 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 282ms. Found 12 JPA repository interfaces.
+2022-08-03 21:54:46,028 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (https)
+2022-08-03 21:54:46,231 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3941 ms
+2022-08-03 21:54:49,082 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-03 21:54:50,482 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-03 21:54:51,337 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2022-08-03 21:54:52,156 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2022-08-03 21:54:52,180 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2022-08-03 21:54:52,443 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2022-08-03 21:54:52,443 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2022-08-03 21:54:52,444 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2022-08-03 21:54:52,444 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2022-08-03 21:54:52,520 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75c0cd39, org.springframework.security.web.context.SecurityContextPersistenceFilter@23365142, org.springframework.security.web.header.HeaderWriterFilter@180d918a, org.springframework.security.web.authentication.logout.LogoutFilter@24d0c6a4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6719f206, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@733bd6f3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2fa2143d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7cf66cf9, org.springframework.security.web.session.SessionManagementFilter@27a6384b, org.springframework.security.web.access.ExceptionTranslationFilter@1abf951a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@400e741]
+2022-08-03 21:54:53,839 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2022-08-03 21:54:54,726 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (https) with context path ''
+2022-08-03 21:54:54,730 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 13.358 seconds (JVM running for 14.122)
+2022-08-03 21:54:54,733 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2022-08-03 21:57:22,935 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 11104 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2022-08-03 21:57:22,935 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2022-08-03 21:57:22,935 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2022-08-03 21:57:24,513 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-03 21:57:24,810 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 288ms. Found 12 JPA repository interfaces.
+2022-08-03 21:57:26,357 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2022-08-03 21:57:26,497 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3453 ms
+2022-08-03 21:57:29,153 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-03 21:57:30,560 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-03 21:57:31,341 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2022-08-03 21:57:32,091 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2022-08-03 21:57:32,106 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2022-08-03 21:57:32,294 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2022-08-03 21:57:32,341 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2022-08-03 21:57:32,341 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2022-08-03 21:57:32,341 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2022-08-03 21:57:32,434 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5401c6a8, org.springframework.security.web.context.SecurityContextPersistenceFilter@344a065a, org.springframework.security.web.header.HeaderWriterFilter@22172b00, org.springframework.security.web.authentication.logout.LogoutFilter@44da745f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@762f8ff6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1870b9b8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67f266bd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ef5cde4, org.springframework.security.web.session.SessionManagementFilter@6719f206, org.springframework.security.web.access.ExceptionTranslationFilter@50e24ea4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5cb6abc8]
+2022-08-03 21:57:33,638 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2022-08-03 21:57:33,684 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2022-08-03 21:57:33,700 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 11.495 seconds (JVM running for 12.181)
+2022-08-03 21:57:33,700 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2022-08-03 21:57:57,568 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-08-03 21:57:57,568 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Completed initialization in 0 ms

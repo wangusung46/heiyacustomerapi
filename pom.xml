@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.5.RELEASE</version>
+        <version>2.2.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.hwvendingmachine</groupId>
@@ -152,18 +152,19 @@
         </dependency>
         
         <!-- Firebase -->
-        <dependency>
-            <groupId>com.google.firebase</groupId>
-            <artifactId>firebase-admin</artifactId>
-            <version>6.8.1</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>com.pushnotification</groupId>
-            <artifactId>fcm</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <type>jar</type>
-        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.firebase/firebase-admin -->
+<dependency>
+    <groupId>com.google.firebase</groupId>
+    <artifactId>firebase-admin</artifactId>
+    <version>6.0.0</version>
+</dependency>
+
+<!--        <dependency>
+    <groupId>com.pushnotification</groupId>
+    <artifactId>fcm</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <type>jar</type>
+</dependency>-->
         <dependency>
             <groupId>com.google.apis</groupId>
             <artifactId>google-api-services-storage</artifactId>
@@ -171,10 +172,16 @@
             <type>jar</type>
         </dependency>
         
+        <!--Thymeleaf-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
         
         
         
-<!--        <dependency>
+        
+        <!--        <dependency>
             <groupId>org.springframework.mobile</groupId>
             <artifactId>spring-mobile-device</artifactId>
             <version>1.1.5.RELEASE</version>
