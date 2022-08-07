@@ -65,4 +65,7 @@ public class Machine {
 
     @Column(name = "channel_type")
     private String channelType;
+
+    @Column(name = "ap2")
+    private Boolean ap2;
 }

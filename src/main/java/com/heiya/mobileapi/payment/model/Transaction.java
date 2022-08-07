@@ -58,7 +58,7 @@ public class Transaction {
     private String merchantId;
 
     @Column(name = "taste_id")
-    private int tasteId;
+    private Integer tasteId;
 
     @Column(name = "transaction_touchpoint")
     private String transactionTouchpoint;
@@ -70,7 +70,7 @@ public class Transaction {
     private String ewalletType;
 
     @Column(name = "customer_id")
-    private long customerId;
+    private Long customerId;
 
     @Column(name = "customer_change")
     private String customerChange;
@@ -119,5 +119,8 @@ public class Transaction {
     @Column(name = "sys_update_time")
     @Temporal(TemporalType.TIMESTAMP)
     private Date sysUpdateTime;
+    
+    @Column(name = "ap2")
+    private Boolean ap2;
 
 }

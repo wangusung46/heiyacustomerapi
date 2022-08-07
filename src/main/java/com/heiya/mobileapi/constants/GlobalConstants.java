@@ -99,4 +99,10 @@ public class GlobalConstants {
     public static final String NOTIFICATION_FIREBASE_SECCESS_PICKUP = "SECCESS_PICKUP";
     public static final String SOUND_NOTIFICATION = "default";
     public static final String COLOR_NOTIFICATION = "#FFFF00";
+
+    //AP2
+    public static final String AP2_ACTIVE = "ap2_active";
+    public static final String AP2_URL = "ap2_url";
+    public static final String AP2_USERNAME = "ap2_username";
+    public static final String AP2_PASSWORD = "ap2_password";
 }
