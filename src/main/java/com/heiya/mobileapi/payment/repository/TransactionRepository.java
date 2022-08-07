@@ -38,4 +38,7 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
         
         @Query(value = "SELECT p FROM Transaction p WHERE p.channelTransactionTime >= (:channelTransactionTime) and p.transactionTouchpoint = 'mobile'")
 	public List<Transaction> findPaymentByTime(@Param("channelTransactionTime") Date channelTransactionTime);
+        
+        @Query(value = "SELECT p FROM Transaction p LEFT JOIN Machine m ON p.machineCode = m.machineCode WHERE m.ap2 = TRUE and p.paymentStatus = (:paymentStatus) and p.settlementTime >= (:channelTransactionTime) and (p.ap2 = (:ap2) or p.ap2 = null)")
+	public List<Transaction> findPaymentListByStatusAndAP2(@Param("paymentStatus") String paymentStatus, @Param("channelTransactionTime") Date channelTransactionTime, @Param("ap2") Boolean ap2);
 }
