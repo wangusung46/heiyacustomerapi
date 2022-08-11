@@ -104,10 +104,19 @@ public class AP2ServiceImpl implements AP2Service {
             }
         } catch (final HttpClientErrorException httpClientErrorException) {
             LOGGER.info(httpClientErrorException.getMessage());
+            if (response.getToken() == null) {
+                hitLoginAp2();
+            }
         } catch (HttpServerErrorException httpServerErrorException) {
             LOGGER.info(httpServerErrorException.getMessage());
+            if (response.getToken() == null) {
+                hitLoginAp2();
+            }
         } catch (RestClientException exception) {
             LOGGER.info(exception.getMessage());
+            if (response.getToken() == null) {
+                hitLoginAp2();
+            }
         }
         LOGGER.info("======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: " + response);
 
@@ -129,8 +138,8 @@ public class AP2ServiceImpl implements AP2Service {
             // Declare Time to login AP2
             Calendar cal = Calendar.getInstance();
             cal.setTime(new Date());
-//            cal.add(Calendar.HOUR, -12);
-            cal.add(Calendar.MINUTE, -1);
+            cal.add(Calendar.HOUR, -12);
+//            cal.add(Calendar.SECOND, -10);
             Date hourBack = cal.getTime();
 
             if (Ap2TokenRequest.getLoginTime() == null) {
@@ -161,8 +170,9 @@ public class AP2ServiceImpl implements AP2Service {
         // Declare Time to login AP2
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
-//            cal.add(Calendar.HOUR, -12);
-        cal.add(Calendar.DAY_OF_MONTH, -1);
+        // 232
+        cal.add(Calendar.HOUR, -Integer.parseInt(crudService.getGlobalConfigParamByKey(GlobalConstants.AP2_GET_TRANSACTION)));
+//        cal.add(Calendar.HOUR, -24);
         Date hourBack = cal.getTime();
 
         Ap2TransactionResponse response = new Ap2TransactionResponse();
