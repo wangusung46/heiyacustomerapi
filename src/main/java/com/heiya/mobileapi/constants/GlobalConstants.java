@@ -105,4 +105,5 @@ public class GlobalConstants {
     public static final String AP2_URL = "ap2_url";
     public static final String AP2_USERNAME = "ap2_username";
     public static final String AP2_PASSWORD = "ap2_password";
+    public static final String AP2_GET_TRANSACTION = "ap2_transaction";
 }
