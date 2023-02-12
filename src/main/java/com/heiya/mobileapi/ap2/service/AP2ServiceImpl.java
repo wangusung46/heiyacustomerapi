@@ -181,16 +181,16 @@ public class AP2ServiceImpl implements AP2Service {
             for (Transaction payment : completePayments) {
                 Ap2TransactionRequest transactionRequest = new Ap2TransactionRequest();
                 transactionRequest.setInvoiceNo(invoice() + new Random().nextInt(900) + 100);
-                transactionRequest.setTransDate(timeStampToDateString(payment.getSettlementTime()));
-                transactionRequest.setTransTime(timeStampToTimeStampString(payment.getSettlementTime()));
+                transactionRequest.setTransDate(timeStampToDateString(payment.getChannelTransactionTime()));
+                transactionRequest.setTransTime(timeStampToTimeStampString(payment.getChannelTransactionTime()));
                 transactionRequest.setSequenceUnique(payment.getOrderNo());
                 transactionRequest.setItemName(payment.getGoodsName());
                 transactionRequest.setItemCode(payment.getGoodsCode());
                 transactionRequest.setItemQty("1");
-                transactionRequest.setItemPricePerUnit(payment.getTotalFee().toString());
-                transactionRequest.setItemPriceAmount(payment.getTotalFee().toString());
-                transactionRequest.setItemVat(String.valueOf((int) (payment.getTotalFee().intValue() * 0.1)));
-                transactionRequest.setItemTotalPriceAmount(payment.getTotalFee().toString());
+                transactionRequest.setItemPricePerUnit(String.valueOf(payment.getTotalFee().intValue() / 1.11));
+                transactionRequest.setItemPriceAmount(String.valueOf(payment.getTotalFee().intValue() / 1.11));
+                transactionRequest.setItemVat(String.valueOf((int) (payment.getTotalFee().intValue() - (payment.getTotalFee().intValue() / 1.11))));
+                transactionRequest.setItemTotalPriceAmount(String.valueOf(payment.getTotalFee().intValue() / 1.11));
                 transactionRequest.setTransactionAmount(payment.getTotalFee().toString());
                 transactionRequests.add(transactionRequest);
             }
@@ -226,10 +226,13 @@ public class AP2ServiceImpl implements AP2Service {
                 }
             } catch (final HttpClientErrorException httpClientErrorException) {
                 LOGGER.info(httpClientErrorException.getMessage());
+                hitLoginAp2();
             } catch (HttpServerErrorException httpServerErrorException) {
                 LOGGER.info(httpServerErrorException.getMessage());
+                hitLoginAp2();
             } catch (RestClientException exception) {
                 LOGGER.info(exception.getMessage());
+                hitLoginAp2();
             }
             LOGGER.info("======== RESPONSE AP2ServiceImpl.transactionCheck() - Ap2TransactionResponse: " + mapper.writeValueAsString(response));
         }

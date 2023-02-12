@@ -1,22 +1,11 @@
 package com.heiya.mobileapi.customer.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.heiya.mobileapi.customer.dto.request.CustomerChangePasswordDTORequest;
 import com.heiya.mobileapi.customer.dto.request.CustomerLoginDTORequest;
 import com.heiya.mobileapi.customer.dto.request.CustomerRegistrationDTORequest;
 import com.heiya.mobileapi.customer.dto.request.CustomerUpdateDTORequest;
+import com.heiya.mobileapi.customer.dto.request.DeleteAccountDTORequest;
 import com.heiya.mobileapi.customer.dto.request.ForgotPasswordDTORequest;
 import com.heiya.mobileapi.customer.dto.response.CustomerDetailDTOResponse;
 import com.heiya.mobileapi.customer.dto.response.CustomerLoginDTOResponse;
@@ -24,9 +13,19 @@ import com.heiya.mobileapi.customer.dto.response.CustomerMobileVersionDTORespons
 import com.heiya.mobileapi.customer.dto.response.CustomerNameDTOResponse;
 import com.heiya.mobileapi.customer.service.CustomerService;
 import com.heiya.mobileapi.dto.response.BaseResponse;
-
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mobile.device.Device;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Dian Krisnanjaya This controller will handle all of customer inquiry
@@ -46,10 +45,8 @@ public class CustomerController {
     @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doLogin(@RequestBody CustomerLoginDTORequest request) throws JsonProcessingException {
         LOGGER.info("\n\n======== START CustomerController.doLogin");
-        CustomerLoginDTOResponse response = null;
-
         try {
-            response = custService.performCustomerLogin(request);
+            CustomerLoginDTOResponse response = custService.performCustomerLogin(request);
             LOGGER.info("======== COMPLETED CustomerController.doLogin");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
@@ -62,10 +59,8 @@ public class CustomerController {
     @PostMapping(value = "/logout/{mobileNo}/{idToken}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doLogout(@PathVariable String mobileNo, @PathVariable String idToken) throws JsonProcessingException {
         LOGGER.info("\n\n======== START CustomerController.doLogout mobile no " + mobileNo);
-        CustomerLoginDTOResponse response = null;
-
         try {
-            response = custService.performCustomerLogout(mobileNo, idToken);
+            CustomerLoginDTOResponse response = custService.performCustomerLogout(mobileNo, idToken);
             LOGGER.info("======== COMPLETED CustomerController.doLogout mobile no " + mobileNo);
             return ResponseEntity.ok(response);
         } catch (Exception e) {
@@ -78,10 +73,8 @@ public class CustomerController {
     @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doRegister(@RequestBody CustomerRegistrationDTORequest request) throws JsonProcessingException {
         LOGGER.info("\n\n======== START CustomerController.doRegistration");
-        BaseResponse response = null;
-
         try {
-            response = custService.performCustomerRegistration(request);
+            BaseResponse response = custService.performCustomerRegistration(request);
             LOGGER.info("======== COMPLETED CustomerController.doRegistration");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
@@ -94,10 +87,8 @@ public class CustomerController {
     @GetMapping(value = "/inquiry/{customerId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doInquiryByID(@PathVariable("customerId") Long customerId) throws JsonProcessingException {
         LOGGER.info("\n\n======== START CustomerController.doInquiryByID");
-        CustomerDetailDTOResponse response = null;
-
         try {
-            response = custService.performCustomerInquiry(customerId);
+            CustomerDetailDTOResponse response = custService.performCustomerInquiry(customerId);
             LOGGER.info("======== COMPLETED CustomerController.doInquiryByID");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
@@ -110,10 +101,8 @@ public class CustomerController {
     @PostMapping(value = "/update", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doUpdateAndSaveCustomer(@RequestBody CustomerUpdateDTORequest request) throws JsonProcessingException {
         LOGGER.info("\n\n======== START CustomerController.doUpdateAndSaveCustomer");
-        BaseResponse response = null;
-
         try {
-            response = custService.performCustomerUpdate(request);
+            BaseResponse response = custService.performCustomerUpdate(request);
             LOGGER.info("======== COMPLETED CustomerController.doUpdateAndSaveCustomer");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
@@ -126,10 +115,8 @@ public class CustomerController {
     @PostMapping(value = "/changepassword", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doChangePassword(@RequestBody CustomerChangePasswordDTORequest request) throws JsonProcessingException {
         LOGGER.info("\n\n======== START CustomerController.doChangePassword");
-        BaseResponse response = null;
-
         try {
-            response = custService.changeCustomerPassword(request);
+            BaseResponse response = custService.changeCustomerPassword(request);
             LOGGER.info("======== COMPLETED CustomerController.doChangePassword");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
@@ -142,10 +129,8 @@ public class CustomerController {
     @PostMapping(value = "/requestforgotpassword/{phoneNo}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doRequestForgotPassword(@PathVariable("phoneNo") String phoneNo) throws JsonProcessingException {
         LOGGER.info("\n\n======== START CustomerController.doRequestForgotPassword");
-        BaseResponse response = null;
-
         try {
-            response = custService.requestForgotPassword(phoneNo);
+            BaseResponse response = custService.requestForgotPassword(phoneNo);
             LOGGER.info("======== COMPLETED CustomerController.doRequestForgotPassword");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
@@ -158,10 +143,8 @@ public class CustomerController {
     @PostMapping(value = "/executeforgotpassword", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doExecForgotPassword(@RequestBody ForgotPasswordDTORequest request) throws JsonProcessingException {
         LOGGER.info("\n\n======== START CustomerController.doExecForgotPassword");
-        BaseResponse response = null;
-
         try {
-            response = custService.executeForgotPassword(request);
+            BaseResponse response = custService.executeForgotPassword(request);
             LOGGER.info("======== COMPLETED CustomerController.doExecForgotPassword");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
@@ -174,10 +157,8 @@ public class CustomerController {
     @GetMapping(value = "/inquiryphoneno/{mobileNo}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doInquiryByPhone(@PathVariable("mobileNo") String mobileNo) throws JsonProcessingException {
         LOGGER.info("\n\n======== START CustomerController.doInquiryByPhone");
-        CustomerNameDTOResponse response = null;
-
         try {
-            response = custService.performCustomerInquiryByPhone(mobileNo);
+            CustomerNameDTOResponse response = custService.performCustomerInquiryByPhone(mobileNo);
             LOGGER.info("======== COMPLETED CustomerController.doInquiryByPhone");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
@@ -190,10 +171,37 @@ public class CustomerController {
     @GetMapping(value = "/inquiryversion/{version}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doInquiryMobile(Device device, @PathVariable("version") String version) throws JsonProcessingException {
         LOGGER.info("\n\n======== START CustomerController.doInquiryMobile : platform " + device.getDevicePlatform().name() + " and version " + version);
-        CustomerMobileVersionDTOResponse response = null;
         try {
-            response = custService.performCheckMobileVersion(device, version);
+            CustomerMobileVersionDTOResponse response = custService.performCheckMobileVersion(device, version);
             LOGGER.info("======== COMPLETED CustomerController.doInquiryMobile : platform " + device.getDevicePlatform().name() + " and version " + version);
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @ApiOperation("Delete Customer")
+    @PostMapping(value = "/delete-customer", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> doDeleteCustomer(@RequestBody DeleteAccountDTORequest request) throws JsonProcessingException {
+        LOGGER.info("\n\n======== START CustomerController.doDeleteCustomer");
+        try {
+            BaseResponse response = custService.performDeleteAccount(request.getMobileNo());
+            LOGGER.info("======== COMPLETED CustomerController.doDeleteCustomer");
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    
+    @ApiOperation("Delete Customer")
+    @PostMapping(value = "/undelete-customer", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> doUnDeleteCustomer(@RequestBody DeleteAccountDTORequest request) throws JsonProcessingException {
+        LOGGER.info("\n\n======== START CustomerController.doDeleteCustomer");
+        try {
+            BaseResponse response = custService.performUnDeleteAccount(request.getMobileNo());
+            LOGGER.info("======== COMPLETED CustomerController.doDeleteCustomer");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
