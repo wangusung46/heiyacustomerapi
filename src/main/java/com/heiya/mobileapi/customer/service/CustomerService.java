@@ -37,4 +37,8 @@ public interface CustomerService {
     public CustomerNameDTOResponse performCustomerInquiryByPhone(String mobileNo) throws Exception;
 
     public CustomerMobileVersionDTOResponse performCheckMobileVersion(Device device, String androidVersion) throws Exception;
+    
+    public BaseResponse performDeleteAccount(String mobileNo) throws Exception;
+    
+    public BaseResponse performUnDeleteAccount(String mobileNo) throws Exception;
 }
