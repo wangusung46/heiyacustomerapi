@@ -3,9 +3,9 @@
  */
 package com.heiya.mobileapi.payment.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +14,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,7 +25,9 @@ import lombok.Setter;
 @Getter
 @Entity
 @Table(name = "qr_transaction")
-public class Transaction {
+public class Transaction implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -122,5 +123,8 @@ public class Transaction {
     
     @Column(name = "ap2")
     private Boolean ap2;
+    
+    @Column(name = "send_email")
+    private Boolean sendEmail;
 
 }

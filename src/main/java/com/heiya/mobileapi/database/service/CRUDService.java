@@ -35,6 +35,8 @@ public interface CRUDService {
 	public StoreTransactionDetail getStoreTransactionDetailByOrderNo(String orderNo);
 	
 	public List<Transaction> getPaymentListByStatusAndTime(String paymentStatus, Date channelTransactionTime);
+	
+	public List<Transaction> getPaymentListByStatusAndTimeAndSendEmail(String paymentStatus, Date channelTransactionTime, Boolean sendEmail);
         
         /* ------------ Payment ------------- */
         
