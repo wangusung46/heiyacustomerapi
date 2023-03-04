@@ -35,7 +35,7 @@ public interface PaymentService {
 
     public TrxStatusDTOResponse getXenditTrxStatus(String externalId, String ewalletType) throws Exception;
     
-    public TrxStatusDTOResponse getNewXenditTrxStatus(String externalId) throws Exception;
+    //public TrxStatusDTOResponse getNewXenditTrxStatus(String externalId) throws Exception;
 
     public TrxStatusDTOResponse getGopayTrxStatus(String externalId, String trigger) throws Exception;
 
@@ -71,6 +71,8 @@ public interface PaymentService {
     public void expirePickupOrder() throws Exception; //should be triggered by Scheduler
 
     public void checkAndUpdateTransactionStatus() throws Exception; //should be triggered by Scheduler
+    
+    public void checkAndUpdateTransactionStatusForEmail() throws Exception; //should be triggered by Scheduler
 
     public ListCheckNotificationDTOResponse checkTransactionStatusNotification() throws Exception; //should be triggered by Scheduler
 }

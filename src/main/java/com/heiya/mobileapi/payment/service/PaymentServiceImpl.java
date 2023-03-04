@@ -1,32 +1,6 @@
 package com.heiya.mobileapi.payment.service;
 
-import java.math.BigDecimal;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.TimeZone;
-
-import org.apache.commons.lang3.RandomStringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.ApplicationContext;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
-
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.heiya.mobileapi.constants.GlobalConstants;
 import com.heiya.mobileapi.customer.dto.response.CustomerChangeDTOResponse;
@@ -39,13 +13,14 @@ import com.heiya.mobileapi.database.service.CRUDService;
 import com.heiya.mobileapi.dto.response.BaseResponse;
 import com.heiya.mobileapi.firebase.model.PaymentNotification;
 import com.heiya.mobileapi.firebase.repository.PaymentNotificationRepository;
+import com.heiya.mobileapi.otp.controller.ReportController;
 import com.heiya.mobileapi.payment.dto.request.ChargePaymentDTORequest;
-import com.heiya.mobileapi.payment.dto.request.HWBrewingDTORequest;
 import com.heiya.mobileapi.payment.dto.request.CreatePaymentDTORequest;
 import com.heiya.mobileapi.payment.dto.request.CustomerChangeDTORequest;
 import com.heiya.mobileapi.payment.dto.request.Gopay;
 import com.heiya.mobileapi.payment.dto.request.GopayCallbackDTORequest;
 import com.heiya.mobileapi.payment.dto.request.GopayCreatePaymentDTORequest;
+import com.heiya.mobileapi.payment.dto.request.HWBrewingDTORequest;
 import com.heiya.mobileapi.payment.dto.request.HWPickupOrderDTORequest;
 import com.heiya.mobileapi.payment.dto.request.HeiyaGeneralCallbackDTORequest;
 import com.heiya.mobileapi.payment.dto.request.Items;
@@ -54,7 +29,6 @@ import com.heiya.mobileapi.payment.dto.request.PickupOrderDetailRequest;
 import com.heiya.mobileapi.payment.dto.request.ShopeePay;
 import com.heiya.mobileapi.payment.dto.request.ShopeepayCreatePaymentDTORequest;
 import com.heiya.mobileapi.payment.dto.request.TransactionDetails;
-import com.heiya.mobileapi.payment.dto.request.XenditBasket;
 import com.heiya.mobileapi.payment.dto.request.XenditChannelProperties;
 import com.heiya.mobileapi.payment.dto.request.XenditCreatePaymentDTORequest;
 import com.heiya.mobileapi.payment.dto.request.XenditDanaCreatePaymentDTORequest;
@@ -75,8 +49,8 @@ import com.heiya.mobileapi.payment.dto.response.PaymentProviderDTOResponse;
 import com.heiya.mobileapi.payment.dto.response.PaymentProviderListDTOResponse;
 import com.heiya.mobileapi.payment.dto.response.ShopeepayCreatePaymentDTOResponse;
 import com.heiya.mobileapi.payment.dto.response.TokenDTOResponse;
-import com.heiya.mobileapi.payment.dto.response.XenditCreatePaymentDTOResponse;
 import com.heiya.mobileapi.payment.dto.response.TrxStatusDTOResponse;
+import com.heiya.mobileapi.payment.dto.response.XenditCreatePaymentDTOResponse;
 import com.heiya.mobileapi.payment.dto.response.XenditResponse;
 import com.heiya.mobileapi.payment.model.PaymentProvider;
 import com.heiya.mobileapi.payment.model.StoreTransactionDetail;
@@ -89,6 +63,34 @@ import com.heiya.mobileapi.product.repository.MachineRepository;
 import com.heiya.mobileapi.product.service.ProductService;
 import com.heiya.mobileapi.util.GopayConnectUtil;
 import com.heiya.mobileapi.util.XenditConnectUtil;
+import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Objects;
+import java.util.TimeZone;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Service
 public class PaymentServiceImpl implements PaymentService {
@@ -125,6 +127,9 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Autowired
     private ApplicationContext applicationContext;
+    
+    @Autowired
+    private ReportController reportController;
 
     private final ObjectMapper mapper = new ObjectMapper();
 
@@ -181,20 +186,6 @@ public class PaymentServiceImpl implements PaymentService {
             XenditOvoCreatePaymentDTORequest xenditRequest = new XenditOvoCreatePaymentDTORequest();
             xenditRequest.setExternalId(orderNo);
 
-            /*
-			 * Commented this discount code because mobile has already pass the discounted amount
-             */
- /*DiscountDTOResponse discRes = productService.getProductDiscount(request.getGoodsId());
-			if (discRes != null && discRes.getResultCode().equals("200")) {
-				BigDecimal discInPercent = new BigDecimal(discRes.getDiscount());
-				BigDecimal discAmount = (request.getAmount().multiply(discInPercent)).divide(new BigDecimal(100));
-				xenditRequest.setAmount(request.getAmount().subtract(discAmount));
-			}
-			else {
-				xenditRequest.setAmount(request.getAmount());
-			}
-			* End of Discount code
-             */
             xenditRequest.setAmount(request.getAmount());
 
             String phoneNo = request.getPhone();
@@ -264,20 +255,6 @@ public class PaymentServiceImpl implements PaymentService {
             XenditDanaCreatePaymentDTORequest xenditRequest = new XenditDanaCreatePaymentDTORequest();
             xenditRequest.setExternalId(orderNo);
 
-            /*
-			 * Commented this discount code because mobile has already pass the discounted amount
-             */
- /*DiscountDTOResponse discRes = productService.getProductDiscount(request.getGoodsId());
-			if (discRes != null && discRes.getResultCode().equals("200")) {
-				BigDecimal discInPercent = new BigDecimal(discRes.getDiscount());
-				BigDecimal discAmount = (request.getAmount().multiply(discInPercent)).divide(new BigDecimal(100));
-				xenditRequest.setAmount(request.getAmount().subtract(discAmount));
-			}
-			else {
-				xenditRequest.setAmount(request.getAmount());
-			}
-			* End of discount code
-             */
             xenditRequest.setAmount(request.getAmount());
             xenditRequest.setEwalletType(request.getEwalletType());
 
@@ -355,20 +332,6 @@ public class PaymentServiceImpl implements PaymentService {
             }
             xenditRequest.setPhone(phoneNo);
 
-            /*
-			 * Commented this discount code because mobile has already pass the discounted amount
-             */
- /*DiscountDTOResponse discRes = productService.getProductDiscount(request.getGoodsId());
-			if (discRes != null && discRes.getResultCode().equals("200")) {
-				BigDecimal discInPercent = new BigDecimal(discRes.getDiscount());
-				BigDecimal discAmount = (request.getAmount().multiply(discInPercent)).divide(new BigDecimal(100));
-				xenditRequest.setAmount(request.getAmount().subtract(discAmount));
-			}
-			else {
-				xenditRequest.setAmount(request.getAmount());
-			}
-			* End of discount code
-             */
             xenditRequest.setAmount(request.getAmount());
 
             //set items
@@ -377,7 +340,7 @@ public class PaymentServiceImpl implements PaymentService {
             items.setName(request.getProductName());
             items.setPrice(request.getAmount());
             items.setQuantity(1); //In Heiya, quantity always 1
-            List<Items> itemList = new ArrayList<Items>();
+            List<Items> itemList = new ArrayList<>();
             itemList.add(items);
             xenditRequest.setItems(itemList);
 
@@ -446,88 +409,97 @@ public class PaymentServiceImpl implements PaymentService {
             XenditChannelProperties channelProperties = new XenditChannelProperties();
             XenditMetadata xenditMetadata = new XenditMetadata();
 
-            if (request.getEwalletType().equals(GlobalConstants.EWALLET_TYPE_OVO_NEW)) {
-//                XenditBasket xenditBasket = new XenditBasket();
-                xenditRequest.setReferenceId(request.getExternalId());
-                xenditRequest.setCurrency("IDR");
-                xenditRequest.setAmount(request.getAmount());
-                xenditRequest.setCheckoutMethod("ONE_TIME_PAYMENT");
-                xenditRequest.setChannelCode(request.getEwalletType());
-
-                String phoneNo = request.getPhone();
-                if (phoneNo.startsWith("0")) {
-                    phoneNo = phoneNo.replaceFirst("0", "+62");
-                } else if (phoneNo.startsWith("62")) {
-                    phoneNo = phoneNo.replaceFirst("62", "+62");
+            switch (request.getEwalletType()) {
+                case GlobalConstants.EWALLET_TYPE_OVO_NEW: {
+                    xenditRequest.setReferenceId(request.getExternalId());
+                    xenditRequest.setCurrency("IDR");
+                    xenditRequest.setAmount(request.getAmount());
+                    xenditRequest.setCheckoutMethod("ONE_TIME_PAYMENT");
+                    xenditRequest.setChannelCode(request.getEwalletType());
+                    String phoneNo = request.getPhone();
+                    if (phoneNo.startsWith("0")) {
+                        phoneNo = phoneNo.replaceFirst("0", "+62");
+                    } else if (phoneNo.startsWith("62")) {
+                        phoneNo = phoneNo.replaceFirst("62", "+62");
+                    }
+                    channelProperties.setMobileNumber(phoneNo);
+                    channelProperties.setSuccessRedirectUrl("http://myheiya.id/paymentsuccess");
+                    channelProperties.setFailureRedirectUrl("http://myheiya.id/paymentfailed");
+                    xenditRequest.setChannelProperties(channelProperties);
+                    xenditMetadata.setBranchArea(null);
+                    xenditMetadata.setBranchCity(null);
+                    xenditMetadata.setBranchCode("tree_branch");
+                    xenditRequest.setMetadata(xenditMetadata);
+                    break;
                 }
-
-                channelProperties.setMobileNumber(phoneNo);
-                channelProperties.setSuccessRedirectUrl("http://myheiya.id/paymentsuccess");
-                channelProperties.setFailureRedirectUrl("http://myheiya.id/paymentfailed");
-                xenditRequest.setChannelProperties(channelProperties);
-                xenditMetadata.setBranchArea(null);
-                xenditMetadata.setBranchCity(null);
-                xenditRequest.setMetadata(xenditMetadata);
-            } else if (request.getEwalletType().equals(GlobalConstants.EWALLET_TYPE_SHOPEEPAY_NEW)) {
-                xenditRequest.setReferenceId(request.getExternalId());
-                xenditRequest.setCurrency("IDR");
-                xenditRequest.setAmount(request.getAmount());
-                xenditRequest.setCheckoutMethod("ONE_TIME_PAYMENT");
-                xenditRequest.setChannelCode(request.getEwalletType());
-
-                String phoneNo = request.getPhone();
-                if (phoneNo.startsWith("0")) {
-                    phoneNo = phoneNo.replaceFirst("0", "+62");
-                } else if (phoneNo.startsWith("62")) {
-                    phoneNo = phoneNo.replaceFirst("62", "+62");
+                case GlobalConstants.EWALLET_TYPE_SHOPEEPAY_NEW: {
+                    xenditRequest.setReferenceId(request.getExternalId());
+                    xenditRequest.setCurrency("IDR");
+                    xenditRequest.setAmount(request.getAmount());
+                    xenditRequest.setCheckoutMethod("ONE_TIME_PAYMENT");
+                    xenditRequest.setChannelCode(request.getEwalletType());
+                    String phoneNo = request.getPhone();
+                    if (phoneNo.startsWith("0")) {
+                        phoneNo = phoneNo.replaceFirst("0", "+62");
+                    } else if (phoneNo.startsWith("62")) {
+                        phoneNo = phoneNo.replaceFirst("62", "+62");
+                    }
+                    channelProperties.setMobileNumber(phoneNo);
+                    channelProperties.setSuccessRedirectUrl("http://myheiya.id/paymentsuccess");
+                    channelProperties.setFailureRedirectUrl("http://myheiya.id/paymentfailed");
+                    xenditRequest.setChannelProperties(channelProperties);
+                    xenditMetadata.setBranchArea(null);
+                    xenditMetadata.setBranchCity(null);
+                    xenditMetadata.setBranchCode("tree_branch");
+                    xenditRequest.setMetadata(xenditMetadata);
+                    break;
                 }
-                channelProperties.setMobileNumber(phoneNo);
-                channelProperties.setSuccessRedirectUrl("http://myheiya.id/paymentsuccess");
-                channelProperties.setFailureRedirectUrl("http://myheiya.id/paymentfailed");
-                xenditRequest.setChannelProperties(channelProperties);
-                xenditMetadata.setBranchArea(null);
-                xenditMetadata.setBranchCity(null);
-                xenditRequest.setMetadata(xenditMetadata);
-            } else if (request.getEwalletType().equals(GlobalConstants.EWALLET_TYPE_DANA_NEW)) {
-                xenditRequest.setReferenceId(request.getExternalId());
-                xenditRequest.setCurrency("IDR");
-                xenditRequest.setAmount(request.getAmount());
-                xenditRequest.setCheckoutMethod("ONE_TIME_PAYMENT");
-                xenditRequest.setChannelCode(request.getEwalletType());
-
-                String phoneNo = request.getPhone();
-                if (phoneNo.startsWith("0")) {
-                    phoneNo = phoneNo.replaceFirst("0", "+62");
-                } else if (phoneNo.startsWith("62")) {
-                    phoneNo = phoneNo.replaceFirst("62", "+62");
+                case GlobalConstants.EWALLET_TYPE_DANA_NEW: {
+                    xenditRequest.setReferenceId(request.getExternalId());
+                    xenditRequest.setCurrency("IDR");
+                    xenditRequest.setAmount(request.getAmount());
+                    xenditRequest.setCheckoutMethod("ONE_TIME_PAYMENT");
+                    xenditRequest.setChannelCode(request.getEwalletType());
+                    String phoneNo = request.getPhone();
+                    if (phoneNo.startsWith("0")) {
+                        phoneNo = phoneNo.replaceFirst("0", "+62");
+                    } else if (phoneNo.startsWith("62")) {
+                        phoneNo = phoneNo.replaceFirst("62", "+62");
+                    }
+                    channelProperties.setMobileNumber(phoneNo);
+                    channelProperties.setSuccessRedirectUrl("http://myheiya.id/paymentsuccess");
+                    channelProperties.setFailureRedirectUrl("http://myheiya.id/paymentfailed");
+                    xenditRequest.setChannelProperties(channelProperties);
+                    xenditMetadata.setBranchArea(null);
+                    xenditMetadata.setBranchCity(null);
+                    xenditMetadata.setBranchCode("tree_branch");
+                    xenditRequest.setMetadata(xenditMetadata);
+                    break;
                 }
-                channelProperties.setMobileNumber(phoneNo);
-                channelProperties.setSuccessRedirectUrl("http://myheiya.id/paymentsuccess");
-                channelProperties.setFailureRedirectUrl("http://myheiya.id/paymentfailed");
-                xenditRequest.setChannelProperties(channelProperties);
-                xenditMetadata.setBranchArea(null);
-                xenditMetadata.setBranchCity(null);
-                xenditRequest.setMetadata(xenditMetadata);
-            } else if (request.getEwalletType().equals(GlobalConstants.EWALLET_TYPE_LINKAJA_NEW)) {
-                xenditRequest.setReferenceId(request.getExternalId());
-                xenditRequest.setCurrency("IDR");
-                xenditRequest.setAmount(request.getAmount());
-                xenditRequest.setCheckoutMethod("ONE_TIME_PAYMENT");
-                xenditRequest.setChannelCode(request.getEwalletType());
-
-                String phoneNo = request.getPhone();
-                if (phoneNo.startsWith("0")) {
-                    phoneNo = phoneNo.replaceFirst("0", "+62");
-                } else if (phoneNo.startsWith("62")) {
-                    phoneNo = phoneNo.replaceFirst("62", "+62");
+                case GlobalConstants.EWALLET_TYPE_LINKAJA_NEW: {
+                    xenditRequest.setReferenceId(request.getExternalId());
+                    xenditRequest.setCurrency("IDR");
+                    xenditRequest.setAmount(request.getAmount());
+                    xenditRequest.setCheckoutMethod("ONE_TIME_PAYMENT");
+                    xenditRequest.setChannelCode(request.getEwalletType());
+                    String phoneNo = request.getPhone();
+                    if (phoneNo.startsWith("0")) {
+                        phoneNo = phoneNo.replaceFirst("0", "+62");
+                    } else if (phoneNo.startsWith("62")) {
+                        phoneNo = phoneNo.replaceFirst("62", "+62");
+                    }
+                    channelProperties.setMobileNumber(phoneNo);
+                    channelProperties.setSuccessRedirectUrl("http://myheiya.id/paymentsuccess");
+                    channelProperties.setFailureRedirectUrl("http://myheiya.id/paymentfailed");
+                    xenditRequest.setChannelProperties(channelProperties);
+                    xenditMetadata.setBranchArea(null);
+                    xenditMetadata.setBranchCity(null);
+                    xenditMetadata.setBranchCode("tree_branch");
+                    xenditRequest.setMetadata(xenditMetadata);
+                    break;
                 }
-                channelProperties.setMobileNumber(phoneNo);
-                channelProperties.setSuccessRedirectUrl("http://myheiya.id/paymentsuccess");
-                channelProperties.setFailureRedirectUrl("http://myheiya.id/paymentfailed");
-                xenditRequest.setChannelProperties(channelProperties);
-                xenditMetadata.setBranchArea(null);
-                xenditMetadata.setBranchCity(null);
-                xenditRequest.setMetadata(xenditMetadata);
+                default:
+                    break;
             }
 
             LOGGER.info("======== REQUEST PaymentServiceImpl.chargeXenditPayment(): " + mapper.writeValueAsString(request));
@@ -540,7 +512,6 @@ public class PaymentServiceImpl implements PaymentService {
             ResponseEntity<XenditResponse> responseEntity;
             responseEntity = restTemplate.exchange(uriBuilder.toUriString(), HttpMethod.POST, entity, XenditResponse.class);
             xenditResponse = responseEntity.getBody();
-            System.out.println(responseEntity.getStatusCode());
 
             if (responseEntity.getStatusCode() == HttpStatus.ACCEPTED && xenditResponse != null) {
                 xenditResponse.setSuccess(true); //0 = success
@@ -573,16 +544,15 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public TrxStatusDTOResponse getXenditTrxStatus(String externalId, String ewalletType) throws Exception {
-        //LOGGER.info("======== REQUEST PaymentServiceImpl.getXenditTrxStatus() for " +ewalletType+ " external ID : " + externalId);
         TrxStatusDTOResponse response = new TrxStatusDTOResponse();
 
         try {
             /* Define URL & headers */
             String xenditBaseURL = crudService.getGlobalConfigParamByKey(GlobalConstants.PAY_GW_XENDIT_URL);
-            String url = xenditBaseURL.concat("/ewallets?external_id=").concat(externalId).concat("&ewallet_type=").concat(ewalletType);
+            String url = xenditBaseURL.concat("/ewallets/charges/").concat(externalId);
 
             HttpHeaders headers = getXenditRequestHeaders();
-            HttpEntity<String> entity = new HttpEntity<String>(headers);
+            HttpEntity<String> entity = new HttpEntity<>(headers);
 
             /* Build URI from URL */
             UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(url);
@@ -592,15 +562,25 @@ public class PaymentServiceImpl implements PaymentService {
             response = responseEntity.getBody();
 
             //Transaction payment = crudService.getPaymentByOrderNo(externalId);
-            if (response.getStatus().equals("PENDING")) {
-                response.setStatus("PENDING");
-            } else if (response.getStatus().equals("COMPLETED")) { //OVO, LINKAJA
-                response.setStatus("COMPLETED");
-            } else if (response.getStatus().equals("PAID")) { //DANA
-                response.setStatus("COMPLETED"); //seragamkan response ke mobile jadi "COMPLETED"
-            } else if (response.getStatus().equals("FAILED") || response.getStatus().equals("EXPIRED")) {
-                response.setStatus("FAILED");
-                response.setReason("Failed: Payment is not completed on the eWallet. Please try again.");
+            switch (response.getStatus()) {
+                case "PENDING":
+                    response.setStatus("PENDING");
+                    break;
+                case "COMPLETED":
+                    //OVO, LINKAJA
+                    response.setStatus("COMPLETED");
+                    break;
+                case "PAID":
+                    //DANA
+                    response.setStatus("COMPLETED"); //seragamkan response ke mobile jadi "COMPLETED"
+                    break;
+                case "FAILED":
+                case "EXPIRED":
+                    response.setStatus("FAILED");
+                    response.setReason("Failed: Payment is not completed on the eWallet. Please try again.");
+                    break;
+                default:
+                    break;
             }
 
             //set global response
@@ -618,7 +598,7 @@ public class PaymentServiceImpl implements PaymentService {
         return response;
     }
 
-    @Override
+    //@Override
     public TrxStatusDTOResponse getNewXenditTrxStatus(String externalId) throws Exception {
         LOGGER.info("======== REQUEST PaymentServiceImpl.getXenditTrxStatus() external ID : " + externalId);
         TrxStatusDTOResponse response = new TrxStatusDTOResponse();
@@ -627,10 +607,9 @@ public class PaymentServiceImpl implements PaymentService {
             /* Define URL & headers */
             String xenditBaseURL = crudService.getGlobalConfigParamByKey(GlobalConstants.PAY_GW_XENDIT_URL);
             String url = xenditBaseURL.concat("/ewallets/charges/").concat(externalId);
-            System.out.println(url);
 
             HttpHeaders headers = getXenditRequestHeaders();
-            HttpEntity<String> entity = new HttpEntity<String>(headers);
+            HttpEntity<String> entity = new HttpEntity<>(headers);
 
             /* Build URI from URL */
             UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(url);
@@ -640,17 +619,29 @@ public class PaymentServiceImpl implements PaymentService {
             response = responseEntity.getBody();
 
             //Transaction payment = crudService.getPaymentByOrderNo(externalId);
-            if (response.getStatus().equals("PENDING")) {
-                response.setStatus("PENDING");
-            } else if (response.getStatus().equals("COMPLETED")) { //OVO, LINKAJA
-                response.setStatus("COMPLETED");
-            } else if (response.getStatus().equals("PAID")) { //DANA
-                response.setStatus("COMPLETED"); //seragamkan response ke mobile jadi "COMPLETED"
-            } else if (response.getStatus().equals("SUCCEEDED")) { //SHOPEEPAY
-                response.setStatus("COMPLETED"); //seragamkan response ke mobile jadi "COMPLETED"
-            } else if (response.getStatus().equals("FAILED") || response.getStatus().equals("EXPIRED")) {
-                response.setStatus("FAILED");
-                response.setReason("Failed: Payment is not completed on the eWallet. Please try again.");
+            switch (response.getStatus()) {
+                case "PENDING":
+                    response.setStatus("PENDING");
+                    break;
+                case "COMPLETED":
+                    //OVO, LINKAJA
+                    response.setStatus("COMPLETED");
+                    break;
+                case "PAID":
+                    //DANA
+                    response.setStatus("COMPLETED"); //seragamkan response ke mobile jadi "COMPLETED"
+                    break;
+                case "SUCCEEDED":
+                    //SHOPEEPAY
+                    response.setStatus("COMPLETED"); //seragamkan response ke mobile jadi "COMPLETED"
+                    break;
+                case "FAILED":
+                case "EXPIRED":
+                    response.setStatus("FAILED");
+                    response.setReason("Failed: Payment is not completed on the eWallet. Please try again.");
+                    break;
+                default:
+                    break;
             }
 
             //set global response
@@ -680,7 +671,7 @@ public class PaymentServiceImpl implements PaymentService {
             String url = gopayBaseURL.concat("/").concat(externalId).concat("/status");
 
             HttpHeaders headers = getGopayRequestHeaders();
-            HttpEntity<String> entity = new HttpEntity<String>(headers);
+            HttpEntity<String> entity = new HttpEntity<>(headers);
 
             /* Build URI from URL */
             UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(url);
@@ -700,23 +691,26 @@ public class PaymentServiceImpl implements PaymentService {
                 response.setEwalletType(gopayResponse.getPaymentType().toUpperCase());
                 response.setExternalId(gopayResponse.getOrderId());
                 response.setTransactionDate(gopayResponse.getTransactionTime()); //already in yyyy-MM-dd HH:mm:ss
-
-                if (gopayResponse.getTransactionStatus().equals(GlobalConstants.TRX_STATUS_PENDING)) {
-                    response.setStatus("PENDING");
-                } else if (gopayResponse.getTransactionStatus().equals("settlement")) {
-                    response.setStatus("COMPLETED"); //seragramkan
-                    //Update ke DB untuk status payment, walaupun sudah dihandle scheduler (buat backup jika scheduler gagal)
-                    if (trigger.equals(GlobalConstants.PAYMENT_STATUS_TRIGGER_APP)) {
-                        GopayCallbackDTORequest callbackRequest = new GopayCallbackDTORequest();
-                        callbackRequest.setTransactionTime(gopayResponse.getTransactionTime());
-                        callbackRequest.setTransactionStatus("COMPLETED");
-                        callbackRequest.setOrderId(gopayResponse.getOrderId());
-                        //Use callback method for GOPAY to update the status to DB & call HW to submit the order
-                        this.callbackStatusByGopay(callbackRequest);
-                    }
-                } else {
-                    response.setStatus("FAILED"); //could be expire, deny, refund, cancel
-                    response.setReason("Failed: Payment is not completed on the eWallet. Please try again.");
+                switch (gopayResponse.getTransactionStatus()) {
+                    case GlobalConstants.TRX_STATUS_PENDING:
+                        response.setStatus("PENDING");
+                        break;
+                    case "settlement":
+                        response.setStatus("COMPLETED"); //seragramkan
+                        //Update ke DB untuk status payment, walaupun sudah dihandle scheduler (buat backup jika scheduler gagal)
+                        if (trigger.equals(GlobalConstants.PAYMENT_STATUS_TRIGGER_APP)) {
+                            GopayCallbackDTORequest callbackRequest = new GopayCallbackDTORequest();
+                            callbackRequest.setTransactionTime(gopayResponse.getTransactionTime());
+                            callbackRequest.setTransactionStatus("COMPLETED");
+                            callbackRequest.setOrderId(gopayResponse.getOrderId());
+                            //Use callback method for GOPAY to update the status to DB & call HW to submit the order
+                            this.callbackStatusByGopay(callbackRequest);
+                        }
+                        break;
+                    default:
+                        response.setStatus("FAILED"); //could be expire, deny, refund, cancel
+                        response.setReason("Failed: Payment is not completed on the eWallet. Please try again.");
+                        break;
                 }
             } else {
                 //set global response
@@ -800,7 +794,7 @@ public class PaymentServiceImpl implements PaymentService {
                     orderDtl.setBrewingCode("");
                     orderDtl.setOrderPrice(request.getPaymentAmount());
 
-                    List<PickupOrderDetailRequest> orderList = new ArrayList<PickupOrderDetailRequest>();
+                    List<PickupOrderDetailRequest> orderList = new ArrayList<>();
                     orderList.add(orderDtl);
                     request.setDetail(orderList);
 
@@ -934,7 +928,7 @@ public class PaymentServiceImpl implements PaymentService {
                 orderDtl.setBrewingCode("");
                 orderDtl.setOrderPrice(request.getPaymentAmount());
 
-                List<PickupOrderDetailRequest> orderList = new ArrayList<PickupOrderDetailRequest>();
+                List<PickupOrderDetailRequest> orderList = new ArrayList<>();
                 orderList.add(orderDtl);
                 request.setDetail(orderList);
 
@@ -992,7 +986,6 @@ public class PaymentServiceImpl implements PaymentService {
                     }
                 }
                 LOGGER.info("======== PaymentServiceImpl.callbackStatusByHeiya() - Payment order no " + payment.getOrderNo() + " has been updated to DB with status: " + payment.getPaymentStatus());
-//                }
             } else {
                 baseResponse.setSuccess(true);
                 baseResponse.setResultCode("400");
@@ -1075,7 +1068,7 @@ public class PaymentServiceImpl implements PaymentService {
                     orderDtl.setBrewingCode("");
                     orderDtl.setOrderPrice(request.getPaymentAmount());
 
-                    List<PickupOrderDetailRequest> orderList = new ArrayList<PickupOrderDetailRequest>();
+                    List<PickupOrderDetailRequest> orderList = new ArrayList<>();
                     orderList.add(orderDtl);
                     request.setDetail(orderList);
 
@@ -1223,7 +1216,7 @@ public class PaymentServiceImpl implements PaymentService {
                     orderDtl.setBrewingCode("");
                     orderDtl.setOrderPrice(request.getPaymentAmount());
 
-                    List<PickupOrderDetailRequest> orderList = new ArrayList<PickupOrderDetailRequest>();
+                    List<PickupOrderDetailRequest> orderList = new ArrayList<>();
                     orderList.add(orderDtl);
                     request.setDetail(orderList);
 
@@ -1254,7 +1247,6 @@ public class PaymentServiceImpl implements PaymentService {
                     //If Response from HW is success, update status from Xendit to DB
                     if (response.getSuccess() == 0) {
                         payment.setPaymentStatus(GlobalConstants.TRX_STATUS_SETTLEMENT);
-//                        payment.setCallback(true);
                         Date settlementDate = this.getDateBasedOnLocalZone();
                         payment.setSettlementTime(settlementDate);
                         //payment.setChannelTransactionId(); //LinkAja does not has Trx ID
@@ -1416,26 +1408,10 @@ public class PaymentServiceImpl implements PaymentService {
             shopeepayChargeRequest.setPaymentType(crudService.getGlobalConfigParamByKey(GlobalConstants.PAY_GW_PROVIDER2));
             TransactionDetails trxDetail = new TransactionDetails();
             trxDetail.setOrderId(request.getExternalId());
-            /*
-				 * Commented this discount code because mobile has already pass the discounted amount
-             */
- /*DiscountDTOResponse discRes = productService.getProductDiscount(request.getGoodsId());
-				if (discRes != null && discRes.getResultCode().equals("200")) {
-					BigDecimal discInPercent = new BigDecimal(discRes.getDiscount());
-					BigDecimal discAmount = (request.getAmount().multiply(discInPercent)).divide(new BigDecimal(100));
-					BigDecimal finalAmount = request.getAmount().subtract(discAmount);
-					trxDetail.setGrossAmount(String.valueOf(finalAmount));
-				}
-				else {
-					trxDetail.setGrossAmount(String.valueOf(request.getAmount()));
-				}
-				* End of Discount code
-             */
+
             trxDetail.setGrossAmount(String.valueOf(request.getAmount()));
             shopeepayChargeRequest.setTransactionDetails(trxDetail);
             ShopeePay shopeepay = new ShopeePay();
-//            Boolean shopeepayEnableCallback = Boolean.valueOf(crudService.getGlobalConfigParamByKey(GlobalConstants.PAY_GW_ENABLE_CALLBACK1));
-//            shopeepay.setEnableCallback(shopeepayEnableCallback);
             String gopayCallbackUrl = crudService.getGlobalConfigParamByKey(GlobalConstants.PAY_GW_CALLBACK_URL1);
             String callbackSettledUrl = gopayCallbackUrl.concat("/").concat(request.getExternalId()); //TODO: Kayaknya perlu callback app, instead callback URL
             shopeepay.setCallbackUrl(callbackSettledUrl);
@@ -1620,7 +1596,7 @@ public class PaymentServiceImpl implements PaymentService {
                     orderDtl.setBrewingCode("");
                     orderDtl.setOrderPrice(request.getPaymentAmount());
 
-                    List<PickupOrderDetailRequest> orderList = new ArrayList<PickupOrderDetailRequest>();
+                    List<PickupOrderDetailRequest> orderList = new ArrayList<>();
                     orderList.add(orderDtl);
                     request.setDetail(orderList);
 
@@ -1731,19 +1707,25 @@ public class PaymentServiceImpl implements PaymentService {
             response.setResultCode("200");
             response.setResultMsg("Successfully retrieved");
 
-            List<OrderDTOResponse> orderResList = new ArrayList<OrderDTOResponse>();
+            List<OrderDTOResponse> orderResList = new ArrayList<>();
             for (Transaction trx : orderList) {
                 OrderDTOResponse orderRes = new OrderDTOResponse();
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 //				                        System.out.println(trx.getCustomerId());
                 orderRes.setPaymentDate(sdf.format(trx.getChannelTransactionTime()));
 
-                if (trx.getPaymentStatus().equals(GlobalConstants.TRX_STATUS_SETTLEMENT)) {
-                    orderRes.setPaymentStatus("Pickup");
-                } else if (trx.getPaymentStatus().equals(GlobalConstants.TRX_STATUS_PICKUPEXPIRED)) {
-                    orderRes.setPaymentStatus("Expired");
-                } else if (trx.getPaymentStatus().equals(GlobalConstants.TRX_STATUS_COMPLETED)) {
-                    orderRes.setPaymentStatus("Completed");
+                switch (trx.getPaymentStatus()) {
+                    case GlobalConstants.TRX_STATUS_SETTLEMENT:
+                        orderRes.setPaymentStatus("Pickup");
+                        break;
+                    case GlobalConstants.TRX_STATUS_PICKUPEXPIRED:
+                        orderRes.setPaymentStatus("Expired");
+                        break;
+                    case GlobalConstants.TRX_STATUS_COMPLETED:
+                        orderRes.setPaymentStatus("Completed");
+                        break;
+                    default:
+                        break;
                 }
 
                 orderRes.setOrderNo(trx.getOrderNo());
@@ -1789,12 +1771,18 @@ public class PaymentServiceImpl implements PaymentService {
     public OrderListDTOResponse getListOfOrdersByStatus(long customerId, String status) throws Exception {
         OrderListDTOResponse response = new OrderListDTOResponse();
         LOGGER.info("======== START PaymentServiceImpl.getListOfOrdersByStatus() for customer ID: " + customerId + " with status: " + status);
-        if (status.equals("Pickup")) {
-            status = GlobalConstants.TRX_STATUS_SETTLEMENT;
-        } else if (status.equals("Expired")) {
-            status = GlobalConstants.TRX_STATUS_PICKUPEXPIRED;
-        } else if (status.equals("Completed")) {
-            status = GlobalConstants.TRX_STATUS_COMPLETED;
+        switch (status) {
+            case "Pickup":
+                status = GlobalConstants.TRX_STATUS_SETTLEMENT;
+                break;
+            case "Expired":
+                status = GlobalConstants.TRX_STATUS_PICKUPEXPIRED;
+                break;
+            case "Completed":
+                status = GlobalConstants.TRX_STATUS_COMPLETED;
+                break;
+            default:
+                break;
         }
 
         List<Transaction> orderList = paymentRepo.findOrderListByStatus(customerId, status);
@@ -1806,19 +1794,25 @@ public class PaymentServiceImpl implements PaymentService {
             response.setResultCode("200");
             response.setResultMsg("Successfully retrieved");
 
-            List<OrderDTOResponse> orderResList = new ArrayList<OrderDTOResponse>();
+            List<OrderDTOResponse> orderResList = new ArrayList<>();
             for (Transaction trx : orderList) {
                 OrderDTOResponse orderRes = new OrderDTOResponse();
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
                 orderRes.setPaymentDate(sdf.format(trx.getChannelTransactionTime()));
 
-                if (trx.getPaymentStatus().equals(GlobalConstants.TRX_STATUS_SETTLEMENT)) {
-                    orderRes.setPaymentStatus("Pickup");
-                } else if (trx.getPaymentStatus().equals(GlobalConstants.TRX_STATUS_PICKUPEXPIRED)) {
-                    orderRes.setPaymentStatus("Expired");
-                } else if (trx.getPaymentStatus().equals(GlobalConstants.TRX_STATUS_COMPLETED)) {
-                    orderRes.setPaymentStatus("Completed");
+                switch (trx.getPaymentStatus()) {
+                    case GlobalConstants.TRX_STATUS_SETTLEMENT:
+                        orderRes.setPaymentStatus("Pickup");
+                        break;
+                    case GlobalConstants.TRX_STATUS_PICKUPEXPIRED:
+                        orderRes.setPaymentStatus("Expired");
+                        break;
+                    case GlobalConstants.TRX_STATUS_COMPLETED:
+                        orderRes.setPaymentStatus("Completed");
+                        break;
+                    default:
+                        break;
                 }
 
                 orderRes.setOrderNo(trx.getOrderNo());
@@ -1956,7 +1950,7 @@ public class PaymentServiceImpl implements PaymentService {
                 baseResponse.setResultMsg("Payment callback received with error in delivery (undelivered).");
             }
             LOGGER.info("======== PaymentServiceImpl.startBrewing() - Payment order no " + payment.getOrderNo() + " has been picked-up and updated to DB with status: " + payment.getPaymentStatus());
-        } catch (Exception e) {
+        } catch (JsonProcessingException | RestClientException e) {
             LOGGER.error(e.getMessage(), e);
             /* Set BAD response */
             baseResponse.setSuccess(false);
@@ -1973,12 +1967,12 @@ public class PaymentServiceImpl implements PaymentService {
     * JOB
     * This method will be called by scheduler to expire pickup order if more than specified hours
      */
+    @Override
     public void expirePickupOrder() throws Exception {
         List<Transaction> settlementPayments = crudService.getPaymentByStatusAndTouchpoint(GlobalConstants.TRX_STATUS_SETTLEMENT, GlobalConstants.MOBILE);
 
         if (!settlementPayments.isEmpty()) {
             for (Transaction payment : settlementPayments) {
-//                if (payment.getCallback() == false) {
                 Date trxDate = payment.getChannelTransactionTime();
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(trxDate);
@@ -1991,7 +1985,6 @@ public class PaymentServiceImpl implements PaymentService {
                     crudService.updatePayment(payment);
                     LOGGER.info("\n\n>>>> END SCHEDULER - Updated order no " + payment.getOrderNo() + " to pickup_expired");
                 }
-//                }
             }
         }
     }
@@ -2000,6 +1993,7 @@ public class PaymentServiceImpl implements PaymentService {
 	 * JOB
 	 * This method will be called by scheduler to check transaction status from ewallet and update it to DB
      */
+    @Override
     public void checkAndUpdateTransactionStatus() throws Exception {
         //Get data from minus 1 hour before
         Calendar cal = Calendar.getInstance();
@@ -2012,109 +2006,122 @@ public class PaymentServiceImpl implements PaymentService {
         if (!pendingPayments.isEmpty()) {
             for (Transaction payment : pendingPayments) {
 //                if (payment.getCallback() == false) {
-                if (payment.getChannelType().equals("midtrans")) {
-                    /* Call Gopay transaction status */
-                    TrxStatusDTOResponse statusResponse = this.getGopayTrxStatus(payment.getChannelTransactionId(), GlobalConstants.PAYMENT_STATUS_TRIGGER_JOB);
-                    if (statusResponse.getStatus() != null) {
-                        if (statusResponse.getStatus().equals("COMPLETED")) {
-                            LOGGER.info("\n\n>>>> [SCHEDULER] Payment Scheduler is running to process settlement for order " + payment.getOrderNo());
-                            if (payment.getEwalletType().equals("GOPAY")) {
-                                GopayCallbackDTORequest callbackRequest = new GopayCallbackDTORequest();
-                                callbackRequest.setTransactionTime(statusResponse.getTransactionDate());
-                                callbackRequest.setTransactionStatus(statusResponse.getStatus());
-                                callbackRequest.setOrderId(statusResponse.getExternalId());
-                                //Use callback method for GOPAY to update the status to DB & call HW to submit the order
-                                this.callbackStatusByGopay(callbackRequest);
-                            } else if (payment.getEwalletType().equals("SHOPEEPAY")) {
-                                GopayCallbackDTORequest callbackRequest = new GopayCallbackDTORequest();
-                                callbackRequest.setTransactionTime(statusResponse.getTransactionDate());
-                                callbackRequest.setTransactionStatus(statusResponse.getStatus());
-                                callbackRequest.setOrderId(statusResponse.getExternalId());
-                                //Use callback method for GOPAY to update the status to DB & call HW to submit the order
-                                this.callbackStatusByGopay(callbackRequest);
-                            }
-                            LOGGER.info("======== [SCHEDULER] PaymentServiceImpl.checkAndUpdateTransactionStatus() - Payment order no " + payment.getOrderNo() + " has been updated to DB with status: " + payment.getPaymentStatus());
-                        } //this else condition is based on https://docs.midtrans.com/en/after-payment/http-notification?id=status-definition
-                        else if (statusResponse.getStatus().equals("FAILED")) {
-                            //Gopay payment failed due to any reason. Update to DB
-                            payment.setPaymentStatus(GlobalConstants.TRX_STATUS_UNPAID);
-                            payment.setErrorMessage("The transaction is unpaid due to cancelled/expired/failed on eWallet side");
-                            crudService.updatePayment(payment);
-                        }
-                    }
-                } else if (payment.getChannelType().equals("xendit")) {
-                    /* Call Xendit transaction status */
-//                    TrxStatusDTOResponse xenditStatusResponse = this.getXenditTrxStatus(payment.getChannelOrderId(), payment.getEwalletType());
-                    TrxStatusDTOResponse xenditStatusResponse = this.getNewXenditTrxStatus(payment.getChannelOrderId());
-                    System.out.println(xenditStatusResponse.getStatus());
-                    if (xenditStatusResponse.getStatus() != null) {
-                        if (xenditStatusResponse.getStatus().equals("COMPLETED")) {
-                            if (payment.getEwalletType().equals("OVO")) {
-                                XenditGeneralCallbackDTORequest ovoCallbackReq = new XenditGeneralCallbackDTORequest();
-                                ovoCallbackReq.setEvent(null);
-                                ovoCallbackReq.setId(xenditStatusResponse.getBusinessId());
-                                ovoCallbackReq.setExternalId(xenditStatusResponse.getExternalId());
-                                ovoCallbackReq.setBusinessId(xenditStatusResponse.getBusinessId());
-                                ovoCallbackReq.setPhone(null);
-                                ovoCallbackReq.setEwalletType(payment.getEwalletType());
-                                ovoCallbackReq.setAmount(xenditStatusResponse.getAmount());
-                                ovoCallbackReq.setCreated(xenditStatusResponse.getTransactionDate());
-                                ovoCallbackReq.setStatus(xenditStatusResponse.getStatus());
-                                //Use callback method for OVO to update the status to DB & call HW to submit the order
-                                this.callbackStatusByXendit(ovoCallbackReq);
-                            } else if (payment.getEwalletType().equals("DANA")) {
-                                XenditGeneralCallbackDTORequest callbackReq = new XenditGeneralCallbackDTORequest();
-                                callbackReq.setExternalId(xenditStatusResponse.getExternalId());
-                                callbackReq.setAmount(xenditStatusResponse.getAmount());
-                                callbackReq.setBusinessId(xenditStatusResponse.getBusinessId());
-                                callbackReq.setPaymentStatus(xenditStatusResponse.getStatus());
-                                if (xenditStatusResponse.getTransactionDate() != null) {
-                                    callbackReq.setTransactionDate(xenditStatusResponse.getTransactionDate());
-                                } else {
-                                    callbackReq.setTransactionDate(xenditStatusResponse.getExpirationDate());
+                switch (payment.getChannelType()) {
+                    case "midtrans":
+                        /* Call Gopay transaction status */
+                        TrxStatusDTOResponse statusResponse = this.getGopayTrxStatus(payment.getChannelTransactionId(), GlobalConstants.PAYMENT_STATUS_TRIGGER_JOB);
+                        if (statusResponse.getStatus() != null) {
+                            if (statusResponse.getStatus().equals("COMPLETED")) {
+                                LOGGER.info("\n\n>>>> [SCHEDULER] Payment Scheduler is running to process settlement for order " + payment.getOrderNo());
+                                if (payment.getEwalletType().equals("GOPAY")) {
+                                    GopayCallbackDTORequest callbackRequest = new GopayCallbackDTORequest();
+                                    callbackRequest.setTransactionTime(statusResponse.getTransactionDate());
+                                    callbackRequest.setTransactionStatus(statusResponse.getStatus());
+                                    callbackRequest.setOrderId(statusResponse.getExternalId());
+                                    //Use callback method for GOPAY to update the status to DB & call HW to submit the order
+                                    this.callbackStatusByGopay(callbackRequest);
+                                } else if (payment.getEwalletType().equals("SHOPEEPAY")) {
+                                    GopayCallbackDTORequest callbackRequest = new GopayCallbackDTORequest();
+                                    callbackRequest.setTransactionTime(statusResponse.getTransactionDate());
+                                    callbackRequest.setTransactionStatus(statusResponse.getStatus());
+                                    callbackRequest.setOrderId(statusResponse.getExternalId());
+                                    //Use callback method for GOPAY to update the status to DB & call HW to submit the order
+                                    this.callbackStatusByGopay(callbackRequest);
                                 }
-                                callbackReq.setEwalletType(payment.getEwalletType());
-                                callbackReq.setCallbackAuthenticationToken("");
-                                //Use callback method for DANA to update the status to DB & call HW to submit the order
-                                this.callbackStatusByXenditForDana(callbackReq);
-                            } else if (payment.getEwalletType().equals("LINKAJA")) {
-                                XenditGeneralCallbackDTORequest callbackReq = new XenditGeneralCallbackDTORequest();
-                                callbackReq.setExternalId(xenditStatusResponse.getExternalId());
-                                callbackReq.setAmount(xenditStatusResponse.getAmount());
-                                callbackReq.setStatus(xenditStatusResponse.getStatus());
-                                callbackReq.setEwalletType(payment.getEwalletType());
-                                callbackReq.setTransactionDate(xenditStatusResponse.getPaymentTimestamp());
-                                callbackReq.setCallbackAuthenticationToken("");
-                                //Use callback method for LINKAJA to update the status to DB & call HW to submit the order
-                                this.callbackStatusByXenditForLinkAja(callbackReq);
+                                LOGGER.info("======== [SCHEDULER] PaymentServiceImpl.checkAndUpdateTransactionStatus() - Payment order no " + payment.getOrderNo() + " has been updated to DB with status: " + payment.getPaymentStatus());
+                            } //this else condition is based on https://docs.midtrans.com/en/after-payment/http-notification?id=status-definition
+                            else if (statusResponse.getStatus().equals("FAILED")) {
+                                //Gopay payment failed due to any reason. Update to DB
+                                payment.setPaymentStatus(GlobalConstants.TRX_STATUS_UNPAID);
+                                payment.setErrorMessage("The transaction is unpaid due to cancelled/expired/failed on eWallet side");
+                                crudService.updatePayment(payment);
                             }
-
-                            LOGGER.info("======== [SCHEDULER] PaymentServiceImpl.checkAndUpdateTransactionStatus() - Payment order no " + payment.getOrderNo() + " has been updated to DB with status: " + payment.getPaymentStatus());
-                        } else if (xenditStatusResponse.getStatus().equals("FAILED")) {
-                            //TAMBAH FAILURE CODE
-                            //Xendit payment failed due to any reason. Update to DB
-                            payment.setPaymentStatus(GlobalConstants.TRX_STATUS_UNPAID);
-                            payment.setErrorMessage("The transaction is unpaid due to cancelled/expired/failed on eWallet side");
-                            crudService.updatePayment(payment);
                         }
-                    }
-                } else if (payment.getChannelType().equals("heiya")) {
-                    /* Call Xendit transaction status */
-                    if (payment.getEwalletType().equals("free_payment")) {
-                        HeiyaGeneralCallbackDTORequest heiyaCallbackReq = new HeiyaGeneralCallbackDTORequest();
+                        break;
+                    case "xendit":
+                        /* Call Xendit transaction status */
+//                        TrxStatusDTOResponse xenditStatusResponse = this.getNewXenditTrxStatus(payment.getChannelOrderId());
+                        TrxStatusDTOResponse xenditStatusResponse = this.getXenditTrxStatus(payment.getChannelOrderId(), payment.getEwalletType());
+                        if (xenditStatusResponse.getStatus() != null) {
+                            if (xenditStatusResponse.getStatus().equals("COMPLETED")) {
+                                switch (payment.getEwalletType()) {
+                                    case "OVO":
+                                        XenditGeneralCallbackDTORequest ovoCallbackReq = new XenditGeneralCallbackDTORequest();
+                                        ovoCallbackReq.setEvent(null);
+                                        ovoCallbackReq.setId(xenditStatusResponse.getBusinessId());
+                                        ovoCallbackReq.setExternalId(xenditStatusResponse.getExternalId());
+                                        ovoCallbackReq.setBusinessId(xenditStatusResponse.getBusinessId());
+                                        ovoCallbackReq.setPhone(null);
+                                        ovoCallbackReq.setEwalletType(payment.getEwalletType());
+                                        ovoCallbackReq.setAmount(xenditStatusResponse.getAmount());
+                                        ovoCallbackReq.setCreated(xenditStatusResponse.getTransactionDate());
+                                        ovoCallbackReq.setStatus(xenditStatusResponse.getStatus());
+                                        //Use callback method for OVO to update the status to DB & call HW to submit the order
+                                        this.callbackStatusByXendit(ovoCallbackReq);
+                                        break;
+                                    case "DANA": {
+                                        XenditGeneralCallbackDTORequest callbackReq = new XenditGeneralCallbackDTORequest();
+                                        callbackReq.setExternalId(xenditStatusResponse.getExternalId());
+                                        callbackReq.setAmount(xenditStatusResponse.getAmount());
+                                        callbackReq.setBusinessId(xenditStatusResponse.getBusinessId());
+                                        callbackReq.setPaymentStatus(xenditStatusResponse.getStatus());
+                                        if (xenditStatusResponse.getTransactionDate() != null) {
+                                            callbackReq.setTransactionDate(xenditStatusResponse.getTransactionDate());
+                                        } else {
+                                            callbackReq.setTransactionDate(xenditStatusResponse.getExpirationDate());
+                                        }
+                                        callbackReq.setEwalletType(payment.getEwalletType());
+                                        callbackReq.setCallbackAuthenticationToken("");
+                                        //Use callback method for DANA to update the status to DB & call HW to submit the order
+                                        this.callbackStatusByXenditForDana(callbackReq);
+                                        break;
+                                    }
+                                    case "LINKAJA": {
+                                        XenditGeneralCallbackDTORequest callbackReq = new XenditGeneralCallbackDTORequest();
+                                        callbackReq.setExternalId(xenditStatusResponse.getExternalId());
+                                        callbackReq.setAmount(xenditStatusResponse.getAmount());
+                                        callbackReq.setStatus(xenditStatusResponse.getStatus());
+                                        callbackReq.setEwalletType(payment.getEwalletType());
+                                        callbackReq.setTransactionDate(xenditStatusResponse.getPaymentTimestamp());
+                                        callbackReq.setCallbackAuthenticationToken("");
+                                        //Use callback method for LINKAJA to update the status to DB & call HW to submit the order
+                                        this.callbackStatusByXenditForLinkAja(callbackReq);
+                                        break;
+                                    }
+                                    default:
+                                        break;
+                                }
+
+                                LOGGER.info("======== [SCHEDULER] PaymentServiceImpl.checkAndUpdateTransactionStatus() - Payment order no " + payment.getOrderNo() + " has been updated to DB with status: " + payment.getPaymentStatus());
+                            } else if (xenditStatusResponse.getStatus().equals("FAILED")) {
+                                //TAMBAH FAILURE CODE
+                                //Xendit payment failed due to any reason. Update to DB
+                                payment.setPaymentStatus(GlobalConstants.TRX_STATUS_UNPAID);
+                                payment.setErrorMessage("The transaction is unpaid due to cancelled/expired/failed on eWallet side");
+                                crudService.updatePayment(payment);
+                            }
+                        }
+                        break;
+                    case "heiya":
+                        /* Call Xendit transaction status */
+                        if (payment.getEwalletType().equals("free_payment")) {
+                            HeiyaGeneralCallbackDTORequest heiyaCallbackReq = new HeiyaGeneralCallbackDTORequest();
 //                        heiyaCallbackReq.setEvent(null);
 //                        heiyaCallbackReq.setId(xenditStatusResponse.getBusinessId());
-                        heiyaCallbackReq.setExternalId(payment.getOrderNo());
+                            heiyaCallbackReq.setExternalId(payment.getOrderNo());
 //                        heiyaCallbackReq.setBusinessId(xenditStatusResponse.getBusinessId());
 //                        heiyaCallbackReq.setPhone(null);
 //                        heiyaCallbackReq.setEwalletType(payment.getEwalletType());
 //                        heiyaCallbackReq.setAmount(xenditStatusResponse.getAmount());
-                        heiyaCallbackReq.setCreated(payment.getChannelTransactionTime().toString());
+                            heiyaCallbackReq.setCreated(payment.getChannelTransactionTime().toString());
 //                        heiyaCallbackReq.setStatus(xenditStatusResponse.getStatus());
-                        //Use callback method for OVO to update the status to DB & call HW to submit the order
-                        this.callbackStatusByHeiya(heiyaCallbackReq);
-                    }
-                    LOGGER.info("======== [SCHEDULER] PaymentServiceImpl.checkAndUpdateTransactionStatus() - Payment order no " + payment.getOrderNo() + " has been updated to DB with status: " + payment.getPaymentStatus());
+//Use callback method for OVO to update the status to DB & call HW to submit the order
+                            this.callbackStatusByHeiya(heiyaCallbackReq);
+                        }
+                        LOGGER.info("======== [SCHEDULER] PaymentServiceImpl.checkAndUpdateTransactionStatus() - Payment order no " + payment.getOrderNo() + " has been updated to DB with status: " + payment.getPaymentStatus());
+                        break;
+                    default:
+                        break;
                 }
             }
         }
@@ -2164,14 +2171,21 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     public void setNewPaymentObj(ChargePaymentDTORequest req, XenditResponse res, Transaction payment) throws Exception {
-        if (req.getEwalletType().equals(GlobalConstants.EWALLET_TYPE_OVO_NEW)) {
-            req.setEwalletType(GlobalConstants.EWALLET_TYPE_OVO);
-        } else if (req.getEwalletType().equals(GlobalConstants.EWALLET_TYPE_DANA_NEW)) {
-            req.setEwalletType(GlobalConstants.EWALLET_TYPE_DANA);
-        } else if (req.getEwalletType().equals(GlobalConstants.EWALLET_TYPE_LINKAJA_NEW)) {
-            req.setEwalletType(GlobalConstants.EWALLET_TYPE_LINKAJA);
-        } else if (req.getEwalletType().equals(GlobalConstants.EWALLET_TYPE_SHOPEEPAY_NEW)) {
-            req.setEwalletType(GlobalConstants.EWALLET_TYPE_SHOPEEPAY);
+        switch (req.getEwalletType()) {
+            case GlobalConstants.EWALLET_TYPE_OVO_NEW:
+                req.setEwalletType(GlobalConstants.EWALLET_TYPE_OVO);
+                break;
+            case GlobalConstants.EWALLET_TYPE_DANA_NEW:
+                req.setEwalletType(GlobalConstants.EWALLET_TYPE_DANA);
+                break;
+            case GlobalConstants.EWALLET_TYPE_LINKAJA_NEW:
+                req.setEwalletType(GlobalConstants.EWALLET_TYPE_LINKAJA);
+                break;
+            case GlobalConstants.EWALLET_TYPE_SHOPEEPAY_NEW:
+                req.setEwalletType(GlobalConstants.EWALLET_TYPE_SHOPEEPAY);
+                break;
+            default:
+                break;
         }
         payment.setOrderNo(req.getExternalId());
         payment.setMachineCode(req.getMachineCode());
@@ -2558,7 +2572,7 @@ public class PaymentServiceImpl implements PaymentService {
 //                System.out.println(transaction.getCustomerId());
         if (transaction != null) {
             if (transaction.getCustomerChange() == null && transaction.getPaymentStatus().equals(GlobalConstants.TRX_STATUS_SETTLEMENT)) {
-                if (transaction.getCustomerId() != customerChange.getId()) {
+                if (!Objects.equals(transaction.getCustomerId(), customerChange.getId())) {
                     transaction.setCustomerChange("change");
                     transaction.setCustomerId(customerChange.getId());
                     paymentRepo.save(transaction);
@@ -2676,7 +2690,7 @@ public class PaymentServiceImpl implements PaymentService {
 
             Customer customer = new Customer();
 
-            List<CheckNotificationDTOResponse> checkNotificationDTOResponses = new ArrayList<CheckNotificationDTOResponse>();
+            List<CheckNotificationDTOResponse> checkNotificationDTOResponses = new ArrayList<>();
 
             CheckNotificationDTOResponse dTOPaymentResponse = new CheckNotificationDTOResponse();
             CheckNotificationDTOResponse dTOExpireResponse = new CheckNotificationDTOResponse();
@@ -2888,19 +2902,31 @@ public class PaymentServiceImpl implements PaymentService {
                             }
                         }
                     }
-
                 }
             }
             response.setSuccess(true);
             response.setResultCode("200");
             response.setCheckNotificationDTOResponses(checkNotificationDTOResponses);
             response.setResultMsg("Send Notification = " + response.getCheckNotificationDTOResponses().size());
-        } catch (Exception e) {
+        } catch (NumberFormatException | ParseException e) {
             LOGGER.error(e.getMessage());
-
         }
-
         return response;
+    }
+
+    @Override
+    public void checkAndUpdateTransactionStatusForEmail() throws Exception {
+        //Get data from minus 1 hour before
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.HOUR, -1);
+        Date oneHourBack = cal.getTime();
+        List<Transaction> pendingPayments = crudService.getPaymentListByStatusAndTimeAndSendEmail(GlobalConstants.TRX_STATUS_UNDELIVERED, oneHourBack, null);
+        for (Transaction pendingPayment : pendingPayments) {
+            pendingPayment.setSendEmail(Boolean.TRUE);
+            paymentRepo.save(pendingPayment);
+            reportController.doReport(pendingPayment.getOrderNo());
+        }
     }
 
 }
