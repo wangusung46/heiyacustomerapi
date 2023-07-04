@@ -10,12 +10,15 @@ import com.heiya.mobileapi.payment.dto.request.CreatePaymentDTORequest;
 import com.heiya.mobileapi.payment.dto.request.CustomerChangeDTORequest;
 import com.heiya.mobileapi.payment.dto.request.GopayCallbackDTORequest;
 import com.heiya.mobileapi.payment.dto.request.PickupDTORequest;
+import com.heiya.mobileapi.payment.dto.request.XenditDataDTORequest;
 import com.heiya.mobileapi.payment.dto.request.XenditGeneralCallbackDTORequest;
 import com.heiya.mobileapi.payment.dto.response.CheckNotificationDTOResponse;
+import com.heiya.mobileapi.payment.dto.response.GopayCreatePaymentDTOResponse;
 import com.heiya.mobileapi.payment.dto.response.ListCheckNotificationDTOResponse;
 import com.heiya.mobileapi.payment.dto.response.MidtransResponse;
 import com.heiya.mobileapi.payment.dto.response.OrderListDTOResponse;
 import com.heiya.mobileapi.payment.dto.response.PaymentProviderListDTOResponse;
+import com.heiya.mobileapi.payment.dto.response.ShopeepayCreatePaymentDTOResponse;
 import com.heiya.mobileapi.payment.dto.response.TokenDTOResponse;
 import com.heiya.mobileapi.payment.dto.response.TrxStatusDTOResponse;
 import com.heiya.mobileapi.payment.dto.response.XenditCreatePaymentDTOResponse;
@@ -67,62 +70,63 @@ public class PaymentController {
         }
     }
 
-//    @ApiOperation("[EWALLET] Charge an item(s) by using E-Wallet services")
-//    @PostMapping(value = "/ewallet/create", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public ResponseEntity<?> doCreateEwalletPayment(@RequestBody CreatePaymentDTORequest request) throws JsonProcessingException {
-//        LOGGER.info("\n\n======== START PaymentController.doCreateEwalletPayment");
-//        XenditCreatePaymentDTOResponse xenditResponse = null;
-//        XenditResponse xenditNewResponse = null;
-//        GopayCreatePaymentDTOResponse gopayResponse = null;
-//        ShopeepayCreatePaymentDTOResponse shopeepayResponse = new ShopeepayCreatePaymentDTOResponse();
-//
-//        try {
-//            switch (request.getEwalletType()) {
-//                case GlobalConstants.EWALLET_TYPE_GOPAY:
-//                    gopayResponse = paymentService.createGopayEWalletPayment(request);
-//                    LOGGER.info("======== COMPLETED PaymentController.doCreateEwalletPayment");
-//                    return ResponseEntity.ok(gopayResponse);
-//                case GlobalConstants.EWALLET_TYPE_OVO:
-//                    xenditResponse = paymentService.createXenditOvoPayment(request);
-//                    LOGGER.info("======== COMPLETED PaymentController.doCreateEwalletPayment");
-//                    return ResponseEntity.ok(xenditResponse);
-//                case GlobalConstants.EWALLET_TYPE_DANA:
-//                    xenditResponse = paymentService.createXenditDanaPayment(request);
-//                    LOGGER.info("======== COMPLETED PaymentController.doCreateEwalletPayment");
-//                    return ResponseEntity.ok(xenditResponse);
-//                case GlobalConstants.EWALLET_TYPE_LINKAJA:
-//                    xenditResponse = paymentService.createXenditLinkAjaPayment(request);
-//                    LOGGER.info("======== COMPLETED PaymentController.doCreateEwalletPayment");
-//                    return ResponseEntity.ok(xenditResponse);
-//                case GlobalConstants.EWALLET_TYPE_SHOPEEPAY:
-//                    shopeepayResponse = paymentService.createShopeepayEWalletPayment(request);
-//                    LOGGER.info("======== COMPLETED PaymentController.doCreateEwalletPayment");
-//                    return ResponseEntity.ok(shopeepayResponse);
-//                default:
-//                    break;
-//            }
-//            return ResponseEntity.ok(null);
-//        } catch (Exception e) {
-//            LOGGER.error(e.getMessage(), e);
-//            return ResponseEntity.badRequest().body(e.getMessage());
-//        }
-//    }
-    @ApiOperation("[EWALLET 2021] Charge an item(s) by using E-Wallet services")
+    @ApiOperation("[EWALLET] Charge an item(s) by using E-Wallet services")
     @PostMapping(value = "/ewallet/create", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> doCreateEwalletPayment(@RequestBody CreatePaymentDTORequest request) throws JsonProcessingException {
+        LOGGER.info("\n\n======== START PaymentController.doCreateEwalletPayment");
+        XenditCreatePaymentDTOResponse xenditResponse = null;
+        XenditResponse xenditNewResponse = null;
+        GopayCreatePaymentDTOResponse gopayResponse = null;
+        ShopeepayCreatePaymentDTOResponse shopeepayResponse = new ShopeepayCreatePaymentDTOResponse();
+
+        try {
+            switch (request.getEwalletType()) {
+                case GlobalConstants.EWALLET_TYPE_GOPAY:
+                    gopayResponse = paymentService.createGopayEWalletPayment(request);
+                    LOGGER.info("======== COMPLETED PaymentController.doCreateEwalletPayment");
+                    return ResponseEntity.ok(gopayResponse);
+                case GlobalConstants.EWALLET_TYPE_OVO:
+                    xenditResponse = paymentService.createXenditOvoPayment(request);
+                    LOGGER.info("======== COMPLETED PaymentController.doCreateEwalletPayment");
+                    return ResponseEntity.ok(xenditResponse);
+                case GlobalConstants.EWALLET_TYPE_DANA:
+                    xenditResponse = paymentService.createXenditDanaPayment(request);
+                    LOGGER.info("======== COMPLETED PaymentController.doCreateEwalletPayment");
+                    return ResponseEntity.ok(xenditResponse);
+                case GlobalConstants.EWALLET_TYPE_LINKAJA:
+                    xenditResponse = paymentService.createXenditLinkAjaPayment(request);
+                    LOGGER.info("======== COMPLETED PaymentController.doCreateEwalletPayment");
+                    return ResponseEntity.ok(xenditResponse);
+                case GlobalConstants.EWALLET_TYPE_SHOPEEPAY:
+                    shopeepayResponse = paymentService.createShopeepayEWalletPayment(request);
+                    LOGGER.info("======== COMPLETED PaymentController.doCreateEwalletPayment");
+                    return ResponseEntity.ok(shopeepayResponse);
+                default:
+                    break;
+            }
+            return ResponseEntity.ok(null);
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    
+    @ApiOperation("[EWALLET 2021] Charge an item(s) by using E-Wallet services")
+    @PostMapping(value = "/ewallet/charges", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> doChargesEwalletPayment(@RequestBody ChargePaymentDTORequest request) throws JsonProcessingException {
         LOGGER.info("\n\n======== START PaymentController.doChargesEwalletPayment");
         MidtransResponse midtransResponse;
         XenditResponse xenditResponse;
         try {
-            midtransResponse = paymentService.chargeMidtransPayment(request);
-            xenditResponse = paymentService.chargeXenditPayment(request);
             switch (request.getChannelType()) {
                 case GlobalConstants.CHANNEL_TYPE_MIDTRANS:
                     switch (request.getEwalletType()) {
                         case GlobalConstants.EWALLET_TYPE_GOPAY:
+                             midtransResponse = paymentService.chargeMidtransPayment(request);
                             LOGGER.info("======== COMPLETED PaymentController.doChargesEwalletPayment MIDTRANS GOPAY");
                             return ResponseEntity.ok(midtransResponse);
                         case GlobalConstants.EWALLET_TYPE_SHOPEEPAY:
+                             midtransResponse = paymentService.chargeMidtransPayment(request);
                             LOGGER.info("======== COMPLETED PaymentController.doChargesEwalletPayment MIDTRANS SHOPEEPAY");
                             return ResponseEntity.ok(midtransResponse);
                         default:
@@ -131,16 +135,24 @@ public class PaymentController {
                 case GlobalConstants.CHANNEL_TYPE_XENDIT:
                     switch (request.getEwalletType()) {
                         case GlobalConstants.EWALLET_TYPE_OVO_NEW:
+                            //request.setEwalletType(GlobalConstants.EWALLET_TYPE_OVO);
+                            xenditResponse = paymentService.chargeXenditPayment(request);
                             LOGGER.info("======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO");
                             return ResponseEntity.ok(xenditResponse);
                         case GlobalConstants.EWALLET_TYPE_DANA_NEW:
+                            //request.setEwalletType(GlobalConstants.EWALLET_TYPE_DANA);
+                            xenditResponse = paymentService.chargeXenditPayment(request);
                             LOGGER.info("======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT DANA");
                             return ResponseEntity.ok(xenditResponse);
                         case GlobalConstants.EWALLET_TYPE_LINKAJA_NEW:
+                            //request.setEwalletType(GlobalConstants.EWALLET_TYPE_LINKAJA);
+                            xenditResponse = paymentService.chargeXenditPayment(request);
                             LOGGER.info("======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT LINKAJA");
                             return ResponseEntity.ok(xenditResponse);
                         case GlobalConstants.EWALLET_TYPE_SHOPEEPAY_NEW:
                             // BELUM BISA
+                            //request.setEwalletType(GlobalConstants.EWALLET_TYPE_SHOPEEPAY);
+                            xenditResponse = paymentService.chargeXenditPayment(request);
                             LOGGER.info("======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT SHOPEEPAY");
                             return ResponseEntity.ok(xenditResponse);
                         default:
@@ -170,20 +182,20 @@ public class PaymentController {
         }
     }
 
-    @ApiOperation("[XENDIT] Get Xendit eWallet transaction status")  //please use transaction status v2 instead of this
-    @GetMapping(value = "/xendit/status/{externalId}/{ewalletType}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> doXenditTransactionStatus(@PathVariable("externalId") String externalId, @PathVariable("ewalletType") String ewalletType) throws JsonProcessingException {
-        LOGGER.info("\n\n======== START PaymentController.doTransactionStatus");
-        TrxStatusDTOResponse response;
-        try {
-            response = paymentService.getXenditTrxStatus(externalId, ewalletType);
-            LOGGER.info("======== COMPLETED PaymentController.doTransactionStatus");
-            return ResponseEntity.ok(response);
-        } catch (Exception e) {
-            LOGGER.error(e.getMessage(), e);
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
-    }
+//    @ApiOperation("[XENDIT] Get Xendit eWallet transaction status")  //please use transaction status v2 instead of this
+//    @GetMapping(value = "/xendit/status/{externalId}/{ewalletType}", produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity<?> doXenditTransactionStatus(@PathVariable("externalId") String externalId, @PathVariable("ewalletType") String ewalletType) throws JsonProcessingException {
+//        LOGGER.info("\n\n======== START PaymentController.doTransactionStatus");
+//        XenditResponse response;
+//        try {
+//            response = paymentService.getXenditTrxStatus(externalId, ewalletType);
+//            LOGGER.info("======== COMPLETED PaymentController.doTransactionStatus");
+//            return ResponseEntity.ok(response);
+//        } catch (Exception e) {
+//            LOGGER.error(e.getMessage(), e);
+//            return ResponseEntity.badRequest().body(e.getMessage());
+//        }
+//    }
 
     @ApiOperation("Get eWallet transaction status v2 (for all eWallet Type)")
     @GetMapping(value = "/ewallet/status/{externalId}/{ewalletType}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -196,24 +208,10 @@ public class PaymentController {
                     response = paymentService.getGopayTrxStatus(externalId, GlobalConstants.PAYMENT_STATUS_TRIGGER_APP);
                     LOGGER.info("======== COMPLETED PaymentController.doEwalletTransactionStatus - GOPAY with response : " + response);
                     return ResponseEntity.ok(response);
-                case GlobalConstants.EWALLET_TYPE_OVO:
-                    response = paymentService.getXenditTrxStatus(externalId, ewalletType);
-                    LOGGER.info("======== COMPLETED PaymentController.doEwalletTransactionStatus - OVO with response : " + response);
-                    return ResponseEntity.ok(response);
-                case GlobalConstants.EWALLET_TYPE_DANA:
-                    response = paymentService.getXenditTrxStatus(externalId, ewalletType);
-                    LOGGER.info("======== COMPLETED PaymentController.doEwalletTransactionStatus - DANA with response : " + response);
-                    return ResponseEntity.ok(response);
-                case GlobalConstants.EWALLET_TYPE_LINKAJA:
-                    response = paymentService.getXenditTrxStatus(externalId, ewalletType);
-                    LOGGER.info("======== COMPLETED PaymentController.doEwalletTransactionStatus - LINKAJA with response : " + response);
-                    return ResponseEntity.ok(response);
-                case GlobalConstants.EWALLET_TYPE_SHOPEEPAY:
-                    response = paymentService.getXenditTrxStatus(externalId, GlobalConstants.PAYMENT_STATUS_TRIGGER_APP);
-                    LOGGER.info("======== COMPLETED PaymentController.doEwalletTransactionStatus - SHOPEEPAY with response : " + response);
-                    return ResponseEntity.ok(response);
                 default:
-                    return ResponseEntity.ok(null);
+                    response = paymentService.getNewXenditTrxStatus(externalId);
+                    LOGGER.info("======== COMPLETED PaymentController.doEwalletTransactionStatus - XENDIT with response : " + response);
+                    return ResponseEntity.ok(response);
             }
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
@@ -223,13 +221,13 @@ public class PaymentController {
 
     @ApiOperation("[XENDIT] Callback API for completed transaction (triggered by Xendit)")
     @PostMapping(value = "/xendit/status/callback", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> doProvideXenditCallback(@RequestBody XenditGeneralCallbackDTORequest request) throws JsonProcessingException {
-        LOGGER.info("\n\n======== START PaymentController.doProvideXenditCallback for : " + request.getEwalletType());
-        BaseResponse response;
+    public ResponseEntity<?> doProvideXenditCallback(@RequestBody XenditGeneralCallbackDTORequest request) throws JsonProcessingException, Exception {
+        LOGGER.info("\n\n======== START PaymentController.doProvideXenditCallback for : " + request);
+        BaseResponse response = paymentService.callbackStatusByXendit(request);
         try {
-            switch (request.getEwalletType()) {
-                case GlobalConstants.EWALLET_TYPE_OVO:
-                    response = paymentService.callbackStatusByXendit(request);
+            switch (request.getXenditDataDTORequest().getChannelCode()) {
+                case GlobalConstants.EWALLET_TYPE_OVO_NEW:
+//                    response = paymentService.callbackStatusByXendit(request);
                     if (response != null) {
                         if (response.getResultCode().equals("200")) {
                             LOGGER.info("======== COMPLETED PaymentController.doProvideXenditCallback - OVO");
@@ -240,8 +238,8 @@ public class PaymentController {
                     } else {
                         return ResponseEntity.badRequest().body(null);
                     }
-                case GlobalConstants.EWALLET_TYPE_SHOPEEPAY:
-                    response = paymentService.callbackStatusByXendit(request);
+                case GlobalConstants.EWALLET_TYPE_SHOPEEPAY_NEW:
+//                    response = paymentService.callbackStatusByXendit(request);
                     if (response != null) {
                         if (response.getResultCode().equals("200")) {
                             LOGGER.info("======== COMPLETED PaymentController.doProvideXenditCallback - SHOPEEPAY");
@@ -252,8 +250,8 @@ public class PaymentController {
                     } else {
                         return ResponseEntity.badRequest().body(null);
                     }
-                case GlobalConstants.EWALLET_TYPE_DANA:
-                    response = paymentService.callbackStatusByXenditForDana(request);
+                case GlobalConstants.EWALLET_TYPE_DANA_NEW:
+//                    response = paymentService.callbackStatusByXenditForDana(request);
                     if (response != null) {
                         if (response.getResultCode().equals("200")) {
                             LOGGER.info("======== COMPLETED PaymentController.doProvideXenditCallback - DANA");
@@ -264,8 +262,8 @@ public class PaymentController {
                     } else {
                         return ResponseEntity.badRequest().body(null);
                     }
-                case GlobalConstants.EWALLET_TYPE_LINKAJA:
-                    response = paymentService.callbackStatusByXenditForLinkAja(request);
+                case GlobalConstants.EWALLET_TYPE_LINKAJA_NEW:
+//                    response = paymentService.callbackStatusByXenditForLinkAja(request);
                     if (response != null) {
                         if (response.getResultCode().equals("200")) {
                             LOGGER.info("======== COMPLETED PaymentController.doProvideXenditCallback - LINKAJA");
