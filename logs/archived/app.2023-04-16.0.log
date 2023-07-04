@@ -1,0 +1,344 @@
+2023-04-16 10:53:55,279 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 6480 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2023-04-16 10:53:55,294 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2023-04-16 10:53:55,302 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2023-04-16 10:53:57,821 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-16 10:53:58,359 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 514ms. Found 12 JPA repository interfaces.
+2023-04-16 10:54:01,144 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2023-04-16 10:54:01,518 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 6102 ms
+2023-04-16 10:54:06,693 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16 10:54:09,593 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-16 10:54:11,315 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2023-04-16 10:54:13,129 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2023-04-16 10:54:13,221 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2023-04-16 10:54:13,576 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2023-04-16 10:54:13,577 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2023-04-16 10:54:13,577 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2023-04-16 10:54:13,577 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2023-04-16 10:54:13,661 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2ac7c683, org.springframework.security.web.context.SecurityContextPersistenceFilter@62818ab0, org.springframework.security.web.header.HeaderWriterFilter@686ace1f, org.springframework.security.web.authentication.logout.LogoutFilter@2a22e7e2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3c6d3ba, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c070ade, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66487713, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@407ff25f, org.springframework.security.web.session.SessionManagementFilter@4cb939d5, org.springframework.security.web.access.ExceptionTranslationFilter@6079d219, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@51806858]
+2023-04-16 10:54:16,126 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2023-04-16 10:54:16,141 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2023-04-16 10:54:16,332 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2023-04-16 10:54:16,358 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 22.244 seconds (JVM running for 23.921)
+2023-04-16 10:54:16,365 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2023-04-16 10:54:18,169 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> START SCHEDULER - Order No : operator20230411151517125Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Wed Apr 12 22:18:00 UTC 2023
+2023-04-16 10:54:18,170 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> START SCHEDULER - Order No : operator20230411151517125Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Wed Apr 12 22:18:00 UTC 2023
+2023-04-16 10:54:18,350 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> END SCHEDULER - Updated order no operator20230411151517125Z to pickup_expired
+2023-04-16 10:54:18,351 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> START SCHEDULER - Order No : operator2023041209414349Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Thu Apr 13 16:42:54 UTC 2023
+2023-04-16 10:54:18,355 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> END SCHEDULER - Updated order no operator20230411151517125Z to pickup_expired
+2023-04-16 10:54:18,355 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> START SCHEDULER - Order No : operator2023041209414349Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Thu Apr 13 16:42:54 UTC 2023
+2023-04-16 10:54:18,366 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> END SCHEDULER - Updated order no operator2023041209414349Z to pickup_expired
+2023-04-16 10:54:18,366 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> END SCHEDULER - Updated order no operator2023041209414349Z to pickup_expired
+2023-04-16 10:54:18,367 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> START SCHEDULER - Order No : operator20230412095407401Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Thu Apr 13 16:54:17 UTC 2023
+2023-04-16 10:54:18,367 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> START SCHEDULER - Order No : operator20230412095407401Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Thu Apr 13 16:54:17 UTC 2023
+2023-04-16 10:54:18,402 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> END SCHEDULER - Updated order no operator20230412095407401Z to pickup_expired
+2023-04-16 10:54:18,402 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> END SCHEDULER - Updated order no operator20230412095407401Z to pickup_expired
+2023-04-16 10:54:18,403 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> START SCHEDULER - Order No : operator20230412095457391Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Thu Apr 13 16:59:59 UTC 2023
+2023-04-16 10:54:18,403 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> START SCHEDULER - Order No : operator20230412095457391Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Thu Apr 13 16:59:59 UTC 2023
+2023-04-16 10:54:18,409 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> END SCHEDULER - Updated order no operator20230412095457391Z to pickup_expired
+2023-04-16 10:54:18,410 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> START SCHEDULER - Order No : operator2023041210040495Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Thu Apr 13 17:16:02 UTC 2023
+2023-04-16 10:54:18,410 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> END SCHEDULER - Updated order no operator20230412095457391Z to pickup_expired
+2023-04-16 10:54:18,410 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> START SCHEDULER - Order No : operator2023041210040495Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Thu Apr 13 17:16:02 UTC 2023
+2023-04-16 10:54:18,432 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> END SCHEDULER - Updated order no operator2023041210040495Z to pickup_expired
+2023-04-16 10:54:18,433 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> START SCHEDULER - Order No : operator20230412100551845Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Thu Apr 13 17:12:50 UTC 2023
+2023-04-16 10:54:18,433 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> END SCHEDULER - Updated order no operator2023041210040495Z to pickup_expired
+2023-04-16 10:54:18,433 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> START SCHEDULER - Order No : operator20230412100551845Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Thu Apr 13 17:12:50 UTC 2023
+2023-04-16 10:54:18,439 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> END SCHEDULER - Updated order no operator20230412100551845Z to pickup_expired
+2023-04-16 10:54:18,440 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> START SCHEDULER - Order No : operator2023041210474676Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Thu Apr 13 17:48:53 UTC 2023
+2023-04-16 10:54:18,441 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> END SCHEDULER - Updated order no operator20230412100551845Z to pickup_expired
+2023-04-16 10:54:18,441 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> START SCHEDULER - Order No : operator2023041210474676Z, Today : Sun Apr 16 10:54:18 UTC 2023 & expire date : Thu Apr 13 17:48:53 UTC 2023
+2023-04-16 10:54:18,449 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-2] 
+
+>>>> END SCHEDULER - Updated order no operator2023041210474676Z to pickup_expired
+2023-04-16 10:54:18,453 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [heiyamobile-api-quartz-job_Worker-1] 
+
+>>>> END SCHEDULER - Updated order no operator2023041210474676Z to pickup_expired
+2023-04-16 10:54:18,790 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDQtMTYgMTA6NTQ6MTgiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2ODE2MTcyNTh9.scMdrL8mjhwTOpTmXrit2mrnPkJkGYTjaSM-BYvwOhU, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
+2023-04-16 10:54:19,797 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:19,803 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412100551845Z","customerName":"Riyad Kurniawan"}
+2023-04-16 10:54:19,890 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-2] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:19,891 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-2] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator2023041210040495Z","customerName":"Riyad Kurniawan"}
+2023-04-16 10:54:20,089 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Your order has been expired","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:12:50 PM","topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 10:54:20,200 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-2] ======== START FCMService.sendMessageToToken() with request : {"title":"Your order has been expired","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:16:02 PM","topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 10:54:20,780 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 10:54:20,799 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:20,799 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-2] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 10:54:20,799 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-2] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:20,799 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:20,799 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-2] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:20,800 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412100551845Z","customerName":"Riyad Kurniawan"}
+2023-04-16 10:54:20,800 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-2] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator2023041210040495Z","customerName":"Riyad Kurniawan"}
+2023-04-16 10:54:21,019 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Your order has been expired","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:12:50 PM","topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 10:54:21,077 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-2] ======== START FCMService.sendMessageToToken() with request : {"title":"Your order has been expired","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:16:02 PM","topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 10:54:21,313 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 10:54:21,314 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:21,314 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:21,314 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412100551845Z","customerName":"Riyad Kurniawan"}
+2023-04-16 10:54:21,360 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-2] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 10:54:21,360 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-2] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:21,360 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-2] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:21,361 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-2] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator2023041210040495Z","customerName":"Riyad Kurniawan"}
+2023-04-16 10:54:21,591 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Your order has been expired","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:12:50 PM","topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 10:54:21,618 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-2] ======== START FCMService.sendMessageToToken() with request : {"title":"Your order has been expired","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:16:02 PM","topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 10:54:21,888 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 10:54:21,888 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:21,888 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:21,888 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412100551845Z","customerName":"Riyad Kurniawan"}
+2023-04-16 10:54:21,905 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-2] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 10:54:21,905 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-2] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:21,905 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-2] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:21,906 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-2] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator2023041210040495Z","customerName":"Riyad Kurniawan"}
+2023-04-16 10:54:22,196 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Your order has been expired","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:12:50 PM","topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 10:54:22,213 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-2] ======== START FCMService.sendMessageToToken() with request : {"title":"Your order has been expired","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:16:02 PM","topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 10:54:22,477 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 10:54:22,482 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:22,483 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:22,483 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412100551845Z","customerName":"Riyad Kurniawan"}
+2023-04-16 10:54:22,493 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-2] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 10:54:22,493 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-2] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:54:22,676 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Your order has been expired","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:12:50 PM","topic":"EXPIRE_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 10:54:22,961 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 10:54:22,962 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 10:59:32,099 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-04-16 10:59:32,170 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Completed initialization in 65 ms
+2023-04-16 10:59:32,613 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-16 10:59:32,613 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_DANA, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-16 10:59:32,637 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230416035932620Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_DANA","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-16 10:59:34,581 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - XenditResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_09ec43a0-02ca-40c4-90a4-64bf4749ab8c","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230416035932620Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_DANA","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":{"desktop_web_checkout_url":"https://m.dana.id/m/portal/cashier/checkout?bizNo=20230416111212800110166222178106328&timestamp=1681617573404&mid=216620000035833566172&did=216650000211517960174&sid=216660000211485681177&sign=vunI8XEzQTo78g2gLdfiNGPCohSixLxm77k6t6FcEfTPbGw5Lo2Z7udd257xclDfhCCgocRjTEUgl3imieMC8jVzVZv6GoC1BG%2B%2B9yPhU6FmxgRwisVrxHMejjAHMCbPewCIJa1cfMTsBmpHf6i8%2F7K1tZv%2FZKk8HN1lY9zlTdZur9f2wOXn2pddnJNZFRfMUTa0VCZeDZwBwZCZE7pOjAgXvvyaxT2TG4AqGAKnAX9J7dvZvYSgTGG2HkTRcs0We671Uqa9Pio4FCw3%2FulPCw%2F67LFjrNGuDSmApj9IuB7bmVuk77LdjDbbxtvs7rl%2FdSy9EUaurUYrNgj%2FJMpBlA%3D%3D&forceToH5=false","mobile_web_checkout_url":"https://m.dana.id/m/portal/cashier/checkout?bizNo=20230416111212800110166222178106328&timestamp=1681617573404&mid=216620000035833566172&did=216650000211517960174&sid=216660000211485681177&sign=vunI8XEzQTo78g2gLdfiNGPCohSixLxm77k6t6FcEfTPbGw5Lo2Z7udd257xclDfhCCgocRjTEUgl3imieMC8jVzVZv6GoC1BG%2B%2B9yPhU6FmxgRwisVrxHMejjAHMCbPewCIJa1cfMTsBmpHf6i8%2F7K1tZv%2FZKk8HN1lY9zlTdZur9f2wOXn2pddnJNZFRfMUTa0VCZeDZwBwZCZE7pOjAgXvvyaxT2TG4AqGAKnAX9J7dvZvYSgTGG2HkTRcs0We671Uqa9Pio4FCw3%2FulPCw%2F67LFjrNGuDSmApj9IuB7bmVuk77LdjDbbxtvs7rl%2FdSy9EUaurUYrNgj%2FJMpBlA%3D%3D&forceToH5=false","mobile_deeplink_checkout_url":null,"qr_checkout_string":null},"is_redirect_required":true,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-16T03:59:33.188405Z","updated":"2023-04-16T03:59:33.188405Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-16 10:59:34,583 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-1] ======== START ProductServiceImpl.getProductDiscount()
+2023-04-16 10:59:34,619 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-1] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2023-04-16 10:59:34,725 DEBUG com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - BaseHWResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_09ec43a0-02ca-40c4-90a4-64bf4749ab8c","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230416035932620Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_DANA","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":{"desktop_web_checkout_url":"https://m.dana.id/m/portal/cashier/checkout?bizNo=20230416111212800110166222178106328&timestamp=1681617573404&mid=216620000035833566172&did=216650000211517960174&sid=216660000211485681177&sign=vunI8XEzQTo78g2gLdfiNGPCohSixLxm77k6t6FcEfTPbGw5Lo2Z7udd257xclDfhCCgocRjTEUgl3imieMC8jVzVZv6GoC1BG%2B%2B9yPhU6FmxgRwisVrxHMejjAHMCbPewCIJa1cfMTsBmpHf6i8%2F7K1tZv%2FZKk8HN1lY9zlTdZur9f2wOXn2pddnJNZFRfMUTa0VCZeDZwBwZCZE7pOjAgXvvyaxT2TG4AqGAKnAX9J7dvZvYSgTGG2HkTRcs0We671Uqa9Pio4FCw3%2FulPCw%2F67LFjrNGuDSmApj9IuB7bmVuk77LdjDbbxtvs7rl%2FdSy9EUaurUYrNgj%2FJMpBlA%3D%3D&forceToH5=false","mobile_web_checkout_url":"https://m.dana.id/m/portal/cashier/checkout?bizNo=20230416111212800110166222178106328&timestamp=1681617573404&mid=216620000035833566172&did=216650000211517960174&sid=216660000211485681177&sign=vunI8XEzQTo78g2gLdfiNGPCohSixLxm77k6t6FcEfTPbGw5Lo2Z7udd257xclDfhCCgocRjTEUgl3imieMC8jVzVZv6GoC1BG%2B%2B9yPhU6FmxgRwisVrxHMejjAHMCbPewCIJa1cfMTsBmpHf6i8%2F7K1tZv%2FZKk8HN1lY9zlTdZur9f2wOXn2pddnJNZFRfMUTa0VCZeDZwBwZCZE7pOjAgXvvyaxT2TG4AqGAKnAX9J7dvZvYSgTGG2HkTRcs0We671Uqa9Pio4FCw3%2FulPCw%2F67LFjrNGuDSmApj9IuB7bmVuk77LdjDbbxtvs7rl%2FdSy9EUaurUYrNgj%2FJMpBlA%3D%3D&forceToH5=false","mobile_deeplink_checkout_url":null,"qr_checkout_string":null},"is_redirect_required":true,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-16T03:59:33.188405Z","updated":"2023-04-16T03:59:33.188405Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-16 10:59:34,725 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT DANA
+2023-04-16 11:03:41,751 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 11:03:41,752 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PAYMENT","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230416035932620Z","customerName":"Riyad Kurniawan"}
+2023-04-16 11:03:41,885 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START FCMService.sendMessageToToken() with request : {"title":"Please pay your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha will expire on Apr 16, 2023 12:02:41 PM","topic":"CHECK_PAYMENT","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 11:03:42,201 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 11:03:42,201 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 11:04:42,250 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 11:04:42,251 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PAYMENT","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230416035932620Z","customerName":"Riyad Kurniawan"}
+2023-04-16 11:04:42,413 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START FCMService.sendMessageToToken() with request : {"title":"Please pay your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha will expire on Apr 16, 2023 12:02:41 PM","topic":"CHECK_PAYMENT","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 11:04:42,782 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 11:04:42,783 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 11:10:21,145 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-5] 
+
+======== START PaymentController.doEwalletTransactionStatus for external ID : 1
+2023-04-16 11:10:22,127 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-5] 400 Bad Request: [{"error_code":"API_VALIDATION_ERROR","message":"charge_request_id format does not match ewc_UUIDV4 : 1."}
+]
+org.springframework.web.client.HttpClientErrorException$BadRequest: 400 Bad Request: [{"error_code":"API_VALIDATION_ERROR","message":"charge_request_id format does not match ewc_UUIDV4 : 1."}
+]
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:101)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:170)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:112)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:782)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:740)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:674)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:583)
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.getXenditTrxStatus(PaymentServiceImpl.java:561)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doEwalletTransactionStatus(PaymentController.java:216)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-16 11:10:22,130 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-5] ======== COMPLETED PaymentController.doEwalletTransactionStatus - DANA with response : TrxStatusDTOResponse(amount=null, businessId=null, ewalletType=null, externalId=null, status=null, transactionDate=null, paymentTimestamp=null, expirationDate=null, checkoutUrl=null, reason=null)
+2023-04-16 11:10:39,019 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-6] 
+
+======== START PaymentController.doEwalletTransactionStatus for external ID : 1
+2023-04-16 11:10:53,490 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-9] 
+
+======== START PaymentController.doEwalletTransactionStatus for external ID : 2
+2023-04-16 11:11:58,129 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-8] 
+
+======== START PaymentController.doGetAllProviders
+2023-04-16 11:11:58,131 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-8] ======== START PaymentServiceImpl.queryAllPaymentProviders()
+2023-04-16 11:11:58,225 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-8] ======== PaymentServiceImpl.queryAllPaymentProviders() - Provider response : {"success":true,"resultCode":"200","resultMsg":"Successfully retrieved","paymentProviderList":[{"id":1,"providerName":"Gopay","apiEndpoint":"https://blabla.com","isActive":"Y"},{"id":2,"providerName":"Ovo","apiEndpoint":"https://blabla.com","isActive":"Y"},{"id":3,"providerName":"Dana","apiEndpoint":"https://blabla.com","isActive":"Y"},{"id":4,"providerName":"LinkAja","apiEndpoint":"https://blabla.com","isActive":"Y"}]}
+2023-04-16 11:11:58,226 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-8] ======== COMPLETED PaymentController.doGetAllProviders
+2023-04-16 11:18:27,664 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-4] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-16 11:18:27,665 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_DANA, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-16 11:18:27,669 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230416041827667Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_DANA","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-16 11:18:29,044 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - XenditResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_12cb49f9-b697-480a-88bb-f9805cd8e22b","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230416041827667Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_DANA","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":{"desktop_web_checkout_url":"https://m.dana.id/m/portal/cashier/checkout?bizNo=20230416111212800110166364377903068&timestamp=1681618708196&mid=216620000035833566172&did=216650000211517960174&sid=216660000211485681177&sign=K%2BmPRLNgpj1Xb5DJX24bvTaOzdE68NMifJ9nMOnfb6VWK5AILJFdG44yZLmD%2FwbXwMDChWK%2BhW%2FMIQpnpPRwE0%2BE2qBAbqPp27EPokh68j6j9ZEWViR6i%2FMNAcfJ%2B2cCS7tqO8SN3rYHbQyfeIQsnzHdQ5b%2BoiJHET0d9snFipTx6ToRpyrlZWG%2FXOLRetaLdmckmuo6B0A3FcRxpEVgtVN3ym35F0og08SmzF2IIov6Hc7P0sLscC%2FcyqtcjzlBH3boeOc0shPVRnK6Jo7Ty7BAWr4eKh%2FhrIPyKwzYcG%2F%2BjTVpPPcO1yOkS9sSWUeU60Z2uG%2BKxQxDsFQKilC8jA%3D%3D&forceToH5=false","mobile_web_checkout_url":"https://m.dana.id/m/portal/cashier/checkout?bizNo=20230416111212800110166364377903068&timestamp=1681618708196&mid=216620000035833566172&did=216650000211517960174&sid=216660000211485681177&sign=K%2BmPRLNgpj1Xb5DJX24bvTaOzdE68NMifJ9nMOnfb6VWK5AILJFdG44yZLmD%2FwbXwMDChWK%2BhW%2FMIQpnpPRwE0%2BE2qBAbqPp27EPokh68j6j9ZEWViR6i%2FMNAcfJ%2B2cCS7tqO8SN3rYHbQyfeIQsnzHdQ5b%2BoiJHET0d9snFipTx6ToRpyrlZWG%2FXOLRetaLdmckmuo6B0A3FcRxpEVgtVN3ym35F0og08SmzF2IIov6Hc7P0sLscC%2FcyqtcjzlBH3boeOc0shPVRnK6Jo7Ty7BAWr4eKh%2FhrIPyKwzYcG%2F%2BjTVpPPcO1yOkS9sSWUeU60Z2uG%2BKxQxDsFQKilC8jA%3D%3D&forceToH5=false","mobile_deeplink_checkout_url":null,"qr_checkout_string":null},"is_redirect_required":true,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-16T04:18:27.927275Z","updated":"2023-04-16T04:18:27.927275Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-16 11:18:29,046 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-4] ======== START ProductServiceImpl.getProductDiscount()
+2023-04-16 11:18:29,053 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-4] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2023-04-16 11:19:05,633 DEBUG com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - BaseHWResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_12cb49f9-b697-480a-88bb-f9805cd8e22b","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230416041827667Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_DANA","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":{"desktop_web_checkout_url":"https://m.dana.id/m/portal/cashier/checkout?bizNo=20230416111212800110166364377903068&timestamp=1681618708196&mid=216620000035833566172&did=216650000211517960174&sid=216660000211485681177&sign=K%2BmPRLNgpj1Xb5DJX24bvTaOzdE68NMifJ9nMOnfb6VWK5AILJFdG44yZLmD%2FwbXwMDChWK%2BhW%2FMIQpnpPRwE0%2BE2qBAbqPp27EPokh68j6j9ZEWViR6i%2FMNAcfJ%2B2cCS7tqO8SN3rYHbQyfeIQsnzHdQ5b%2BoiJHET0d9snFipTx6ToRpyrlZWG%2FXOLRetaLdmckmuo6B0A3FcRxpEVgtVN3ym35F0og08SmzF2IIov6Hc7P0sLscC%2FcyqtcjzlBH3boeOc0shPVRnK6Jo7Ty7BAWr4eKh%2FhrIPyKwzYcG%2F%2BjTVpPPcO1yOkS9sSWUeU60Z2uG%2BKxQxDsFQKilC8jA%3D%3D&forceToH5=false","mobile_web_checkout_url":"https://m.dana.id/m/portal/cashier/checkout?bizNo=20230416111212800110166364377903068&timestamp=1681618708196&mid=216620000035833566172&did=216650000211517960174&sid=216660000211485681177&sign=K%2BmPRLNgpj1Xb5DJX24bvTaOzdE68NMifJ9nMOnfb6VWK5AILJFdG44yZLmD%2FwbXwMDChWK%2BhW%2FMIQpnpPRwE0%2BE2qBAbqPp27EPokh68j6j9ZEWViR6i%2FMNAcfJ%2B2cCS7tqO8SN3rYHbQyfeIQsnzHdQ5b%2BoiJHET0d9snFipTx6ToRpyrlZWG%2FXOLRetaLdmckmuo6B0A3FcRxpEVgtVN3ym35F0og08SmzF2IIov6Hc7P0sLscC%2FcyqtcjzlBH3boeOc0shPVRnK6Jo7Ty7BAWr4eKh%2FhrIPyKwzYcG%2F%2BjTVpPPcO1yOkS9sSWUeU60Z2uG%2BKxQxDsFQKilC8jA%3D%3D&forceToH5=false","mobile_deeplink_checkout_url":null,"qr_checkout_string":null},"is_redirect_required":true,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-16T04:18:27.927275Z","updated":"2023-04-16T04:18:27.927275Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-16 11:19:05,633 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-4] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT DANA
+2023-04-16 11:31:48,716 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-2] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 11:31:48,717 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-2] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"EXPIRE_PAYMENT","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230416035932620Z","customerName":"Riyad Kurniawan"}
+2023-04-16 11:31:48,846 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-2] ======== START FCMService.sendMessageToToken() with request : {"title":"Your payment has been expired","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 16, 2023 12:02:41 PM","topic":"EXPIRE_PAYMENT","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 11:31:49,178 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-2] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 11:31:49,178 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-2] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 11:34:56,632 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 11:34:56,632 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PAYMENT","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230416041827667Z","customerName":"Riyad Kurniawan"}
+2023-04-16 11:34:56,740 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START FCMService.sendMessageToToken() with request : {"title":"Please pay your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha will expire on Apr 16, 2023 12:33:54 PM","topic":"CHECK_PAYMENT","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 11:34:57,032 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 11:34:57,032 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 11:35:57,145 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 11:35:57,145 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PAYMENT","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230416041827667Z","customerName":"Riyad Kurniawan"}
+2023-04-16 11:35:57,262 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START FCMService.sendMessageToToken() with request : {"title":"Please pay your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha will expire on Apr 16, 2023 12:33:54 PM","topic":"CHECK_PAYMENT","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 11:35:57,537 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 11:35:57,538 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 11:48:35,756 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-16 11:48:35,757 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"EXPIRE_PAYMENT","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230416041827667Z","customerName":"Riyad Kurniawan"}
+2023-04-16 11:48:35,900 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Your payment has been expired","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 16, 2023 12:33:54 PM","topic":"EXPIRE_PAYMENT","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-16 11:48:36,195 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-16 11:48:36,195 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup

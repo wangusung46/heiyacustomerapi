@@ -1,250 +1,933 @@
-2023-01-28 12:46:29,715 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 12144 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
-2023-01-28 12:46:29,726 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2023-01-28 12:46:29,727 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
-2023-01-28 12:46:31,987 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-28 12:46:32,488 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 482ms. Found 12 JPA repository interfaces.
-2023-01-28 12:46:34,461 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
-2023-01-28 12:46:34,677 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 4699 ms
-2023-01-28 12:46:38,177 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-28 12:46:41,248 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-28 12:46:42,135 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
-2023-01-28 12:46:43,105 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
-2023-01-28 12:46:43,219 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+2023-04-17 14:06:49,340 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 15000 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2023-04-17 14:06:49,354 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2023-04-17 14:06:49,355 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2023-04-17 14:06:51,124 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-17 14:06:51,428 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 289ms. Found 12 JPA repository interfaces.
+2023-04-17 14:06:53,186 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2023-04-17 14:06:53,400 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3952 ms
+2023-04-17 14:06:56,229 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-17 14:06:57,612 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-17 14:06:58,448 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2023-04-17 14:06:59,303 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2023-04-17 14:06:59,336 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
 
 >>>> Starting Jobs.... 
 
 
-2023-01-28 12:46:43,663 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
-2023-01-28 12:46:43,664 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
-2023-01-28 12:46:43,665 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
-2023-01-28 12:46:43,666 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
-2023-01-28 12:46:43,751 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fe243a, org.springframework.security.web.context.SecurityContextPersistenceFilter@bc4a9b0, org.springframework.security.web.header.HeaderWriterFilter@27b7204, org.springframework.security.web.authentication.logout.LogoutFilter@22f057b4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6f0ae0ee, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@129c322f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5af56240, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4c8a9266, org.springframework.security.web.session.SessionManagementFilter@565efd7d, org.springframework.security.web.access.ExceptionTranslationFilter@1ef5cde4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3f1fb139]
-2023-01-28 12:46:45,069 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
-2023-01-28 12:46:45,082 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
-2023-01-28 12:46:45,141 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
-2023-01-28 12:46:45,145 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 16.261 seconds (JVM running for 17.071)
-2023-01-28 12:46:45,150 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
-2023-01-28 12:46:46,393 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDEtMjggMTI6NDY6NDYiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2NzQ4ODQ4MDZ9.yGzS6tmLTyqneSokVm3MTkAm_YUq-hM-eaCEOdU55_s, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
-2023-01-28 12:50:29,372 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Initializing Servlet 'dispatcherServlet'
-2023-01-28 12:50:29,383 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Completed initialization in 10 ms
-2023-01-28 12:50:29,441 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-2] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:31,407 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-3] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:31,450 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-6] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:31,458 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-10] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:31,459 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-4] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:31,461 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-1] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:31,465 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-7] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:31,731 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-5] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:31,760 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-8] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:31,771 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-9] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:31,811 WARN org.springframework.web.servlet.PageNotFound [http-nio-8083-exec-3] No mapping for GET /
-2023-01-28 12:50:31,812 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-3] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:31,834 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-6] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:31,835 WARN org.springframework.web.servlet.PageNotFound [http-nio-8083-exec-4] No mapping for GET /csrf
-2023-01-28 12:50:31,836 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-4] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:32,084 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-10] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:32,084 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-7] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:32,085 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-1] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:50:33,616 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-5] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:51:15,004 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-2] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:51:38,068 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-7] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 12:51:38,076 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-7] 
+2023-04-17 14:06:59,605 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2023-04-17 14:06:59,607 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2023-04-17 14:06:59,607 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2023-04-17 14:06:59,607 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2023-04-17 14:06:59,682 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29897daf, org.springframework.security.web.context.SecurityContextPersistenceFilter@e00c94e, org.springframework.security.web.header.HeaderWriterFilter@216de23a, org.springframework.security.web.authentication.logout.LogoutFilter@2553fbd0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@74b13aa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c0ec502, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@747476f1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63e54c66, org.springframework.security.web.session.SessionManagementFilter@31b4c003, org.springframework.security.web.access.ExceptionTranslationFilter@515b7335, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@307eb95f]
+2023-04-17 14:07:01,084 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2023-04-17 14:07:01,098 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2023-04-17 14:07:01,153 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2023-04-17 14:07:01,156 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 12.739 seconds (JVM running for 14.071)
+2023-04-17 14:07:01,160 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2023-04-17 14:07:02,488 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDQtMTcgMTQ6MDc6MDAiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2ODE3MTUyMjB9.lePoc1b0uuNrrjYC0_zhcIsXgba5n_xyyCxszpZL8MI, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
+2023-04-17 14:07:58,110 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-04-17 14:07:58,124 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Completed initialization in 13 ms
+2023-04-17 14:07:58,404 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-1] 
 
-======== START CustomerController.doLogin
-2023-01-28 12:51:38,077 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-7] ======== START CustomerServiceImpl.performCustomerLogin() with request : {"mobileNo":"081248666660","password":"1","id_token":"string"}
-2023-01-28 12:51:38,231 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-7] ======== CustomerServiceImpl.performCustomerLogin() - Get New Token : string
-2023-01-28 12:51:38,261 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-7] ======== CustomerServiceImpl.performCustomerLogin() - Login success for customer mobile no:081248666660
-2023-01-28 12:51:38,261 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-7] ======== COMPLETED CustomerController.doLogin
-2023-01-28 12:51:38,305 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-1] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:03:55,325 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-3] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:03:55,330 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-3] 
+======== START CustomerController.doRequestForgotPassword
+2023-04-17 14:07:58,405 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-1] ======== START CustomerServiceImpl.requestForgotPassword() for phone no: 6281314985590
+2023-04-17 14:07:58,411 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-1] ======== COMPLETED CustomerController.doRequestForgotPassword
+2023-04-17 14:08:13,128 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-2] 
 
-======== START CustomerController.doLogout mobile no 081248666660
-2023-01-28 13:03:55,331 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-3] ======== START CustomerServiceImpl.performCustomerLogout() with mobile no 081248666660
-2023-01-28 13:03:55,366 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-3] ======== END CustomerServiceImpl.performCustomerLogout() - Logout mobile no 081248666660 success
-2023-01-28 13:03:55,366 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-3] ======== COMPLETED CustomerController.doLogout mobile no 081248666660
-2023-01-28 13:04:29,790 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-9] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:04:29,792 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-9] 
-
-======== START CustomerController.doLogin
-2023-01-28 13:04:29,792 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-9] ======== START CustomerServiceImpl.performCustomerLogin() with request : {"mobileNo":"081248666660","password":"1","id_token":"string"}
-2023-01-28 13:04:29,890 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-9] ======== CustomerServiceImpl.performCustomerLogin() - Set Loggedin : true
-2023-01-28 13:04:29,895 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-9] ======== CustomerServiceImpl.performCustomerLogin() - Login success for customer mobile no:081248666660
-2023-01-28 13:04:29,896 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-9] ======== COMPLETED CustomerController.doLogin
-2023-01-28 13:06:46,132 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-6] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:06:46,136 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-6] 
-
-======== START CustomerController.doRegistration
-2023-01-28 13:06:46,138 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-6] ======== START CustomerServiceImpl.performCustomerRegistration() with request : {"firstName":"Riyad Kurniawan","lastName":"Gusung","gender":"F","dob":"1997-04-25","mobileNo":"081248666660","email":"wangusungkomputer46@gmail.com","address":"string","password":"1","isActive":"Y","isLoggedIn":"Y"}
-2023-01-28 13:06:46,244 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-6] ======== CustomerServiceImpl.performCustomerRegistration() - Registration with email wangusungkomputer46@gmail.com success
-2023-01-28 13:06:46,244 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-6] ======== COMPLETED CustomerController.doRegistration
-2023-01-28 13:07:33,518 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-2] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:07:33,519 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-2] 
-
-======== START CustomerController.doRegistration
-2023-01-28 13:07:33,519 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-2] ======== START CustomerServiceImpl.performCustomerRegistration() with request : {"firstName":"Riyad Kurniawan","lastName":"Gusung","gender":"F","dob":"1997-04-25","mobileNo":"081248666660","email":"wangusungkomputer46@gmail.com","address":"string","password":"1","isActive":"Y","isLoggedIn":"Y"}
-2023-01-28 13:07:33,521 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-2] ======== COMPLETED CustomerController.doRegistration
-2023-01-28 13:07:42,714 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-7] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:07:42,716 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-7] 
-
-======== START CustomerController.doRegistration
-2023-01-28 13:07:42,716 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-7] ======== START CustomerServiceImpl.performCustomerRegistration() with request : {"firstName":"Riyad Kurniawan","lastName":"Gusung","gender":"F","dob":"1997-04-25","mobileNo":"081248666660","email":"wangusungkomputer46@gmail.com","address":"string","password":"1","isActive":"Y","isLoggedIn":"Y"}
-2023-01-28 13:07:42,820 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-7] ======== CustomerServiceImpl.performCustomerRegistration() - Registration with email wangusungkomputer46@gmail.com success
-2023-01-28 13:07:42,821 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-7] ======== COMPLETED CustomerController.doRegistration
-2023-01-28 13:08:31,580 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-5] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:08:31,581 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-5] 
-
-======== START CustomerController.doRegistration
-2023-01-28 13:08:31,582 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-5] ======== START CustomerServiceImpl.performCustomerRegistration() with request : {"firstName":"Riyad","lastName":"Kurniawan","gender":"M","dob":"1997-04-25","mobileNo":"081248666660","email":"wangusung46@gmail.com","address":"Jakarta","password":"1","isActive":"Y","isLoggedIn":"Y"}
-2023-01-28 13:08:31,683 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-5] ======== CustomerServiceImpl.performCustomerRegistration() - Registration with email wangusung46@gmail.com success
-2023-01-28 13:08:31,683 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-5] ======== COMPLETED CustomerController.doRegistration
-2023-01-28 13:09:01,139 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-9] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:09:01,140 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-9] 
-
-======== START CustomerController.doRegistration
-2023-01-28 13:09:01,141 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-9] ======== START CustomerServiceImpl.performCustomerRegistration() with request : {"firstName":"Riyad","lastName":"Kurniawan","gender":"M","dob":"1997-04-25","mobileNo":"081248666660","email":"wangusung46@gmail.com","address":"Jakarta","password":"1","isActive":"Y","isLoggedIn":"Y"}
-2023-01-28 13:09:01,142 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-9] ======== COMPLETED CustomerController.doRegistration
-2023-01-28 13:32:32,577 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 12352 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
-2023-01-28 13:32:32,580 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
-2023-01-28 13:32:32,581 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
-2023-01-28 13:32:33,866 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-28 13:32:34,101 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 222ms. Found 12 JPA repository interfaces.
-2023-01-28 13:32:35,526 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
-2023-01-28 13:32:35,693 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3040 ms
-2023-01-28 13:32:37,780 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-28 13:32:38,826 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-28 13:32:39,613 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
-2023-01-28 13:32:40,175 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
-2023-01-28 13:32:40,195 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+======== START CustomerController.doRequestForgotPassword
+2023-04-17 14:08:13,128 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-2] ======== START CustomerServiceImpl.requestForgotPassword() for phone no: 6281314985590
+2023-04-17 14:08:23,365 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-2] ======== COMPLETED CustomerController.doRequestForgotPassword
+2023-04-17 14:09:22,696 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 11628 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2023-04-17 14:09:22,700 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2023-04-17 14:09:22,701 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2023-04-17 14:09:24,107 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-17 14:09:24,435 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 315ms. Found 12 JPA repository interfaces.
+2023-04-17 14:09:26,209 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2023-04-17 14:09:26,420 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3641 ms
+2023-04-17 14:09:31,323 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-17 14:09:32,503 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-17 14:09:33,128 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2023-04-17 14:09:33,725 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2023-04-17 14:09:33,748 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
 
 >>>> Starting Jobs.... 
 
 
-2023-01-28 13:32:40,346 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
-2023-01-28 13:32:40,346 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
-2023-01-28 13:32:40,346 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
-2023-01-28 13:32:40,346 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
-2023-01-28 13:32:40,402 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f94541b, org.springframework.security.web.context.SecurityContextPersistenceFilter@67a3dd86, org.springframework.security.web.header.HeaderWriterFilter@62615be, org.springframework.security.web.authentication.logout.LogoutFilter@bc4a9b0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@51dbed72, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1eb52131, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5cb6abc8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bebad0d, org.springframework.security.web.session.SessionManagementFilter@5d20195b, org.springframework.security.web.access.ExceptionTranslationFilter@5b0835cb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@ff8e36d]
-2023-01-28 13:32:41,349 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
-2023-01-28 13:32:41,361 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
-2023-01-28 13:32:41,410 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
-2023-01-28 13:32:41,414 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 9.507 seconds (JVM running for 10.591)
-2023-01-28 13:32:41,417 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
-2023-01-28 13:32:42,731 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDEtMjggMTM6MzI6NDIiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2NzQ4ODc1NjJ9.rnT2zTqfwy4bryQ0cp4AYpmW4dln2beksYX01UW0HMs, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
-2023-01-28 13:32:48,847 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-3] Initializing Servlet 'dispatcherServlet'
-2023-01-28 13:32:48,855 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-3] Completed initialization in 7 ms
-2023-01-28 13:32:49,078 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-3] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,116 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-4] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,118 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-8] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,119 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-1] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,121 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-7] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,122 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-10] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,387 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-9] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,393 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-6] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,443 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-5] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,458 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-2] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,528 WARN org.springframework.web.servlet.PageNotFound [http-nio-8083-exec-4] No mapping for GET /
-2023-01-28 13:32:49,536 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-4] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,544 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-7] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,566 WARN org.springframework.web.servlet.PageNotFound [http-nio-8083-exec-1] No mapping for GET /csrf
-2023-01-28 13:32:49,567 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-1] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,846 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-6] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,846 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-10] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:49,846 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-8] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:51,846 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-1] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:32:51,993 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-3] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:33:48,068 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-6] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:33:48,080 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-6] 
+2023-04-17 14:09:33,942 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2023-04-17 14:09:33,942 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2023-04-17 14:09:33,942 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2023-04-17 14:09:33,943 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2023-04-17 14:09:34,003 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@312e8eaf, org.springframework.security.web.context.SecurityContextPersistenceFilter@66be0e72, org.springframework.security.web.header.HeaderWriterFilter@2e778abb, org.springframework.security.web.authentication.logout.LogoutFilter@1bdb6b36, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5c438795, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e09c7a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@58a5b69c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c960f64, org.springframework.security.web.session.SessionManagementFilter@6b6bae60, org.springframework.security.web.access.ExceptionTranslationFilter@7f065f9e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4eee730c]
+2023-04-17 14:09:35,207 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2023-04-17 14:09:35,223 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2023-04-17 14:09:35,279 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2023-04-17 14:09:35,284 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 13.352 seconds (JVM running for 14.309)
+2023-04-17 14:09:35,288 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2023-04-17 14:09:36,464 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDQtMTcgMTQ6MDk6MzQiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2ODE3MTUzNzR9.L6KbWD-faTTw8Y-FlKux26ZBP02MHJqnSbuK6-NtN24, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
+2023-04-17 14:09:39,122 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Initializing Servlet 'dispatcherServlet'
+2023-04-17 14:09:39,134 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Completed initialization in 11 ms
+2023-04-17 14:09:39,417 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-2] 
 
-======== START CustomerController.doChangePassword
-2023-01-28 13:33:48,082 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-6] ======== START CustomerServiceImpl.changeCustomerPassword() with request : {"customerId":25,"oldPassword":"1","newPassword":"2","confirmNewPassword":"2"}
-2023-01-28 13:33:48,215 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-6] ======== COMPLETED CustomerController.doChangePassword
-2023-01-28 13:33:48,260 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-10] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:36:11,686 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-2] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:36:11,688 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-2] 
+======== START CustomerController.doRequestForgotPassword
+2023-04-17 14:09:39,418 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-2] ======== START CustomerServiceImpl.requestForgotPassword() for phone no: 6281314985590
+2023-04-17 14:09:48,452 INFO com.heiya.mobileapi.otp.service.OtpServiceImpl [http-nio-8083-exec-2] ======== START OtpServiceImpl.generateEmailOTP() with Key : aGVpeWFjdXN0b21lcmFwaQ==
+2023-04-17 14:09:48,453 INFO com.heiya.mobileapi.otp.service.OtpServiceImpl [http-nio-8083-exec-2] ======== OtpServiceImpl.generateEmailOTP() - OTP code : 424921
+2023-04-17 14:09:48,454 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-2] 
+======== Forgot Password OTP : 424921
+2023-04-17 14:09:48,455 INFO com.heiya.mobileapi.communication.service.SmsServiceImpl [http-nio-8083-exec-2] ======== START SmsServiceImpl.sendSMS() to : 6281314985590 and message : Your Forgot Password OTP code is 424921. Please keep it confidential.
+2023-04-17 14:09:48,477 DEBUG com.heiya.mobileapi.communication.service.SmsServiceImpl [http-nio-8083-exec-2] ======== RESPONSE SmsServiceImpl.sendSMS() SmsRequestParameters: [userid=heiyaotp, password=P@55h3IyA0tP2994, msisdn=6281314985590, message=Your Forgot Password OTP code is 424921. Please keep it confidential., refno=heiya559020230417070948458Z, masking=HEIYA, app_code=BP, type=MSK]
+2023-04-17 14:10:09,903 ERROR com.heiya.mobileapi.communication.service.SmsServiceImpl [http-nio-8083-exec-2] Connect to mitrapay.mitracomm.com:56526 [mitrapay.mitracomm.com/202.169.43.53] failed: Connection timed out: connect
+org.apache.http.conn.HttpHostConnectException: Connect to mitrapay.mitracomm.com:56526 [mitrapay.mitracomm.com/202.169.43.53] failed: Connection timed out: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at com.heiya.mobileapi.communication.service.SmsServiceImpl.sendSMS(SmsServiceImpl.java:71)
+	at com.heiya.mobileapi.customer.service.CustomerServiceImpl.requestForgotPassword(CustomerServiceImpl.java:412)
+	at com.heiya.mobileapi.customer.controller.CustomerController.doRequestForgotPassword(CustomerController.java:133)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:75)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 88 common frames omitted
+2023-04-17 14:10:09,904 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-2] ======== CustomerServiceImpl.requestForgotPassword() - Failed to send forgot password OTP
+2023-04-17 14:10:09,904 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-2] ======== COMPLETED CustomerController.doRequestForgotPassword
+2023-04-17 15:04:39,126 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 1200 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2023-04-17 15:04:39,130 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2023-04-17 15:04:39,130 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2023-04-17 15:04:40,831 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-17 15:04:41,148 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 301ms. Found 12 JPA repository interfaces.
+2023-04-17 15:04:42,889 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2023-04-17 15:04:43,146 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3924 ms
+2023-04-17 15:04:45,813 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-17 15:04:47,331 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-17 15:04:48,189 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2023-04-17 15:04:48,909 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2023-04-17 15:04:48,933 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
 
-======== START CustomerController.doChangePassword
-2023-01-28 13:36:11,688 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-2] ======== START CustomerServiceImpl.changeCustomerPassword() with request : {"customerId":26,"oldPassword":"1","newPassword":"2","confirmNewPassword":"2"}
-2023-01-28 13:36:11,783 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-2] ======== COMPLETED CustomerController.doChangePassword
-2023-01-28 13:38:00,882 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-4] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:38:00,884 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-4] 
+>>>> Starting Jobs.... 
 
-======== START CustomerController.doChangePassword
-2023-01-28 13:38:00,884 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-4] ======== START CustomerServiceImpl.changeCustomerPassword() with request : {"customerId":35,"oldPassword":"1","newPassword":"2","confirmNewPassword":"2"}
-2023-01-28 13:38:00,887 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-4] ======== CustomerServiceImpl.performCustomerInquiry() - Customer not found
-2023-01-28 13:38:00,887 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-4] ======== COMPLETED CustomerController.doChangePassword
-2023-01-28 13:38:24,225 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-7] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:38:24,226 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-7] 
 
-======== START CustomerController.doChangePassword
-2023-01-28 13:38:24,227 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-7] ======== START CustomerServiceImpl.changeCustomerPassword() with request : {"customerId":35,"oldPassword":"1","newPassword":"2","confirmNewPassword":"2"}
-2023-01-28 13:38:24,495 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-7] ======== CustomerServiceImpl.changeCustomerPassword() - Update Password success
-2023-01-28 13:38:24,496 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-7] ======== COMPLETED CustomerController.doChangePassword
-2023-01-28 13:38:40,447 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-1] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:38:40,448 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-1] 
+2023-04-17 15:04:49,183 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2023-04-17 15:04:49,183 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2023-04-17 15:04:49,183 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2023-04-17 15:04:49,184 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2023-04-17 15:04:49,255 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b897456, org.springframework.security.web.context.SecurityContextPersistenceFilter@571b4bf6, org.springframework.security.web.header.HeaderWriterFilter@2f08e6d3, org.springframework.security.web.authentication.logout.LogoutFilter@48064a5a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@308d8de8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a904e64, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68e6856c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4dcc0e3d, org.springframework.security.web.session.SessionManagementFilter@771b2b5b, org.springframework.security.web.access.ExceptionTranslationFilter@5dfd4fac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@421c057a]
+2023-04-17 15:04:50,420 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2023-04-17 15:04:50,430 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2023-04-17 15:04:50,496 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2023-04-17 15:04:50,501 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 12.187 seconds (JVM running for 13.106)
+2023-04-17 15:04:50,505 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2023-04-17 15:04:51,673 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDQtMTcgMTU6MDQ6NDgiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2ODE3MTg2ODh9.TQb0T-E79jXvu2cQ9QBcKvRyyd6ezknPSOCkdxbtgys, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
+2023-04-17 15:05:42,360 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Initializing Servlet 'dispatcherServlet'
+2023-04-17 15:05:42,379 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Completed initialization in 18 ms
+2023-04-17 15:05:42,696 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-2] 
 
-======== START CustomerController.doChangePassword
-2023-01-28 13:38:40,448 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-1] ======== START CustomerServiceImpl.changeCustomerPassword() with request : {"customerId":35,"oldPassword":"2","newPassword":"1","confirmNewPassword":"1"}
-2023-01-28 13:38:40,675 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-1] ======== CustomerServiceImpl.changeCustomerPassword() - Update Password success
-2023-01-28 13:38:40,675 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-1] ======== COMPLETED CustomerController.doChangePassword
-2023-01-28 13:38:42,826 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-3] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:38:42,827 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-3] 
+======== START PaymentController.doEwalletTransactionStatus for external ID : operator20230417075416272Z
+2023-04-17 15:05:42,696 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-2] ======== REQUEST PaymentServiceImpl.getXenditTrxStatus() external ID : operator20230417075416272Z
+2023-04-17 15:05:43,817 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-2] 400 Bad Request: [{"error_code":"API_VALIDATION_ERROR","message":"charge_request_id format does not match ewc_UUIDV4 : operator20230417075416272Z."}
+]
+org.springframework.web.client.HttpClientErrorException$BadRequest: 400 Bad Request: [{"error_code":"API_VALIDATION_ERROR","message":"charge_request_id format does not match ewc_UUIDV4 : operator20230417075416272Z."}
+]
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:101)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:170)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:112)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:782)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:740)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:674)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:583)
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.getNewXenditTrxStatus(PaymentServiceImpl.java:618)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doEwalletTransactionStatus(PaymentController.java:212)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-17 15:05:43,819 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-2] ======== COMPLETED PaymentController.doEwalletTransactionStatus - OVO with response : TrxStatusDTOResponse(amount=null, businessId=null, ewalletType=null, externalId=null, status=null, transactionDate=null, paymentTimestamp=null, expirationDate=null, checkoutUrl=null, reason=null)
+2023-04-17 15:06:16,327 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] 
 
-======== START CustomerController.doChangePassword
-2023-01-28 13:38:42,827 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-3] ======== START CustomerServiceImpl.changeCustomerPassword() with request : {"customerId":35,"oldPassword":"2","newPassword":"1","confirmNewPassword":"1"}
-2023-01-28 13:38:42,926 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-3] ======== COMPLETED CustomerController.doChangePassword
-2023-01-28 13:39:59,899 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-6] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:39:59,902 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-6] 
+======== START PaymentController.doEwalletTransactionStatus for external ID : operator20230417075416272Z
+2023-04-17 15:06:16,328 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== REQUEST PaymentServiceImpl.getXenditTrxStatus() external ID : operator20230417075416272Z
+2023-04-17 15:21:26,379 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 13008 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2023-04-17 15:21:26,384 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2023-04-17 15:21:26,385 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2023-04-17 15:21:28,034 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-17 15:21:28,404 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 350ms. Found 12 JPA repository interfaces.
+2023-04-17 15:21:30,369 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2023-04-17 15:21:30,583 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 4109 ms
+2023-04-17 15:21:33,079 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-17 15:21:34,667 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-17 15:21:35,352 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2023-04-17 15:21:36,018 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2023-04-17 15:21:36,040 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
 
-======== START CustomerController.doExecForgotPassword
-2023-01-28 13:39:59,903 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-6] ======== START CustomerServiceImpl.executeForgotPassword() with request : {"phoneNo":"081248666660","newPassword":"1","confirmNewPassword":"1"}
-2023-01-28 13:40:00,024 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-6] ======== CustomerServiceImpl.executeForgotPassword() - Update Password success
-2023-01-28 13:40:00,024 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-6] ======== COMPLETED CustomerController.doExecForgotPassword
-2023-01-28 13:40:05,623 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-10] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:40:05,624 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-10] 
+>>>> Starting Jobs.... 
 
-======== START CustomerController.doExecForgotPassword
-2023-01-28 13:40:05,624 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-10] ======== START CustomerServiceImpl.executeForgotPassword() with request : {"phoneNo":"081248666660","newPassword":"1","confirmNewPassword":"1"}
-2023-01-28 13:40:05,720 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-10] ======== CustomerServiceImpl.executeForgotPassword() - Update Password success
-2023-01-28 13:40:05,721 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-10] ======== COMPLETED CustomerController.doExecForgotPassword
-2023-01-28 13:40:06,390 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-9] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:40:06,391 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-9] 
 
-======== START CustomerController.doExecForgotPassword
-2023-01-28 13:40:06,392 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-9] ======== START CustomerServiceImpl.executeForgotPassword() with request : {"phoneNo":"081248666660","newPassword":"1","confirmNewPassword":"1"}
-2023-01-28 13:40:06,488 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-9] ======== CustomerServiceImpl.executeForgotPassword() - Update Password success
-2023-01-28 13:40:06,488 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-9] ======== COMPLETED CustomerController.doExecForgotPassword
-2023-01-28 13:40:15,030 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-2] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:40:15,031 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-2] 
+2023-04-17 15:21:36,281 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2023-04-17 15:21:36,281 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2023-04-17 15:21:36,281 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2023-04-17 15:21:36,281 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2023-04-17 15:21:36,340 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@665e18d5, org.springframework.security.web.context.SecurityContextPersistenceFilter@6bf2ecbb, org.springframework.security.web.header.HeaderWriterFilter@c2ddfeb, org.springframework.security.web.authentication.logout.LogoutFilter@3aec2f59, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@8e100e7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5955568, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37aec9b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4795876e, org.springframework.security.web.session.SessionManagementFilter@74ec4df3, org.springframework.security.web.access.ExceptionTranslationFilter@189f9f9f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@c6a1be2]
+2023-04-17 15:21:37,532 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2023-04-17 15:21:37,544 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2023-04-17 15:21:37,598 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2023-04-17 15:21:37,602 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 12.057 seconds (JVM running for 12.964)
+2023-04-17 15:21:37,604 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2023-04-17 15:21:39,047 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDQtMTcgMTU6MjE6MzYiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2ODE3MTk2OTZ9.DkCo2LgT4MZU7pZdXoYK3g4YUe1Pca5o71H1vVWOPuo, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
+2023-04-17 15:22:02,348 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Initializing Servlet 'dispatcherServlet'
+2023-04-17 15:22:02,362 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Completed initialization in 13 ms
+2023-04-17 15:22:02,629 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-2] 
 
-======== START CustomerController.doExecForgotPassword
-2023-01-28 13:40:15,032 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-2] ======== START CustomerServiceImpl.executeForgotPassword() with request : {"phoneNo":"081248666660","newPassword":"1","confirmNewPassword":"1"}
-2023-01-28 13:40:15,033 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-2] ======== COMPLETED CustomerController.doExecForgotPassword
-2023-01-28 13:40:24,751 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-5] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:40:24,752 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-5] 
+======== START PaymentController.doEwalletTransactionStatus for external ID : operator20230417075416272Z
+2023-04-17 15:22:02,629 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-2] ======== REQUEST PaymentServiceImpl.getXenditTrxStatus() external ID : operator20230417075416272Z
+2023-04-17 15:22:12,324 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-2] 400 Bad Request: [{"error_code":"API_VALIDATION_ERROR","message":"charge_request_id format does not match ewc_UUIDV4 : operator20230417075416272Z."}
+]
+org.springframework.web.client.HttpClientErrorException$BadRequest: 400 Bad Request: [{"error_code":"API_VALIDATION_ERROR","message":"charge_request_id format does not match ewc_UUIDV4 : operator20230417075416272Z."}
+]
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:101)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:170)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:112)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:782)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:740)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:674)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:583)
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.getNewXenditTrxStatus(PaymentServiceImpl.java:619)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doEwalletTransactionStatus(PaymentController.java:212)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-17 15:22:12,325 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-2] ======== COMPLETED PaymentController.doEwalletTransactionStatus - OVO with response : TrxStatusDTOResponse(amount=null, businessId=null, ewalletType=null, externalId=null, status=null, transactionDate=null, paymentTimestamp=null, expirationDate=null, checkoutUrl=null, reason=null)
+2023-04-17 15:23:34,112 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-4] 
 
-======== START CustomerController.doExecForgotPassword
-2023-01-28 13:40:24,752 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-5] ======== START CustomerServiceImpl.executeForgotPassword() with request : {"phoneNo":"081248666660","newPassword":"1","confirmNewPassword":"1"}
-2023-01-28 13:40:24,855 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-5] ======== CustomerServiceImpl.executeForgotPassword() - Update Password success
-2023-01-28 13:40:24,855 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-5] ======== COMPLETED CustomerController.doExecForgotPassword
-2023-01-28 13:40:37,279 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-4] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:40:37,282 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-4] 
+======== START PaymentController.doEwalletTransactionStatus for external ID : ewc_7668c89a-44f7-4813-8e0f-b3137f0cc781
+2023-04-17 15:23:34,113 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== REQUEST PaymentServiceImpl.getXenditTrxStatus() external ID : ewc_7668c89a-44f7-4813-8e0f-b3137f0cc781
+2023-04-17 15:23:39,933 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-4] ======== COMPLETED PaymentController.doEwalletTransactionStatus - OVO with response : TrxStatusDTOResponse(amount=100, businessId=5ee8bc676923a51923ce8524, ewalletType=ID_DANA, externalId=operator20230417075416272Z, status=PENDING, transactionDate=2023-04-17T07:54:17.046599Z, paymentTimestamp=2023-04-17T07:54:17.046599Z, expirationDate=null, checkoutUrl=null, reason=https://api.xendit.co/ewallets/charges/ewc_7668c89a-44f7-4813-8e0f-b3137f0cc781)
+2023-04-17 15:31:15,456 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 7368 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2023-04-17 15:31:15,460 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2023-04-17 15:31:15,461 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2023-04-17 15:31:17,144 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-17 15:31:17,425 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 266ms. Found 12 JPA repository interfaces.
+2023-04-17 15:31:19,592 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2023-04-17 15:31:19,772 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 4233 ms
+2023-04-17 15:31:22,173 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-17 15:31:23,431 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-17 15:31:24,117 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2023-04-17 15:31:24,825 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2023-04-17 15:31:24,846 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
 
-======== START CustomerController.doInquiryByID
-2023-01-28 13:40:37,283 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-4] ======== START CustomerServiceImpl.performCustomerInquiry() with cust ID : 35
-2023-01-28 13:40:37,289 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-4] ======== CustomerServiceImpl.performCustomerInquiry() - Customer found :{"success":true,"resultCode":"200","resultMsg":"Successfully retrievd customer data","customerId":35,"firstName":"Riyad","lastName":"Kurniawan","gender":"M","dob":"1997-04-24","mobileNo":"081248666660","email":"wangusung46@gmail.com","address":"Jakarta","isActive":"Y","isLoggedIn":null}
-2023-01-28 13:40:37,289 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-4] ======== COMPLETED CustomerController.doInquiryByID
-2023-01-28 13:40:46,222 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-7] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:40:46,223 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-7] 
+>>>> Starting Jobs.... 
 
-======== START CustomerController.doInquiryByID
-2023-01-28 13:40:46,224 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-7] ======== START CustomerServiceImpl.performCustomerInquiry() with cust ID : 35
-2023-01-28 13:40:46,232 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-7] ======== CustomerServiceImpl.performCustomerInquiry() - Customer not found
-2023-01-28 13:40:46,232 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-7] ======== COMPLETED CustomerController.doInquiryByID
-2023-01-28 13:40:59,486 INFO com.heiya.mobileapi.util.RemoteClientLogger [http-nio-8083-exec-1] >>>> API Request from IP Address : 0:0:0:0:0:0:0:1
-2023-01-28 13:40:59,488 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-1] 
 
-======== START CustomerController.doInquiryByPhone
-2023-01-28 13:40:59,488 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-1] ======== START CustomerServiceImpl.performCustomerInquiryByPhone() with Phone Number : 081248666660
-2023-01-28 13:40:59,490 INFO com.heiya.mobileapi.customer.service.CustomerServiceImpl [http-nio-8083-exec-1] ======== CustomerServiceImpl.performCustomerInquiryByPhone() - Customer not actived
-2023-01-28 13:40:59,490 INFO com.heiya.mobileapi.customer.controller.CustomerController [http-nio-8083-exec-1] ======== COMPLETED CustomerController.doInquiryByPhone
+2023-04-17 15:31:25,078 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2023-04-17 15:31:25,079 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2023-04-17 15:31:25,079 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2023-04-17 15:31:25,079 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2023-04-17 15:31:25,151 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@62d4dac4, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e08ed28, org.springframework.security.web.header.HeaderWriterFilter@6012bee8, org.springframework.security.web.authentication.logout.LogoutFilter@53b60595, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1d0f03f6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34d6e9a4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@738ed8d3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@11efa76e, org.springframework.security.web.session.SessionManagementFilter@78fd1179, org.springframework.security.web.access.ExceptionTranslationFilter@18a349cb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58df431e]
+2023-04-17 15:31:26,408 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2023-04-17 15:31:26,420 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2023-04-17 15:31:26,485 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2023-04-17 15:31:26,489 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 11.87 seconds (JVM running for 12.894)
+2023-04-17 15:31:26,493 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2023-04-17 15:31:27,673 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDQtMTcgMTU6MzE6MjQiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2ODE3MjAyODR9.MtqwIgzdKtlXKHKAyIUUXMK1924_K3ESl-O7UpIcYeg, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
+2023-04-17 15:32:00,348 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-04-17 15:32:00,362 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Completed initialization in 14 ms
+2023-04-17 15:32:00,654 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] 
+
+======== START PaymentController.doEwalletTransactionStatus for external ID : operator20230417075416272Z
+2023-04-17 15:32:00,655 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== REQUEST PaymentServiceImpl.getXenditTrxStatus() external ID : operator20230417075416272Z
+2023-04-17 15:32:00,782 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] null
+java.lang.NullPointerException: null
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.getNewXenditTrxStatus(PaymentServiceImpl.java:610)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doEwalletTransactionStatus(PaymentController.java:212)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-17 15:32:00,783 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] ======== COMPLETED PaymentController.doEwalletTransactionStatus - OVO with response : TrxStatusDTOResponse(amount=null, businessId=null, ewalletType=null, externalId=null, status=null, transactionDate=null, paymentTimestamp=null, expirationDate=null, checkoutUrl=null, reason=null)
+2023-04-17 15:33:11,469 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-3] 
+
+======== START PaymentController.doEwalletTransactionStatus for external ID : operator20230417075416272Z
+2023-04-17 15:33:11,469 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-3] ======== REQUEST PaymentServiceImpl.getXenditTrxStatus() external ID : operator20230417075416272Z
+2023-04-17 15:33:11,589 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-3] null
+java.lang.NullPointerException: null
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.getNewXenditTrxStatus(PaymentServiceImpl.java:610)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doEwalletTransactionStatus(PaymentController.java:212)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-17 15:33:11,590 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-3] ======== COMPLETED PaymentController.doEwalletTransactionStatus - OVO with response : TrxStatusDTOResponse(amount=null, businessId=null, ewalletType=null, externalId=null, status=null, transactionDate=null, paymentTimestamp=null, expirationDate=null, checkoutUrl=null, reason=null)
+2023-04-17 15:33:20,095 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-6] 
+
+======== START PaymentController.doEwalletTransactionStatus for external ID : operator20230417075416272Z
+2023-04-17 15:33:20,096 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-6] ======== REQUEST PaymentServiceImpl.getXenditTrxStatus() external ID : operator20230417075416272Z
+2023-04-17 15:33:45,757 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-6] null
+java.lang.NullPointerException: null
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.getNewXenditTrxStatus(PaymentServiceImpl.java:610)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doEwalletTransactionStatus(PaymentController.java:212)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-17 15:33:45,800 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-6] ======== COMPLETED PaymentController.doEwalletTransactionStatus - OVO with response : TrxStatusDTOResponse(amount=null, businessId=null, ewalletType=null, externalId=null, status=null, transactionDate=null, paymentTimestamp=null, expirationDate=null, checkoutUrl=null, reason=null)
+2023-04-17 15:34:06,645 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-7] 
+
+======== START PaymentController.doEwalletTransactionStatus for external ID : operator20230417075416272Z
+2023-04-17 15:34:06,646 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-7] ======== REQUEST PaymentServiceImpl.getXenditTrxStatus() external ID : operator20230417075416272Z
+2023-04-17 15:34:18,437 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-7] null
+java.lang.NullPointerException: null
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.getNewXenditTrxStatus(PaymentServiceImpl.java:610)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doEwalletTransactionStatus(PaymentController.java:212)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-17 15:34:18,439 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-7] ======== COMPLETED PaymentController.doEwalletTransactionStatus - OVO with response : TrxStatusDTOResponse(amount=null, businessId=null, ewalletType=null, externalId=null, status=null, transactionDate=null, paymentTimestamp=null, expirationDate=null, checkoutUrl=null, reason=null)
+2023-04-17 15:34:20,656 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-10] 
+
+======== START PaymentController.doEwalletTransactionStatus for external ID : operator20230417075416272Z
+2023-04-17 15:34:20,657 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-10] ======== REQUEST PaymentServiceImpl.getXenditTrxStatus() external ID : operator20230417075416272Z
+2023-04-17 15:34:37,989 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-10] null
+java.lang.NullPointerException: null
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.getNewXenditTrxStatus(PaymentServiceImpl.java:610)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doEwalletTransactionStatus(PaymentController.java:212)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-17 15:34:37,991 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-10] ======== COMPLETED PaymentController.doEwalletTransactionStatus - OVO with response : TrxStatusDTOResponse(amount=null, businessId=null, ewalletType=null, externalId=null, status=null, transactionDate=null, paymentTimestamp=null, expirationDate=null, checkoutUrl=null, reason=null)
+2023-04-17 15:37:06,799 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-5] 
+
+======== START PaymentController.doEwalletTransactionStatus for external ID : operator20230416041827667Z
+2023-04-17 15:37:06,800 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-5] ======== REQUEST PaymentServiceImpl.getXenditTrxStatus() external ID : operator20230416041827667Z
+2023-04-17 15:37:18,229 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-5] ======== COMPLETED PaymentController.doEwalletTransactionStatus - OVO with response : TrxStatusDTOResponse(amount=100, businessId=5ee8bc676923a51923ce8524, ewalletType=ID_DANA, externalId=operator20230416041827667Z, status=FAILED, transactionDate=2023-04-16T04:18:27.927275Z, paymentTimestamp=2023-04-16T04:18:27.927275Z, expirationDate=null, checkoutUrl=null, reason=Failed: Payment is not completed on the eWallet. Please try again.)
+2023-04-17 15:39:43,845 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 1028 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2023-04-17 15:39:43,848 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2023-04-17 15:39:43,849 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2023-04-17 15:39:45,237 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-17 15:39:45,515 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 261ms. Found 12 JPA repository interfaces.
+2023-04-17 15:39:47,246 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2023-04-17 15:39:47,504 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3558 ms
+2023-04-17 15:39:49,873 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-17 15:39:51,113 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-17 15:39:51,829 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2023-04-17 15:39:52,533 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2023-04-17 15:39:52,555 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2023-04-17 15:39:52,787 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2023-04-17 15:39:52,787 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2023-04-17 15:39:52,787 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2023-04-17 15:39:52,788 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2023-04-17 15:39:52,849 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@318f47f1, org.springframework.security.web.context.SecurityContextPersistenceFilter@7a8e35d1, org.springframework.security.web.header.HeaderWriterFilter@65384249, org.springframework.security.web.authentication.logout.LogoutFilter@49318c2a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@283595db, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1aade3c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6dd59886, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@900ffc4, org.springframework.security.web.session.SessionManagementFilter@17e31657, org.springframework.security.web.access.ExceptionTranslationFilter@e196238, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@73bb782d]
+2023-04-17 15:39:54,044 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2023-04-17 15:39:54,057 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2023-04-17 15:39:54,112 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2023-04-17 15:39:54,116 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 11.752 seconds (JVM running for 12.652)
+2023-04-17 15:39:54,119 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2023-04-17 15:39:55,254 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDQtMTcgMTU6Mzk6NTIiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2ODE3MjA3OTJ9.IhQ15p4wSupzS-ePlB0-izXY_TfNeBjJHZrXNfWiHFs, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
+2023-04-17 15:40:24,434 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-04-17 15:40:24,452 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Completed initialization in 17 ms
+2023-04-17 15:40:24,758 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] 
+
+======== START PaymentController.doEwalletTransactionStatus for external ID : operator20230416041827667Z
+2023-04-17 15:40:24,759 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== REQUEST PaymentServiceImpl.getXenditTrxStatus() external ID : operator20230416041827667Z
+2023-04-17 15:40:26,054 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] ======== COMPLETED PaymentController.doEwalletTransactionStatus - XENDIT with response : TrxStatusDTOResponse(amount=100, businessId=5ee8bc676923a51923ce8524, ewalletType=ID_DANA, externalId=operator20230416041827667Z, status=FAILED, transactionDate=2023-04-16T04:18:27.927275Z, paymentTimestamp=2023-04-16T04:18:27.927275Z, expirationDate=null, checkoutUrl=null, reason=Failed: Payment is not completed on the eWallet. Please try again.)

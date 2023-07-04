@@ -381,6 +381,12 @@ public class CustomerServiceImpl implements CustomerService {
         BaseResponse response = new BaseResponse();
         try {
             LOGGER.info("======== START CustomerServiceImpl.requestForgotPassword() for phone no: " + phoneNo);
+            if (phoneNo.startsWith("62")) {
+                phoneNo = phoneNo.replace("62", "0");
+            }
+            if (phoneNo.startsWith("+62")) {
+                phoneNo = phoneNo.replace("+62", "0");
+            }
             Customer customer = customerRepo.findByMobileNo(phoneNo);
             if (customer != null) {
                 if ("Y".equals(customer.getIsActive())) {
@@ -393,12 +399,7 @@ public class CustomerServiceImpl implements CustomerService {
                         response.setResultMsg("Mobile no you entered is invalid. Should be number only (10-15 characters)");
                         return response;
                     }
-                    if (phoneNo.startsWith("62")) {
-                        phoneNo = phoneNo.replace("62", "0");
-                    }
-                    if (phoneNo.startsWith("+62")) {
-                        phoneNo = phoneNo.replace("+62", "0");
-                    }
+
                     //Start sending SMS OTP
                     if (phoneNo.startsWith("0")) {
                         phoneNo = "62".concat(phoneNo.substring(1));

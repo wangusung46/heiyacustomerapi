@@ -1,0 +1,1118 @@
+2023-04-12 11:04:09,885 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 13524 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2023-04-12 11:04:09,900 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2023-04-12 11:04:09,901 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2023-04-12 11:04:12,953 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-12 11:04:13,514 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 527ms. Found 12 JPA repository interfaces.
+2023-04-12 11:04:17,095 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2023-04-12 11:04:17,409 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 7282 ms
+2023-04-12 11:04:22,915 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-12 11:04:26,117 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-12 11:04:29,102 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2023-04-12 11:04:31,796 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2023-04-12 11:04:31,833 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2023-04-12 11:04:32,617 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2023-04-12 11:04:32,618 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2023-04-12 11:04:32,618 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2023-04-12 11:04:32,618 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2023-04-12 11:04:33,164 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@611ffa8d, org.springframework.security.web.context.SecurityContextPersistenceFilter@22b2d9e3, org.springframework.security.web.header.HeaderWriterFilter@29897daf, org.springframework.security.web.authentication.logout.LogoutFilter@24244ea, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@498cf1dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43600de0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@593db293, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@45f32b12, org.springframework.security.web.session.SessionManagementFilter@2dedde74, org.springframework.security.web.access.ExceptionTranslationFilter@2c9af700, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@69e58566]
+2023-04-12 11:04:37,127 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2023-04-12 11:04:37,215 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2023-04-12 11:04:37,280 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2023-04-12 11:04:37,361 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 30.427 seconds (JVM running for 32.401)
+2023-04-12 11:04:37,364 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2023-04-12 11:04:40,200 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDQtMTIgMTE6MDQ6MzkiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2ODEyNzIyNzl9.YmUkqR-81Fl2ygHOQmvCmY-ToADiGJZnXNL3H8FeBvo, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
+2023-04-12 11:04:42,981 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 11:04:42,986 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230411151517125Z","customerName":"Riyad Kurniawan"}
+2023-04-12 11:04:43,122 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 12, 2023 10:18:00 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 11:04:43,758 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 11:04:43,758 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 11:04:43,758 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 11:04:43,759 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230411151517125Z","customerName":"Riyad Kurniawan"}
+2023-04-12 11:04:43,882 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 12, 2023 10:18:00 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 11:04:44,174 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 11:04:44,174 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 11:04:44,174 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 11:04:44,175 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230411151517125Z","customerName":"Riyad Kurniawan"}
+2023-04-12 11:04:44,340 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 12, 2023 10:18:00 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 11:04:44,620 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 11:04:44,620 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 11:04:44,620 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 11:04:44,620 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230411151517125Z","customerName":"Riyad Kurniawan"}
+2023-04-12 11:04:44,791 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 12, 2023 10:18:00 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 11:04:45,068 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 11:04:45,068 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 16:17:19,758 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 8808 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2023-04-12 16:17:19,763 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2023-04-12 16:17:19,764 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2023-04-12 16:17:22,778 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-12 16:17:23,386 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 575ms. Found 12 JPA repository interfaces.
+2023-04-12 16:17:26,082 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2023-04-12 16:17:26,370 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 6483 ms
+2023-04-12 16:17:31,306 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-12 16:17:33,609 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-12 16:17:34,896 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2023-04-12 16:17:35,875 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2023-04-12 16:17:35,899 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2023-04-12 16:17:36,191 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2023-04-12 16:17:36,191 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2023-04-12 16:17:36,192 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2023-04-12 16:17:36,192 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2023-04-12 16:17:36,327 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@154cbb46, org.springframework.security.web.context.SecurityContextPersistenceFilter@25dacc5a, org.springframework.security.web.header.HeaderWriterFilter@4791d904, org.springframework.security.web.authentication.logout.LogoutFilter@4fd70118, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7cd2d3b6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@273e622f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56afbace, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58fbecde, org.springframework.security.web.session.SessionManagementFilter@292b7a02, org.springframework.security.web.access.ExceptionTranslationFilter@5a8149f6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5dfc7b3f]
+2023-04-12 16:17:38,429 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2023-04-12 16:17:38,442 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2023-04-12 16:17:38,592 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2023-04-12 16:17:38,614 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 20.12 seconds (JVM running for 21.568)
+2023-04-12 16:17:38,662 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2023-04-12 16:17:41,101 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDQtMTIgMTY6MTc6MzgiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2ODEyOTEwNTh9.RINvHnNZ7D-0s1_KC7sl-3e83QoE1lhR92dIbMT7N6Q, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
+2023-04-12 16:40:09,714 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 14380 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2023-04-12 16:40:09,724 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2023-04-12 16:40:09,725 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2023-04-12 16:40:12,101 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-12 16:40:12,434 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 318ms. Found 12 JPA repository interfaces.
+2023-04-12 16:40:14,086 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2023-04-12 16:40:14,323 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 4457 ms
+2023-04-12 16:40:17,354 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-12 16:40:18,852 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-12 16:40:19,733 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2023-04-12 16:40:20,570 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2023-04-12 16:40:20,594 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2023-04-12 16:40:20,819 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2023-04-12 16:40:20,820 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2023-04-12 16:40:20,821 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2023-04-12 16:40:20,821 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2023-04-12 16:40:20,904 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@74fd5fb0, org.springframework.security.web.context.SecurityContextPersistenceFilter@13f358f8, org.springframework.security.web.header.HeaderWriterFilter@568cbf8d, org.springframework.security.web.authentication.logout.LogoutFilter@2b0d6bf2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@235b4aea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64dcfd09, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d18401b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c16cc25, org.springframework.security.web.session.SessionManagementFilter@3aec2f59, org.springframework.security.web.access.ExceptionTranslationFilter@6eeb15f9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@571b4bf6]
+2023-04-12 16:40:22,668 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2023-04-12 16:40:22,684 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2023-04-12 16:40:22,763 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2023-04-12 16:40:22,768 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 14.061 seconds (JVM running for 14.941)
+2023-04-12 16:40:22,770 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2023-04-12 16:40:24,348 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDQtMTIgMTY6NDA6MjIiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2ODEyOTI0MjJ9.W8jZOtvebtqvvDL6VrUN39pwJHV8WnaXp7ri7uXKJNM, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
+2023-04-12 16:41:42,296 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-04-12 16:41:42,313 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Completed initialization in 16 ms
+2023-04-12 16:41:43,039 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 16:41:43,040 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 16:41:43,068 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator2023041209414349Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:41:44,329 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - XenditResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_ca7b5a54-eb7e-442a-866f-56f506fe98da","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator2023041209414349Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T09:41:41.73977Z","updated":"2023-04-12T09:41:41.73977Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:41:44,330 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-1] ======== START ProductServiceImpl.getProductDiscount()
+2023-04-12 16:41:44,338 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-1] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2023-04-12 16:41:44,420 DEBUG com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - BaseHWResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_ca7b5a54-eb7e-442a-866f-56f506fe98da","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator2023041209414349Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T09:41:41.73977Z","updated":"2023-04-12T09:41:41.73977Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:41:44,421 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 16:43:45,701 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-5] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 16:43:45,701 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-5] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 16:43:45,703 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-5] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230412094345703Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:43:46,180 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-5] 401 Unauthorized: [no body]
+org.springframework.web.client.HttpClientErrorException$Unauthorized: 401 Unauthorized: [no body]
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:105)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:170)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:112)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:782)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:740)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:674)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:583)
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.chargeXenditPayment(PaymentServiceImpl.java:513)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doChargesEwalletPayment(PaymentController.java:139)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-12 16:43:46,181 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-5] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 16:43:54,317 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-2] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 16:43:54,321 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-2] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator2023041209414349Z","customerName":"Riyad Kurniawan"}
+2023-04-12 16:43:54,423 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-2] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 4:42:54 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 16:43:55,064 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-2] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 16:43:55,065 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-2] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 16:44:23,152 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-8] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 16:44:23,153 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-8] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 16:44:23,162 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-8] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230412094423162Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:44:46,814 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-8] 401 Unauthorized: [no body]
+org.springframework.web.client.HttpClientErrorException$Unauthorized: 401 Unauthorized: [no body]
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:105)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:170)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:112)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:782)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:740)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:674)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:583)
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.chargeXenditPayment(PaymentServiceImpl.java:513)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doChargesEwalletPayment(PaymentController.java:139)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-12 16:44:46,816 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-8] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 16:44:54,229 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 16:44:54,230 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator2023041209414349Z","customerName":"Riyad Kurniawan"}
+2023-04-12 16:44:54,337 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 4:42:54 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 16:44:54,624 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 16:44:54,625 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 16:45:11,375 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-9] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 16:45:11,376 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-9] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 16:45:11,382 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-9] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230412094511381Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:46:18,257 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-9] 401 Unauthorized: [no body]
+org.springframework.web.client.HttpClientErrorException$Unauthorized: 401 Unauthorized: [no body]
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:105)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:170)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:112)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:782)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:740)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:674)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:583)
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.chargeXenditPayment(PaymentServiceImpl.java:513)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doChargesEwalletPayment(PaymentController.java:139)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-12 16:46:18,258 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-9] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 16:52:32,490 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-2] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 16:52:32,491 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-2] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 16:52:32,492 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-2] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230412095232492Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:52:37,939 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-2] 401 Unauthorized: [no body]
+org.springframework.web.client.HttpClientErrorException$Unauthorized: 401 Unauthorized: [no body]
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:105)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:170)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:112)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:782)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:740)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:674)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:583)
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.chargeXenditPayment(PaymentServiceImpl.java:513)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doChargesEwalletPayment(PaymentController.java:139)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-12 16:52:37,939 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-2] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 16:53:13,775 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-6] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 16:53:13,775 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-6] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 16:53:13,777 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-6] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230412095313776Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:53:17,986 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-6] 401 Unauthorized: [no body]
+org.springframework.web.client.HttpClientErrorException$Unauthorized: 401 Unauthorized: [no body]
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:105)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:170)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:112)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:782)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:740)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:674)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:583)
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.chargeXenditPayment(PaymentServiceImpl.java:513)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doChargesEwalletPayment(PaymentController.java:139)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-12 16:53:17,987 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-6] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 16:54:07,400 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-7] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 16:54:07,400 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-7] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 16:54:07,419 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-7] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230412095407401Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:54:13,729 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-7] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - XenditResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_046aac4e-a078-41ab-bda5-776a6a156366","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412095407401Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T09:54:11.06621Z","updated":"2023-04-12T09:54:11.06621Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:54:13,731 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-7] ======== START ProductServiceImpl.getProductDiscount()
+2023-04-12 16:54:13,735 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-7] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2023-04-12 16:54:13,758 DEBUG com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-7] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - BaseHWResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_046aac4e-a078-41ab-bda5-776a6a156366","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412095407401Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T09:54:11.06621Z","updated":"2023-04-12T09:54:11.06621Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:54:13,758 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-7] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 16:54:57,389 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-10] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 16:54:57,389 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-10] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 16:54:57,391 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-10] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230412095457391Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:55:08,957 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-10] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - XenditResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_b1eb11b9-4b7c-418a-93cc-a86e3467ce80","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412095457391Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T09:55:06.293087Z","updated":"2023-04-12T09:55:06.293087Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:55:08,957 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-10] ======== START ProductServiceImpl.getProductDiscount()
+2023-04-12 16:55:08,958 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-10] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2023-04-12 16:55:08,962 DEBUG com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-10] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - BaseHWResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_b1eb11b9-4b7c-418a-93cc-a86e3467ce80","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412095457391Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T09:55:06.293087Z","updated":"2023-04-12T09:55:06.293087Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 16:55:08,962 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-10] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 16:55:18,238 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 16:55:18,238 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412095407401Z","customerName":"Riyad Kurniawan"}
+2023-04-12 16:55:18,338 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 4:54:17 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 16:55:18,646 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 16:55:18,647 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 16:56:18,213 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 16:56:18,214 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412095407401Z","customerName":"Riyad Kurniawan"}
+2023-04-12 16:56:18,349 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 4:54:17 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 16:56:18,634 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 16:56:18,634 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:03:23,120 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 10932 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2023-04-12 17:03:23,125 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2023-04-12 17:03:23,126 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2023-04-12 17:03:25,866 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-12 17:03:26,512 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 624ms. Found 12 JPA repository interfaces.
+2023-04-12 17:03:28,667 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2023-04-12 17:03:28,952 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 5703 ms
+2023-04-12 17:03:31,527 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-12 17:03:32,801 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-12 17:03:33,555 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2023-04-12 17:03:34,288 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2023-04-12 17:03:34,310 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2023-04-12 17:03:34,490 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2023-04-12 17:03:34,490 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2023-04-12 17:03:34,491 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2023-04-12 17:03:34,491 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2023-04-12 17:03:34,545 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5b132063, org.springframework.security.web.context.SecurityContextPersistenceFilter@7375ebe7, org.springframework.security.web.header.HeaderWriterFilter@5984742f, org.springframework.security.web.authentication.logout.LogoutFilter@6bc1c8d0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@14ecd835, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@207358ad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4667c6d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b98c80c, org.springframework.security.web.session.SessionManagementFilter@6a9b8f33, org.springframework.security.web.access.ExceptionTranslationFilter@51a65f56, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@21252bef]
+2023-04-12 17:03:35,674 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2023-04-12 17:03:35,691 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2023-04-12 17:03:35,736 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2023-04-12 17:03:35,740 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 13.796 seconds (JVM running for 14.818)
+2023-04-12 17:03:35,744 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2023-04-12 17:03:36,924 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDQtMTIgMTc6MDM6MzQiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2ODEyOTM4MTR9.HI22jgxVTC0L5lE8vx8Jt3t_B-Cna_vU_Gt5NUjrD5w, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
+2023-04-12 17:03:37,731 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:03:37,738 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412095457391Z","customerName":"Riyad Kurniawan"}
+2023-04-12 17:03:37,907 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 4:59:59 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 17:03:38,485 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 17:03:38,485 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:03:38,486 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:03:38,486 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412095457391Z","customerName":"Riyad Kurniawan"}
+2023-04-12 17:03:38,591 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 4:59:59 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 17:03:38,875 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 17:03:38,875 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:03:38,875 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:03:38,875 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412095457391Z","customerName":"Riyad Kurniawan"}
+2023-04-12 17:03:38,971 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 4:59:59 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 17:03:39,250 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 17:03:39,250 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:03:39,250 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:03:39,251 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412095457391Z","customerName":"Riyad Kurniawan"}
+2023-04-12 17:03:39,371 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 4:59:59 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 17:03:39,654 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 17:03:39,655 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:04:03,674 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-04-12 17:04:03,687 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Completed initialization in 13 ms
+2023-04-12 17:04:04,089 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 17:04:04,090 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 17:04:04,109 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator2023041210040495Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:04:08,471 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - XenditResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_d714677f-ac98-41be-bbaf-3999ee727831","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator2023041210040495Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:04:05.717423Z","updated":"2023-04-12T10:04:05.717423Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:04:08,472 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-1] ======== START ProductServiceImpl.getProductDiscount()
+2023-04-12 17:04:08,476 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-1] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2023-04-12 17:04:08,502 DEBUG com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - BaseHWResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_d714677f-ac98-41be-bbaf-3999ee727831","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator2023041210040495Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:04:05.717423Z","updated":"2023-04-12T10:04:05.717423Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:04:08,502 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 17:05:51,843 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-4] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 17:05:51,843 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 17:05:51,846 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230412100551845Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:05:56,176 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - XenditResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_26ae5331-40e6-4339-96e1-473e41ca0ec3","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412100551845Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:05:53.417398Z","updated":"2023-04-12T10:05:53.417398Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:05:56,176 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-4] ======== START ProductServiceImpl.getProductDiscount()
+2023-04-12 17:05:56,179 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-4] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2023-04-12 17:05:56,184 DEBUG com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - BaseHWResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_26ae5331-40e6-4339-96e1-473e41ca0ec3","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412100551845Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:05:53.417398Z","updated":"2023-04-12T10:05:53.417398Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:05:56,184 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-4] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 17:33:36,759 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 17424 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2023-04-12 17:33:36,765 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2023-04-12 17:33:36,766 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2023-04-12 17:33:39,286 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-12 17:33:39,721 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 418ms. Found 12 JPA repository interfaces.
+2023-04-12 17:33:41,801 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2023-04-12 17:33:42,056 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 5195 ms
+2023-04-12 17:33:46,391 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-12 17:33:48,183 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-12 17:33:49,188 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2023-04-12 17:33:50,101 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2023-04-12 17:33:50,178 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2023-04-12 17:33:50,618 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2023-04-12 17:33:50,618 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2023-04-12 17:33:50,618 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2023-04-12 17:33:50,618 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2023-04-12 17:33:50,722 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79fbcef4, org.springframework.security.web.context.SecurityContextPersistenceFilter@76a1cc1a, org.springframework.security.web.header.HeaderWriterFilter@44f5259a, org.springframework.security.web.authentication.logout.LogoutFilter@74214ac3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@26c494d7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e763080, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a486851, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@770be0d0, org.springframework.security.web.session.SessionManagementFilter@1aade3c, org.springframework.security.web.access.ExceptionTranslationFilter@218c6d3e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10b36d8a]
+2023-04-12 17:33:53,108 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2023-04-12 17:33:53,157 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2023-04-12 17:33:53,287 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2023-04-12 17:33:53,291 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 17.548 seconds (JVM running for 18.802)
+2023-04-12 17:33:53,293 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2023-04-12 17:33:55,297 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDQtMTIgMTc6MzM6NTIiLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2ODEyOTU2MzJ9.vsGL-pwRqC2epK8RQUaON0OVqYB-T34pJ6-5nY95RE0, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
+2023-04-12 17:33:57,408 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:33:57,414 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412100551845Z","customerName":"Riyad Kurniawan"}
+2023-04-12 17:33:57,584 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:12:50 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 17:33:58,270 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 17:33:58,270 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:33:58,271 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:33:58,271 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412100551845Z","customerName":"Riyad Kurniawan"}
+2023-04-12 17:33:58,435 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:12:50 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 17:33:58,727 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 17:33:58,727 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:33:58,727 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:33:58,728 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412100551845Z","customerName":"Riyad Kurniawan"}
+2023-04-12 17:33:58,910 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:12:50 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 17:33:59,204 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 17:33:59,205 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:33:59,205 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:33:59,205 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412100551845Z","customerName":"Riyad Kurniawan"}
+2023-04-12 17:33:59,387 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:12:50 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 17:33:59,687 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 17:33:59,687 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:33:59,687 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:33:59,688 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412100551845Z","customerName":"Riyad Kurniawan"}
+2023-04-12 17:33:59,856 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:12:50 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 17:34:00,197 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 17:34:00,197 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:34:00,197 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:34:00,197 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412100551845Z","customerName":"Riyad Kurniawan"}
+2023-04-12 17:34:00,310 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:12:50 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 17:34:00,618 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 17:34:00,618 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:34:00,618 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:34:00,619 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412100551845Z","customerName":"Riyad Kurniawan"}
+2023-04-12 17:34:00,733 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:12:50 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 17:34:01,027 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 17:34:01,027 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:34:01,027 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:34:01,027 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator20230412100551845Z","customerName":"Riyad Kurniawan"}
+2023-04-12 17:34:01,128 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-1] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:12:50 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 17:34:01,397 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-1] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 17:34:01,398 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-1] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:37:01,113 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-9] Initializing Servlet 'dispatcherServlet'
+2023-04-12 17:37:01,127 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-9] Completed initialization in 14 ms
+2023-04-12 17:37:01,414 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-9] 
+
+======== START PaymentController.doXenditOvoCreatePayment
+2023-04-12 17:37:01,414 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-9] ======== START PaymentServiceImpl.createXenditEWalletPayment() with request : CreatePaymentDTORequest(externalId= , amount=1, phone=+6281248666660, ewalletType=OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 17:37:01,426 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-9] ======== REQUEST PaymentServiceImpl.createXenditEWalletPayment(): {"external_id":"operator20230412103701417Z","amount":1,"phone":"+6281248666660","ewallet_type":"OVO","goodsId":18,"tasteId":2,"goodsProtocol":30,"productName":"Espresso Matcha","machineCode":"516101190000"}
+2023-04-12 17:37:02,522 ERROR com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-9] 410 Gone: [{"error_code":"SERVICE_DEPRECATED","message":"The service has been deprecated effectively."}]
+org.springframework.web.client.HttpClientErrorException$Gone: 410 Gone: [{"error_code":"SERVICE_DEPRECATED","message":"The service has been deprecated effectively."}]
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:129)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:170)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:112)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:782)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:740)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:674)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:583)
+	at com.heiya.mobileapi.payment.service.PaymentServiceImpl.createXenditOvoPayment(PaymentServiceImpl.java:206)
+	at com.heiya.mobileapi.payment.controller.PaymentController.doXenditOvoCreatePayment(PaymentController.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:204)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-12 17:37:02,523 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-9] ======== COMPLETED PaymentController.doXenditOvoCreatePayment
+2023-04-12 17:37:18,222 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-5] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 17:37:18,222 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-5] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 17:37:18,228 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-5] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230412103718224Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:37:23,153 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-5] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - XenditResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_b1eeb45b-fb57-4a76-83b5-ad82cc110b14","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412103718224Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:37:20.088008Z","updated":"2023-04-12T10:37:20.088008Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:37:23,153 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-5] ======== START ProductServiceImpl.getProductDiscount()
+2023-04-12 17:37:23,158 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-5] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2023-04-12 17:37:29,511 DEBUG com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-5] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - BaseHWResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_b1eeb45b-fb57-4a76-83b5-ad82cc110b14","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412103718224Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:37:20.088008Z","updated":"2023-04-12T10:37:20.088008Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:37:29,511 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-5] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 17:40:17,753 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-3] 
+
+======== START PaymentController.doProvideXenditCallback for : XenditGeneralCallbackDTORequest(xenditDataDTORequest=XenditDataDTORequest(id=ewc_95d47d3a-db03-4b4b-9b6c-71077157cbc8, businessId=null, referenceId=operator20230412103718224Z, status=SUCCEEDED, currency=IDR, chargeAmount=20000, captureAmount=20000, checkoutMethod=ONE_TIME_PAYMENT, channelCode=ID_OVO, channelProperties=XenditChannelProperties(successRedirectUrl=https://google.com, mobileNumber=null, failureRedirectUrl=null), phone=null, xenditActions=XenditActions(desktopWebCheckoutUrl=, mobileWebCheckoutUrl=, mobileDeeplinkCheckoutUrl=https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWwFfJaB-n_6eGjr1eAHnlwWEJDsEpIU_-8m0QS5Tb1nFp_ZEtGrgHWKV8LuV6rwVL2COCVw, qrCheckoutString=null), isRedirectRequired=true, callbackUrl=https://webhook.site/5eebb675-6102-453a-a81c-de95fb08bc77, created=2020-10-21T13:57:43.355897Z, updated=2020-10-21T13:57:43.730483Z, voidedAt=null, captureNow=true, customerId=null, paymentMethodId=null, failureCode=null, basket=null, metadata=XenditMetadata(branchArea=null, branchCity=null, branchCode=senayan_372)), event=ewallet.capture, created=2020-10-21T13:59:14.536400713Z, businessId=59e0daf7049b567510c63f67)
+2023-04-12 17:40:30,454 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-3] ======== START PaymentServiceImpl.callbackStatusByXendit() with request : {"data":{"id":"ewc_95d47d3a-db03-4b4b-9b6c-71077157cbc8","business_id":null,"reference_id":"operator20230412103718224Z","status":"SUCCEEDED","currency":"IDR","charge_amount":20000,"capture_amount":20000,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"https://google.com","mobile_number":null,"failure_redirect_url":null},"phone":null,"actions":{"desktop_web_checkout_url":"","mobile_web_checkout_url":"","mobile_deeplink_checkout_url":"https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWwFfJaB-n_6eGjr1eAHnlwWEJDsEpIU_-8m0QS5Tb1nFp_ZEtGrgHWKV8LuV6rwVL2COCVw","qr_checkout_string":null},"is_redirect_required":true,"callback_url":"https://webhook.site/5eebb675-6102-453a-a81c-de95fb08bc77","created":"2020-10-21T13:57:43.355897Z","updated":"2020-10-21T13:57:43.730483Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"senayan_372"}},"event":"ewallet.capture","created":"2020-10-21T13:59:14.536400713Z","business_id":"59e0daf7049b567510c63f67"}
+2023-04-12 17:40:42,100 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-3] ======== COMPLETED PaymentServiceImpl.callbackStatusByXendit()
+2023-04-12 17:41:13,899 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-2] 
+
+======== START PaymentController.doProvideXenditCallback for : XenditGeneralCallbackDTORequest(xenditDataDTORequest=XenditDataDTORequest(id=ewc_95d47d3a-db03-4b4b-9b6c-71077157cbc8, businessId=null, referenceId=operator20230412103718224Z, status=SUCCEEDED, currency=IDR, chargeAmount=20000, captureAmount=20000, checkoutMethod=ONE_TIME_PAYMENT, channelCode=ID_OVO, channelProperties=XenditChannelProperties(successRedirectUrl=https://google.com, mobileNumber=null, failureRedirectUrl=null), phone=null, xenditActions=XenditActions(desktopWebCheckoutUrl=, mobileWebCheckoutUrl=, mobileDeeplinkCheckoutUrl=https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWwFfJaB-n_6eGjr1eAHnlwWEJDsEpIU_-8m0QS5Tb1nFp_ZEtGrgHWKV8LuV6rwVL2COCVw, qrCheckoutString=null), isRedirectRequired=true, callbackUrl=https://webhook.site/5eebb675-6102-453a-a81c-de95fb08bc77, created=2020-10-21T13:57:43.355897Z, updated=2020-10-21T13:57:43.730483Z, voidedAt=null, captureNow=true, customerId=null, paymentMethodId=null, failureCode=null, basket=null, metadata=XenditMetadata(branchArea=null, branchCity=null, branchCode=senayan_372)), event=ewallet.capture, created=2020-10-21T13:59:14.536400713Z, businessId=59e0daf7049b567510c63f67)
+2023-04-12 17:41:17,252 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-2] ======== START PaymentServiceImpl.callbackStatusByXendit() with request : {"data":{"id":"ewc_95d47d3a-db03-4b4b-9b6c-71077157cbc8","business_id":null,"reference_id":"operator20230412103718224Z","status":"SUCCEEDED","currency":"IDR","charge_amount":20000,"capture_amount":20000,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"https://google.com","mobile_number":null,"failure_redirect_url":null},"phone":null,"actions":{"desktop_web_checkout_url":"","mobile_web_checkout_url":"","mobile_deeplink_checkout_url":"https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWwFfJaB-n_6eGjr1eAHnlwWEJDsEpIU_-8m0QS5Tb1nFp_ZEtGrgHWKV8LuV6rwVL2COCVw","qr_checkout_string":null},"is_redirect_required":true,"callback_url":"https://webhook.site/5eebb675-6102-453a-a81c-de95fb08bc77","created":"2020-10-21T13:57:43.355897Z","updated":"2020-10-21T13:57:43.730483Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"senayan_372"}},"event":"ewallet.capture","created":"2020-10-21T13:59:14.536400713Z","business_id":"59e0daf7049b567510c63f67"}
+2023-04-12 17:41:17,451 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-2] ======== COMPLETED PaymentServiceImpl.callbackStatusByXendit()
+2023-04-12 17:42:44,783 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 17:42:44,783 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 17:42:45,144 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230412104245143Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:42:50,382 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - XenditResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_c83fa990-2297-4aef-9504-49804889afee","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412104245143Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:42:47.288395Z","updated":"2023-04-12T10:42:47.288395Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:42:50,383 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-1] ======== START ProductServiceImpl.getProductDiscount()
+2023-04-12 17:42:50,385 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-1] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2023-04-12 17:42:53,948 DEBUG com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - BaseHWResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_c83fa990-2297-4aef-9504-49804889afee","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412104245143Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:42:47.288395Z","updated":"2023-04-12T10:42:47.288395Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:42:53,948 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 17:43:09,185 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-8] 
+
+======== START PaymentController.doProvideXenditCallback for : XenditGeneralCallbackDTORequest(xenditDataDTORequest=XenditDataDTORequest(id=ewc_95d47d3a-db03-4b4b-9b6c-71077157cbc8, businessId=null, referenceId=operator20230412104245143Z, status=SUCCEEDED, currency=IDR, chargeAmount=20000, captureAmount=20000, checkoutMethod=ONE_TIME_PAYMENT, channelCode=ID_OVO, channelProperties=XenditChannelProperties(successRedirectUrl=https://google.com, mobileNumber=null, failureRedirectUrl=null), phone=null, xenditActions=XenditActions(desktopWebCheckoutUrl=, mobileWebCheckoutUrl=, mobileDeeplinkCheckoutUrl=https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWwFfJaB-n_6eGjr1eAHnlwWEJDsEpIU_-8m0QS5Tb1nFp_ZEtGrgHWKV8LuV6rwVL2COCVw, qrCheckoutString=null), isRedirectRequired=true, callbackUrl=https://webhook.site/5eebb675-6102-453a-a81c-de95fb08bc77, created=2020-10-21T13:57:43.355897Z, updated=2020-10-21T13:57:43.730483Z, voidedAt=null, captureNow=true, customerId=null, paymentMethodId=null, failureCode=null, basket=null, metadata=XenditMetadata(branchArea=null, branchCity=null, branchCode=senayan_372)), event=ewallet.capture, created=2020-10-21T13:59:14.536400713Z, businessId=59e0daf7049b567510c63f67)
+2023-04-12 17:43:09,186 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-8] ======== START PaymentServiceImpl.callbackStatusByXendit() with request : {"data":{"id":"ewc_95d47d3a-db03-4b4b-9b6c-71077157cbc8","business_id":null,"reference_id":"operator20230412104245143Z","status":"SUCCEEDED","currency":"IDR","charge_amount":20000,"capture_amount":20000,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"https://google.com","mobile_number":null,"failure_redirect_url":null},"phone":null,"actions":{"desktop_web_checkout_url":"","mobile_web_checkout_url":"","mobile_deeplink_checkout_url":"https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWwFfJaB-n_6eGjr1eAHnlwWEJDsEpIU_-8m0QS5Tb1nFp_ZEtGrgHWKV8LuV6rwVL2COCVw","qr_checkout_string":null},"is_redirect_required":true,"callback_url":"https://webhook.site/5eebb675-6102-453a-a81c-de95fb08bc77","created":"2020-10-21T13:57:43.355897Z","updated":"2020-10-21T13:57:43.730483Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"senayan_372"}},"event":"ewallet.capture","created":"2020-10-21T13:59:14.536400713Z","business_id":"59e0daf7049b567510c63f67"}
+2023-04-12 17:43:09,293 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-8] ======== COMPLETED PaymentServiceImpl.callbackStatusByXendit()
+2023-04-12 17:43:09,295 ERROR com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-8] null
+java.lang.NullPointerException: null
+	at com.heiya.mobileapi.payment.controller.PaymentController.doProvideXenditCallback(PaymentController.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:209)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-12 17:43:36,868 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-10] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 17:43:36,869 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-10] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 17:43:36,870 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-10] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230412104336870Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:43:42,440 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-10] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - XenditResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_ffb7d498-3013-41e4-a6c7-ad4bb08eaea1","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412104336870Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:43:39.312734Z","updated":"2023-04-12T10:43:39.312734Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:43:42,440 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-10] ======== START ProductServiceImpl.getProductDiscount()
+2023-04-12 17:43:42,441 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-10] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2023-04-12 17:43:42,447 DEBUG com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-10] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - BaseHWResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_ffb7d498-3013-41e4-a6c7-ad4bb08eaea1","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412104336870Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:43:39.312734Z","updated":"2023-04-12T10:43:39.312734Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:43:42,447 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-10] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 17:43:54,689 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-4] 
+
+======== START PaymentController.doProvideXenditCallback for : XenditGeneralCallbackDTORequest(xenditDataDTORequest=XenditDataDTORequest(id=ewc_95d47d3a-db03-4b4b-9b6c-71077157cbc8, businessId=null, referenceId=operator20230412104336870Z, status=SUCCEEDED, currency=IDR, chargeAmount=20000, captureAmount=20000, checkoutMethod=ONE_TIME_PAYMENT, channelCode=ID_OVO, channelProperties=XenditChannelProperties(successRedirectUrl=https://google.com, mobileNumber=null, failureRedirectUrl=null), phone=null, xenditActions=XenditActions(desktopWebCheckoutUrl=, mobileWebCheckoutUrl=, mobileDeeplinkCheckoutUrl=https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWwFfJaB-n_6eGjr1eAHnlwWEJDsEpIU_-8m0QS5Tb1nFp_ZEtGrgHWKV8LuV6rwVL2COCVw, qrCheckoutString=null), isRedirectRequired=true, callbackUrl=https://webhook.site/5eebb675-6102-453a-a81c-de95fb08bc77, created=2020-10-21T13:57:43.355897Z, updated=2020-10-21T13:57:43.730483Z, voidedAt=null, captureNow=true, customerId=null, paymentMethodId=null, failureCode=null, basket=null, metadata=XenditMetadata(branchArea=null, branchCity=null, branchCode=senayan_372)), event=ewallet.capture, created=2020-10-21T13:59:14.536400713Z, businessId=59e0daf7049b567510c63f67)
+2023-04-12 17:43:54,690 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== START PaymentServiceImpl.callbackStatusByXendit() with request : {"data":{"id":"ewc_95d47d3a-db03-4b4b-9b6c-71077157cbc8","business_id":null,"reference_id":"operator20230412104336870Z","status":"SUCCEEDED","currency":"IDR","charge_amount":20000,"capture_amount":20000,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"https://google.com","mobile_number":null,"failure_redirect_url":null},"phone":null,"actions":{"desktop_web_checkout_url":"","mobile_web_checkout_url":"","mobile_deeplink_checkout_url":"https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWwFfJaB-n_6eGjr1eAHnlwWEJDsEpIU_-8m0QS5Tb1nFp_ZEtGrgHWKV8LuV6rwVL2COCVw","qr_checkout_string":null},"is_redirect_required":true,"callback_url":"https://webhook.site/5eebb675-6102-453a-a81c-de95fb08bc77","created":"2020-10-21T13:57:43.355897Z","updated":"2020-10-21T13:57:43.730483Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"senayan_372"}},"event":"ewallet.capture","created":"2020-10-21T13:59:14.536400713Z","business_id":"59e0daf7049b567510c63f67"}
+2023-04-12 17:43:54,836 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== COMPLETED PaymentServiceImpl.callbackStatusByXendit()
+2023-04-12 17:44:52,123 ERROR com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-4] null
+java.lang.NullPointerException: null
+	at com.heiya.mobileapi.payment.controller.PaymentController.doProvideXenditCallback(PaymentController.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:209)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+2023-04-12 17:45:02,427 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-7] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 17:45:02,428 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-7] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 17:45:02,434 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-7] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator20230412104502433Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:45:03,575 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-7] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - XenditResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_f9c24919-48be-40fd-93aa-a868a325ac50","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412104502433Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:45:00.421186Z","updated":"2023-04-12T10:45:00.421186Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:45:03,575 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-7] ======== START ProductServiceImpl.getProductDiscount()
+2023-04-12 17:45:03,576 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-7] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2023-04-12 17:45:03,582 DEBUG com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-7] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - BaseHWResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_f9c24919-48be-40fd-93aa-a868a325ac50","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator20230412104502433Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:45:00.421186Z","updated":"2023-04-12T10:45:00.421186Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:45:03,582 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-7] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 17:45:16,954 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-9] 
+
+======== START PaymentController.doProvideXenditCallback for : XenditGeneralCallbackDTORequest(xenditDataDTORequest=XenditDataDTORequest(id=ewc_95d47d3a-db03-4b4b-9b6c-71077157cbc8, businessId=null, referenceId=operator20230412104502433Z, status=SUCCEEDED, currency=IDR, chargeAmount=20000, captureAmount=20000, checkoutMethod=ONE_TIME_PAYMENT, channelCode=ID_OVO, channelProperties=XenditChannelProperties(successRedirectUrl=https://google.com, mobileNumber=null, failureRedirectUrl=null), phone=null, xenditActions=XenditActions(desktopWebCheckoutUrl=, mobileWebCheckoutUrl=, mobileDeeplinkCheckoutUrl=https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWwFfJaB-n_6eGjr1eAHnlwWEJDsEpIU_-8m0QS5Tb1nFp_ZEtGrgHWKV8LuV6rwVL2COCVw, qrCheckoutString=null), isRedirectRequired=true, callbackUrl=https://webhook.site/5eebb675-6102-453a-a81c-de95fb08bc77, created=2020-10-21T13:57:43.355897Z, updated=2020-10-21T13:57:43.730483Z, voidedAt=null, captureNow=true, customerId=null, paymentMethodId=null, failureCode=null, basket=null, metadata=XenditMetadata(branchArea=null, branchCity=null, branchCode=senayan_372)), event=ewallet.capture, created=2020-10-21T13:59:14.536400713Z, businessId=59e0daf7049b567510c63f67)
+2023-04-12 17:45:16,957 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-9] ======== START PaymentServiceImpl.callbackStatusByXendit() with request : {"data":{"id":"ewc_95d47d3a-db03-4b4b-9b6c-71077157cbc8","business_id":null,"reference_id":"operator20230412104502433Z","status":"SUCCEEDED","currency":"IDR","charge_amount":20000,"capture_amount":20000,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"https://google.com","mobile_number":null,"failure_redirect_url":null},"phone":null,"actions":{"desktop_web_checkout_url":"","mobile_web_checkout_url":"","mobile_deeplink_checkout_url":"https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWwFfJaB-n_6eGjr1eAHnlwWEJDsEpIU_-8m0QS5Tb1nFp_ZEtGrgHWKV8LuV6rwVL2COCVw","qr_checkout_string":null},"is_redirect_required":true,"callback_url":"https://webhook.site/5eebb675-6102-453a-a81c-de95fb08bc77","created":"2020-10-21T13:57:43.355897Z","updated":"2020-10-21T13:57:43.730483Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"senayan_372"}},"event":"ewallet.capture","created":"2020-10-21T13:59:14.536400713Z","business_id":"59e0daf7049b567510c63f67"}
+2023-04-12 17:46:18,763 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Starting HeiyaCustomerApplication on Khanza with PID 16980 (C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi\target\classes started by wangu in C:\Users\wangu\Documents\NetBeansProjects\heiyacustomerapi)
+2023-04-12 17:46:18,767 DEBUG com.heiya.mobileapi.HeiyaCustomerApplication [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2023-04-12 17:46:18,768 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] No active profile set, falling back to default profiles: default
+2023-04-12 17:46:20,290 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-12 17:46:20,547 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 242ms. Found 12 JPA repository interfaces.
+2023-04-12 17:46:22,182 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8083 (http)
+2023-04-12 17:46:22,385 INFO org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 3538 ms
+2023-04-12 17:46:24,798 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-12 17:46:26,137 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-12 17:46:26,877 INFO com.heiya.mobileapi.firebase.service.FCMInitializer [main] Firebase application has been initialized
+2023-04-12 17:46:27,721 INFO com.heiya.mobileapi.config.SchedulerConfig [main] simpleJobTrigger
+2023-04-12 17:46:27,754 INFO com.heiya.mobileapi.config.SchedulerConfig [main] 
+
+>>>> Starting Jobs.... 
+
+
+2023-04-12 17:46:28,087 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/xendit/status/callback'], []
+2023-04-12 17:46:28,088 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/dana/status/callback'], []
+2023-04-12 17:46:28,088 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/linkaja/status/callback'], []
+2023-04-12 17:46:28,088 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: Ant [pattern='/v1/payment/gopay/status/callback'], []
+2023-04-12 17:46:28,164 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@773ad729, org.springframework.security.web.context.SecurityContextPersistenceFilter@1fa8a4f7, org.springframework.security.web.header.HeaderWriterFilter@22db12f6, org.springframework.security.web.authentication.logout.LogoutFilter@443d94ae, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3431cb1f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27f6e2c3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48064a5a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20e8286a, org.springframework.security.web.session.SessionManagementFilter@285b63eb, org.springframework.security.web.access.ExceptionTranslationFilter@4f96e484, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@43069adf]
+2023-04-12 17:46:29,494 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2023-04-12 17:46:29,508 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2023-04-12 17:46:29,574 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8083 (http) with context path ''
+2023-04-12 17:46:29,578 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] Started HeiyaCustomerApplication in 11.624 seconds (JVM running for 13.679)
+2023-04-12 17:46:29,581 INFO com.heiya.mobileapi.HeiyaCustomerApplication [main] C:\Program Files\Java\jdk1.8.0_333\jre
+2023-04-12 17:46:30,752 INFO com.heiya.mobileapi.ap2.service.AP2ServiceImpl [pay-thread1] ======== RESPONSE AP2ServiceImpl.getToken() - Ap2LoginResponse: Ap2LoginResponse(token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1MDAiLCJmdWxsbmFtZSI6IkFQSSBWZW5kaW5nIEluZG9uZXNpYSIsInVzZXJuYW1lIjoiYXBpLnZlbmRpbmdpbmRvIiwidGVuYW50X2lkIjoiIiwibGFzdF9sb2dpbiI6IjIwMjMtMDQtMTIgMTc6NDY6MjciLCJjcmVhdGVkX2F0IjoiMjAyMi0wOC0xMSAwNToyNjoxOCIsInVwZGF0ZWRfYXQiOm51bGwsInRpbWUiOjE2ODEyOTYzODd9.U0TNeHREn8I5oMQMOr1-S2EVTeo0uodBsEmTG0wx5c8, status=true, message=Success login, ap2UserRequest=Ap2UserResponse(fullname=API Vending Indonesia, ap2StoreRequests=[Ap2StoreResponse(storeId=0ec30305df1acb98537a6dcb0e579185, airportCode=CGK, storeName=Vending Machine CGK, storeReference=null)], createdAt=2022-08-11 05:26:18, updatedAt=null))
+2023-04-12 17:47:45,746 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-04-12 17:47:45,764 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-1] Completed initialization in 17 ms
+2023-04-12 17:47:46,074 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] 
+
+======== START PaymentController.doChargesEwalletPayment
+2023-04-12 17:47:46,074 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== START PaymentServiceImpl.chargeXenditPayment() with request : ChargePaymentDTORequest(externalId=, amount=100, phone=081248666660, channelType=xendit, ewalletType=ID_OVO, goodsId=18, tasteId=2, goodsProtocol=30, productName=Espresso Matcha, machineCode=516101190000)
+2023-04-12 17:47:46,120 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST {"reference_id":"operator2023041210474676Z","currency":"IDR","amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:47:47,216 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - XenditResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_2da60a04-787d-4502-9f80-8f63008762e1","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator2023041210474676Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:47:44.069185Z","updated":"2023-04-12T10:47:44.069185Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:47:48,077 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-1] ======== START ProductServiceImpl.getProductDiscount()
+2023-04-12 17:47:48,084 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-1] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2023-04-12 17:47:48,407 DEBUG com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-1] ======== RESPONSE PaymentServiceImpl.chargeXenditPayment() - BaseHWResponse: {"success":true,"resultCode":"200","resultMsg":"Xendit eWallet transaction is created","id":"ewc_2da60a04-787d-4502-9f80-8f63008762e1","business_id":"5ee8bc676923a51923ce8524","reference_id":"operator2023041210474676Z","status":"PENDING","currency":"IDR","charge_amount":100,"capture_amount":100,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"http://myheiya.id/paymentsuccess","mobile_number":"+6281248666660","failure_redirect_url":"http://myheiya.id/paymentfailed"},"phone":null,"actions":null,"is_redirect_required":false,"callback_url":"https://myheiya.id:8083/v1/payment/xendit/status/callback","created":"2023-04-12T10:47:44.069185Z","updated":"2023-04-12T10:47:44.069185Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"tree_branch"}}
+2023-04-12 17:47:48,407 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-1] ======== COMPLETED PaymentController.doChargesEwalletPayment XENDIT OVO
+2023-04-12 17:47:58,959 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-4] 
+
+======== START PaymentController.doProvideXenditCallback for : XenditGeneralCallbackDTORequest(xenditDataDTORequest=XenditDataDTORequest(id=ewc_95d47d3a-db03-4b4b-9b6c-71077157cbc8, businessId=null, referenceId=operator2023041210474676Z, status=SUCCEEDED, currency=IDR, chargeAmount=20000, captureAmount=20000, checkoutMethod=ONE_TIME_PAYMENT, channelCode=ID_OVO, channelProperties=XenditChannelProperties(successRedirectUrl=https://google.com, mobileNumber=null, failureRedirectUrl=null), phone=null, xenditActions=XenditActions(desktopWebCheckoutUrl=, mobileWebCheckoutUrl=, mobileDeeplinkCheckoutUrl=https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWwFfJaB-n_6eGjr1eAHnlwWEJDsEpIU_-8m0QS5Tb1nFp_ZEtGrgHWKV8LuV6rwVL2COCVw, qrCheckoutString=null), isRedirectRequired=true, callbackUrl=https://webhook.site/5eebb675-6102-453a-a81c-de95fb08bc77, created=2020-10-21T13:57:43.355897Z, updated=2020-10-21T13:57:43.730483Z, voidedAt=null, captureNow=true, customerId=null, paymentMethodId=null, failureCode=null, basket=null, metadata=XenditMetadata(branchArea=null, branchCity=null, branchCode=senayan_372)), event=ewallet.capture, created=2020-10-21T13:59:14.536400713Z, businessId=59e0daf7049b567510c63f67)
+2023-04-12 17:47:58,965 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== START PaymentServiceImpl.callbackStatusByXendit() with request : {"data":{"id":"ewc_95d47d3a-db03-4b4b-9b6c-71077157cbc8","business_id":null,"reference_id":"operator2023041210474676Z","status":"SUCCEEDED","currency":"IDR","charge_amount":20000,"capture_amount":20000,"checkout_method":"ONE_TIME_PAYMENT","channel_code":"ID_OVO","channel_properties":{"success_redirect_url":"https://google.com","mobile_number":null,"failure_redirect_url":null},"phone":null,"actions":{"desktop_web_checkout_url":"","mobile_web_checkout_url":"","mobile_deeplink_checkout_url":"https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWwFfJaB-n_6eGjr1eAHnlwWEJDsEpIU_-8m0QS5Tb1nFp_ZEtGrgHWKV8LuV6rwVL2COCVw","qr_checkout_string":null},"is_redirect_required":true,"callback_url":"https://webhook.site/5eebb675-6102-453a-a81c-de95fb08bc77","created":"2020-10-21T13:57:43.355897Z","updated":"2020-10-21T13:57:43.730483Z","voided_at":null,"capture_now":"true","customer_id":null,"payment_method_id":null,"failure_code":null,"basket":null,"metadata":{"branch_area":null,"branch_city":null,"branch_code":"senayan_372"}},"event":"ewallet.capture","created":"2020-10-21T13:59:14.536400713Z","business_id":"59e0daf7049b567510c63f67"}
+2023-04-12 17:48:08,442 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-4] ======== START ProductServiceImpl.getProductDiscount()
+2023-04-12 17:48:08,444 INFO com.heiya.mobileapi.product.service.ProductServiceImpl [http-nio-8083-exec-4] ======== END ProductServiceImpl.getProductDiscount() - No discount found for this product
+2023-04-12 17:48:08,454 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== START PaymentServiceImpl.callbackStatusByXendit() Order request to HW: {"order_no":"operator2023041210474676Z","order_type":"normal","operate_code":"G6019009-2","payment_time":"2020-10-27 18:59:14","original_amount":"","deposit_amount":"","payment_amount":"100","machine_code":"516101190000","order_source":"userDefined","detail":[{"tasteid":"2","name":"Espresso Matcha","goodid":"18","orderGoodsNo":"operate20230412104808447Z_JPCT","brewingCode":"","orderPrice":"100"}]}
+2023-04-12 17:48:10,721 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== RESPONSE PaymentServiceImpl.callbackStatusByXendit() - BaseHWResponse: {"success":0,"resultCode":"200","resultMsg":"ok","result":"ok","extInfo":null}
+2023-04-12 17:48:10,741 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== PaymentServiceImpl.callbackStatusByXendit() - Payment order no operator2023041210474676Z has been updated to DB with status: settlement
+2023-04-12 17:48:10,741 INFO com.heiya.mobileapi.payment.service.PaymentServiceImpl [http-nio-8083-exec-4] ======== COMPLETED PaymentServiceImpl.callbackStatusByXendit()
+2023-04-12 17:48:19,592 INFO com.heiya.mobileapi.payment.controller.PaymentController [http-nio-8083-exec-4] ======== COMPLETED PaymentController.doProvideXenditCallback - OVO
+2023-04-12 17:49:55,430 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] 
+
+======== START PushNotificationController.doSendTokenCheckExpirePickup
+2023-04-12 17:49:55,435 INFO com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START PushNotificationServiceImpl.sendPushNotificationWithOrderNo() with request : {"topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H","orderNo":"operator2023041210474676Z","customerName":"Riyad Kurniawan"}
+2023-04-12 17:49:55,539 INFO com.heiya.mobileapi.firebase.service.FCMPaymentSettlementServiceImpl [heiyamobile-api-quartz-job_Worker-5] ======== START FCMService.sendMessageToToken() with request : {"title":"Please take your order","message":"Hallo Riyad Kurniawan Your order Espresso Matcha expire on Apr 13, 2023 5:48:53 PM","topic":"CHECK_PICKUP","token":"dzNSFMN7btE:APA91bHb2LggJkLToIFcbF6HwkA4vjTAAPCRZp8wImQtNOykmqrtv-g0unhA3LYiyNlPyLQX-ZlxAXAQACNQGs1go0YIFUsadasxg4PLIFhDEHrw7TOUQ5UDuH5DWGC8xqB4s99rON_H"}
+2023-04-12 17:49:56,144 ERROR com.heiya.mobileapi.firebase.service.PushNotificationServiceImpl [heiyamobile-api-quartz-job_Worker-5] com.google.firebase.messaging.FirebaseMessagingException: Requested entity was not found.
+2023-04-12 17:49:56,144 INFO com.heiya.mobileapi.firebase.controller.PushNotificationController [heiyamobile-api-quartz-job_Worker-5] ======== COMPLETED PushNotificationController.doSendTokenCheckExpirePickup

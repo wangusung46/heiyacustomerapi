@@ -127,7 +127,7 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Autowired
     private ApplicationContext applicationContext;
-    
+
     @Autowired
     private ReportController reportController;
 
@@ -415,7 +415,7 @@ public class PaymentServiceImpl implements PaymentService {
                     xenditRequest.setCurrency("IDR");
                     xenditRequest.setAmount(request.getAmount());
                     xenditRequest.setCheckoutMethod("ONE_TIME_PAYMENT");
-                    xenditRequest.setChannelCode(request.getEwalletType());
+                    xenditRequest.setChannelCode(GlobalConstants.EWALLET_TYPE_OVO_NEW);
                     String phoneNo = request.getPhone();
                     if (phoneNo.startsWith("0")) {
                         phoneNo = phoneNo.replaceFirst("0", "+62");
@@ -437,7 +437,7 @@ public class PaymentServiceImpl implements PaymentService {
                     xenditRequest.setCurrency("IDR");
                     xenditRequest.setAmount(request.getAmount());
                     xenditRequest.setCheckoutMethod("ONE_TIME_PAYMENT");
-                    xenditRequest.setChannelCode(request.getEwalletType());
+                    xenditRequest.setChannelCode(GlobalConstants.EWALLET_TYPE_SHOPEEPAY_NEW);
                     String phoneNo = request.getPhone();
                     if (phoneNo.startsWith("0")) {
                         phoneNo = phoneNo.replaceFirst("0", "+62");
@@ -459,7 +459,7 @@ public class PaymentServiceImpl implements PaymentService {
                     xenditRequest.setCurrency("IDR");
                     xenditRequest.setAmount(request.getAmount());
                     xenditRequest.setCheckoutMethod("ONE_TIME_PAYMENT");
-                    xenditRequest.setChannelCode(request.getEwalletType());
+                    xenditRequest.setChannelCode(GlobalConstants.EWALLET_TYPE_DANA_NEW);
                     String phoneNo = request.getPhone();
                     if (phoneNo.startsWith("0")) {
                         phoneNo = phoneNo.replaceFirst("0", "+62");
@@ -481,7 +481,7 @@ public class PaymentServiceImpl implements PaymentService {
                     xenditRequest.setCurrency("IDR");
                     xenditRequest.setAmount(request.getAmount());
                     xenditRequest.setCheckoutMethod("ONE_TIME_PAYMENT");
-                    xenditRequest.setChannelCode(request.getEwalletType());
+                    xenditRequest.setChannelCode(GlobalConstants.EWALLET_TYPE_LINKAJA_NEW);
                     String phoneNo = request.getPhone();
                     if (phoneNo.startsWith("0")) {
                         phoneNo = phoneNo.replaceFirst("0", "+62");
@@ -502,7 +502,7 @@ public class PaymentServiceImpl implements PaymentService {
                     break;
             }
 
-            LOGGER.info("======== REQUEST PaymentServiceImpl.chargeXenditPayment(): " + mapper.writeValueAsString(request));
+            LOGGER.info("======== REQUEST PaymentServiceImpl.chargeXenditPayment(): XENDIT REQUEST " + mapper.writeValueAsString(xenditRequest));
 
             HttpEntity<XenditCreatePaymentDTORequest> entity = new HttpEntity<>(xenditRequest, headers);
 
@@ -542,71 +542,73 @@ public class PaymentServiceImpl implements PaymentService {
         return xenditResponse;
     }
 
+//    @Override
+//    public XenditResponse getXenditTrxStatus(String externalId, String ewalletType) throws Exception {
+//        TrxStatusDTOResponse response = new TrxStatusDTOResponse();
+//
+//        try {
+//            /* Define URL & headers */
+//            String xenditBaseURL = crudService.getGlobalConfigParamByKey(GlobalConstants.PAY_GW_XENDIT_URL);
+//            String url = xenditBaseURL.concat("/ewallets/charges/").concat(externalId);
+//
+//            HttpHeaders headers = getXenditRequestHeaders();
+//            HttpEntity<String> entity = new HttpEntity<>(headers);
+//
+//            /* Build URI from URL */
+//            UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(url);
+//
+//            ResponseEntity<XenditResponse> responseEntity;
+//            responseEntity = restTemplate.exchange(uriBuilder.toUriString(), HttpMethod.GET, entity, XenditResponse.class);
+//            response = responseEntity.getBody();
+//
+//            //Transaction payment = crudService.getPaymentByOrderNo(externalId);
+//            switch (response.getStatus()) {
+//                case "PENDING":
+//                    response.setStatus("PENDING");
+//                    break;
+//                case "COMPLETED":
+//                    //OVO, LINKAJA
+//                    response.setStatus("COMPLETED");
+//                    break;
+//                case "PAID":
+//                    //DANA
+//                    response.setStatus("COMPLETED"); //seragamkan response ke mobile jadi "COMPLETED"
+//                    break;
+//                case "FAILED":
+//                case "EXPIRED":
+//                    response.setStatus("FAILED");
+//                    response.setReason("Failed: Payment is not completed on the eWallet. Please try again.");
+//                    break;
+//                default:
+//                    break;
+//            }
+//
+//            //set global response
+//            response.setSuccess(true);
+//            response.setResultCode("200");
+//            response.setResultMsg("Transaction status retrieved successfully");
+//            //LOGGER.debug("======== RESPONSE PaymentServiceImpl.getXenditTrxStatus() - XenditTrxStatusDTOResponse: " + mapper.writeValueAsString(response));
+//        } catch (Exception e) {
+//            LOGGER.error(e.getMessage(), e);
+//            response.setSuccess(false);
+//            response.setResultCode("400");
+//            response.setResultMsg(e.getMessage());
+//        }
+//
+//        return response;
+//    }
+
     @Override
-    public TrxStatusDTOResponse getXenditTrxStatus(String externalId, String ewalletType) throws Exception {
-        TrxStatusDTOResponse response = new TrxStatusDTOResponse();
-
-        try {
-            /* Define URL & headers */
-            String xenditBaseURL = crudService.getGlobalConfigParamByKey(GlobalConstants.PAY_GW_XENDIT_URL);
-            String url = xenditBaseURL.concat("/ewallets/charges/").concat(externalId);
-
-            HttpHeaders headers = getXenditRequestHeaders();
-            HttpEntity<String> entity = new HttpEntity<>(headers);
-
-            /* Build URI from URL */
-            UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(url);
-
-            ResponseEntity<TrxStatusDTOResponse> responseEntity;
-            responseEntity = restTemplate.exchange(uriBuilder.toUriString(), HttpMethod.GET, entity, TrxStatusDTOResponse.class);
-            response = responseEntity.getBody();
-
-            //Transaction payment = crudService.getPaymentByOrderNo(externalId);
-            switch (response.getStatus()) {
-                case "PENDING":
-                    response.setStatus("PENDING");
-                    break;
-                case "COMPLETED":
-                    //OVO, LINKAJA
-                    response.setStatus("COMPLETED");
-                    break;
-                case "PAID":
-                    //DANA
-                    response.setStatus("COMPLETED"); //seragamkan response ke mobile jadi "COMPLETED"
-                    break;
-                case "FAILED":
-                case "EXPIRED":
-                    response.setStatus("FAILED");
-                    response.setReason("Failed: Payment is not completed on the eWallet. Please try again.");
-                    break;
-                default:
-                    break;
-            }
-
-            //set global response
-            response.setSuccess(true);
-            response.setResultCode("200");
-            response.setResultMsg("Transaction status retrieved successfully");
-            //LOGGER.debug("======== RESPONSE PaymentServiceImpl.getXenditTrxStatus() - XenditTrxStatusDTOResponse: " + mapper.writeValueAsString(response));
-        } catch (Exception e) {
-            LOGGER.error(e.getMessage(), e);
-            response.setSuccess(false);
-            response.setResultCode("400");
-            response.setResultMsg(e.getMessage());
-        }
-
-        return response;
-    }
-
-    //@Override
     public TrxStatusDTOResponse getNewXenditTrxStatus(String externalId) throws Exception {
         LOGGER.info("======== REQUEST PaymentServiceImpl.getXenditTrxStatus() external ID : " + externalId);
         TrxStatusDTOResponse response = new TrxStatusDTOResponse();
+        XenditResponse xenditResponse = new XenditResponse();
 
         try {
             /* Define URL & headers */
             String xenditBaseURL = crudService.getGlobalConfigParamByKey(GlobalConstants.PAY_GW_XENDIT_URL);
-            String url = xenditBaseURL.concat("/ewallets/charges/").concat(externalId);
+            String channelId = paymentRepo.findPaymentByOrderNo(externalId).getChannelOrderId();
+            String url = xenditBaseURL.concat("/ewallets/charges/").concat(channelId);
 
             HttpHeaders headers = getXenditRequestHeaders();
             HttpEntity<String> entity = new HttpEntity<>(headers);
@@ -614,9 +616,22 @@ public class PaymentServiceImpl implements PaymentService {
             /* Build URI from URL */
             UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(url);
 
-            ResponseEntity<TrxStatusDTOResponse> responseEntity;
-            responseEntity = restTemplate.exchange(uriBuilder.toUriString(), HttpMethod.GET, entity, TrxStatusDTOResponse.class);
-            response = responseEntity.getBody();
+            ResponseEntity<XenditResponse> responseEntity;
+            responseEntity = restTemplate.exchange(uriBuilder.toUriString(), HttpMethod.GET, entity, XenditResponse.class);
+            xenditResponse = responseEntity.getBody();
+            response.setAmount(xenditResponse.getChargeAmount().toString());
+            response.setBusinessId(xenditResponse.getBusinessId());
+            //response.setCheckoutUrl(url);
+            response.setEwalletType(xenditResponse.getChannelCode());
+            //response.setExpirationDate(url);
+            response.setExternalId(xenditResponse.getReferenceId());
+            response.setPaymentTimestamp(xenditResponse.getCreated());
+            response.setReason(url);
+            response.setResultCode(xenditResponse.getResultCode());
+            response.setResultMsg(xenditResponse.getResultMsg());
+            response.setStatus(xenditResponse.getStatus());
+            response.setSuccess(xenditResponse.isSuccess());
+            response.setTransactionDate(xenditResponse.getCreated());
 
             //Transaction payment = crudService.getPaymentByOrderNo(externalId);
             switch (response.getStatus()) {
@@ -739,11 +754,11 @@ public class PaymentServiceImpl implements PaymentService {
         /*  Check whether the order no is already paid or not.
 		 *  Only paid order no that will able to process this callback functionality
          */
-        Transaction payment = crudService.getPaymentByOrderNo(callbackRequest.getExternalId()); //get stored transaction from DB by order no from Xendit callback
+        Transaction payment = crudService.getPaymentByOrderNo(callbackRequest.getXenditDataDTORequest().getReferenceId()); //get stored transaction from DB by order no from Xendit callback
         if (payment == null) {
             baseResponse.setSuccess(false);
             baseResponse.setResultCode("404");
-            baseResponse.setResultMsg("Payment with order no. " + callbackRequest.getExternalId() + " not found in our database.");
+            baseResponse.setResultMsg("Payment with order no. " + callbackRequest.getXenditDataDTORequest().getReferenceId() + " not found in our database.");
             LOGGER.info("======== PaymentServiceImpl.callbackStatusByXendit() error response : " + mapper.writeValueAsString(baseResponse));
             return baseResponse;
         }
@@ -754,10 +769,10 @@ public class PaymentServiceImpl implements PaymentService {
             String url = hwApiBaseUrl2.concat("/order");
 
             if (payment != null && payment.getPaymentStatus().equals("pending")) {
-                if (callbackRequest.getStatus().equals("COMPLETED")) {
+                if (callbackRequest.getXenditDataDTORequest().getStatus().equals("SUCCEEDED")) {
                     /* Set request parameter */
                     HWPickupOrderDTORequest request = new HWPickupOrderDTORequest();
-                    request.setOrderNo(callbackRequest.getExternalId());
+                    request.setOrderNo(callbackRequest.getXenditDataDTORequest().getReferenceId());
                     request.setOrderType("normal");
                     request.setOperateCode(crudService.getGlobalConfigParamByKey(GlobalConstants.OPERATE_CODE));
                     request.setPaymentTime(this.convertDateFormat(callbackRequest.getCreated()));
@@ -855,7 +870,7 @@ public class PaymentServiceImpl implements PaymentService {
                 } else {
                     //Xendit payment failed due to any reason. Update to DB
                     payment.setPaymentStatus(GlobalConstants.TRX_STATUS_UNPAID);
-                    payment.setErrorMessage(callbackRequest.getFailureCode());
+                    payment.setErrorMessage(callbackRequest.getXenditDataDTORequest().getFailureCode());
                     crudService.updatePayment(payment);
                 }
             } else {
@@ -1013,11 +1028,11 @@ public class PaymentServiceImpl implements PaymentService {
         /*  Check whether the order no is already paid or not.
 		 *  Only paid order no that will able to process this callback functionality
          */
-        Transaction payment = crudService.getPaymentByOrderNo(callbackRequest.getExternalId()); //get stored transaction from DB by order no from Xendit callback
+        Transaction payment = crudService.getPaymentByOrderNo(callbackRequest.getXenditDataDTORequest().getReferenceId()); //get stored transaction from DB by order no from Xendit callback
         if (payment == null) {
             baseResponse.setSuccess(false);
             baseResponse.setResultCode("404");
-            baseResponse.setResultMsg("Payment with order no. " + callbackRequest.getExternalId() + " not found in our database.");
+            baseResponse.setResultMsg("Payment with order no. " + callbackRequest.getXenditDataDTORequest().getReferenceId() + " not found in our database.");
             LOGGER.info("======== PaymentServiceImpl.callbackStatusByXenditForDana() error response : " + mapper.writeValueAsString(baseResponse));
             return baseResponse;
         }
@@ -1028,13 +1043,13 @@ public class PaymentServiceImpl implements PaymentService {
             String url = hwApiBaseUrl2.concat("/order");
 
             if (payment != null && payment.getPaymentStatus().equals("pending")) {
-                if (callbackRequest.getPaymentStatus().equals("PAID") || callbackRequest.getPaymentStatus().equals("COMPLETED")) {
+                if (callbackRequest.getXenditDataDTORequest().getStatus().equals("PAID") || callbackRequest.getXenditDataDTORequest().getStatus().equals("COMPLETED")) {
                     /* Set request parameter */
                     HWPickupOrderDTORequest request = new HWPickupOrderDTORequest();
-                    request.setOrderNo(callbackRequest.getExternalId());
+                    request.setOrderNo(callbackRequest.getXenditDataDTORequest().getReferenceId());
                     request.setOrderType("normal");
                     request.setOperateCode(crudService.getGlobalConfigParamByKey(GlobalConstants.OPERATE_CODE));
-                    request.setPaymentTime(this.convertDateFormatDANA(callbackRequest.getTransactionDate()));
+                    request.setPaymentTime(this.convertDateFormatDANA(callbackRequest.getXenditDataDTORequest().getCreated()));
 
                     //SET AMOUNT and DISCOUNT
                     DiscountDTOResponse discRes = productService.getProductDiscount(Integer.parseInt(payment.getGoodsCode()));
@@ -1100,7 +1115,7 @@ public class PaymentServiceImpl implements PaymentService {
                     LOGGER.info("======== RESPONSE PaymentServiceImpl.callbackStatusByXenditForDana() - Success Code: " + response.getSuccess());
                     if (response.getSuccess() == 0) {
                         payment.setPaymentStatus(GlobalConstants.TRX_STATUS_SETTLEMENT);
-                        Date settlementDate = this.formatUTCDateToLocalZoneForDANA(callbackRequest.getTransactionDate());
+                        Date settlementDate = this.formatUTCDateToLocalZoneForDANA(callbackRequest.getXenditDataDTORequest().getCreated());
                         payment.setSettlementTime(payment.getChannelTransactionTime());
                         payment.setChannelTransactionId(callbackRequest.getBusinessId());
                         crudService.updatePayment(payment);
@@ -1118,7 +1133,7 @@ public class PaymentServiceImpl implements PaymentService {
                         } else {
                             //If there is an error from HW Server API, then mark the status as "undelivered"
                             payment.setPaymentStatus(GlobalConstants.TRX_STATUS_UNDELIVERED);
-                            Date settlementDate = this.formatUTCDateToLocalZoneForDANA(callbackRequest.getTransactionDate());
+                            Date settlementDate = this.formatUTCDateToLocalZoneForDANA(callbackRequest.getXenditDataDTORequest().getCreated());
                             payment.setSettlementTime(settlementDate);
                             payment.setChannelTransactionId(callbackRequest.getBusinessId());
                             payment.setErrorMessage(response.getResultCode().concat(" : ").concat(response.getResultMsg()));
@@ -1160,11 +1175,11 @@ public class PaymentServiceImpl implements PaymentService {
         /*  Check whether the order no is already paid or not.
 		 *  Only paid order no that will able to process this callback functionality
          */
-        Transaction payment = crudService.getPaymentByOrderNo(callbackRequest.getExternalId()); //get stored transaction from DB by order no from Xendit callback
+        Transaction payment = crudService.getPaymentByOrderNo(callbackRequest.getXenditDataDTORequest().getReferenceId()); //get stored transaction from DB by order no from Xendit callback
         if (payment == null) {
             baseResponse.setSuccess(false);
             baseResponse.setResultCode("404");
-            baseResponse.setResultMsg("Payment with order no. " + callbackRequest.getExternalId() + " not found in our database.");
+            baseResponse.setResultMsg("Payment with order no. " + callbackRequest.getXenditDataDTORequest().getReferenceId() + " not found in our database.");
             LOGGER.info("======== PaymentServiceImpl.callbackStatusByXenditForLinkAja() error response : " + mapper.writeValueAsString(baseResponse));
             return baseResponse;
         }
@@ -1175,10 +1190,10 @@ public class PaymentServiceImpl implements PaymentService {
             String url = hwApiBaseUrl2.concat("/order");
 
             if (payment != null && payment.getPaymentStatus().equals("pending")) {
-                if (callbackRequest.getStatus().equals("SUCCESS_COMPLETED") || callbackRequest.getStatus().equals("COMPLETED")) {
+                if (callbackRequest.getXenditDataDTORequest().getStatus().equals("SUCCESS_COMPLETED") || callbackRequest.getXenditDataDTORequest().getStatus().equals("COMPLETED")) {
                     /* Set request parameter */
                     HWPickupOrderDTORequest request = new HWPickupOrderDTORequest();
-                    request.setOrderNo(callbackRequest.getExternalId());
+                    request.setOrderNo(callbackRequest.getXenditDataDTORequest().getReferenceId());
                     request.setOrderType("normal");
                     request.setOperateCode(crudService.getGlobalConfigParamByKey(GlobalConstants.OPERATE_CODE));
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -2040,50 +2055,46 @@ public class PaymentServiceImpl implements PaymentService {
                         break;
                     case "xendit":
                         /* Call Xendit transaction status */
-//                        TrxStatusDTOResponse xenditStatusResponse = this.getNewXenditTrxStatus(payment.getChannelOrderId());
-                        TrxStatusDTOResponse xenditStatusResponse = this.getXenditTrxStatus(payment.getChannelOrderId(), payment.getEwalletType());
+                        TrxStatusDTOResponse xenditStatusResponse = this.getNewXenditTrxStatus(payment.getChannelOrderId());
+//                        TrxStatusDTOResponse xenditStatusResponse = this.getXenditTrxStatus(payment.getChannelOrderId(), payment.getEwalletType());
                         if (xenditStatusResponse.getStatus() != null) {
                             if (xenditStatusResponse.getStatus().equals("COMPLETED")) {
                                 switch (payment.getEwalletType()) {
                                     case "OVO":
                                         XenditGeneralCallbackDTORequest ovoCallbackReq = new XenditGeneralCallbackDTORequest();
                                         ovoCallbackReq.setEvent(null);
-                                        ovoCallbackReq.setId(xenditStatusResponse.getBusinessId());
-                                        ovoCallbackReq.setExternalId(xenditStatusResponse.getExternalId());
+                                        ovoCallbackReq.getXenditDataDTORequest().setId(xenditStatusResponse.getBusinessId());
+                                        ovoCallbackReq.getXenditDataDTORequest().setReferenceId(xenditStatusResponse.getExternalId());
                                         ovoCallbackReq.setBusinessId(xenditStatusResponse.getBusinessId());
-                                        ovoCallbackReq.setPhone(null);
-                                        ovoCallbackReq.setEwalletType(payment.getEwalletType());
-                                        ovoCallbackReq.setAmount(xenditStatusResponse.getAmount());
+                                        //ovoCallbackReq.setPhone(null);
+                                        ovoCallbackReq.getXenditDataDTORequest().setChannelCode(payment.getEwalletType());
+                                        ovoCallbackReq.getXenditDataDTORequest().setChargeAmount(new BigDecimal(xenditStatusResponse.getAmount()));
                                         ovoCallbackReq.setCreated(xenditStatusResponse.getTransactionDate());
-                                        ovoCallbackReq.setStatus(xenditStatusResponse.getStatus());
+                                        ovoCallbackReq.getXenditDataDTORequest().setStatus(xenditStatusResponse.getStatus());
                                         //Use callback method for OVO to update the status to DB & call HW to submit the order
                                         this.callbackStatusByXendit(ovoCallbackReq);
                                         break;
                                     case "DANA": {
                                         XenditGeneralCallbackDTORequest callbackReq = new XenditGeneralCallbackDTORequest();
-                                        callbackReq.setExternalId(xenditStatusResponse.getExternalId());
-                                        callbackReq.setAmount(xenditStatusResponse.getAmount());
+                                        callbackReq.getXenditDataDTORequest().setReferenceId(xenditStatusResponse.getExternalId());
+                                        callbackReq.getXenditDataDTORequest().setChargeAmount(new BigDecimal(xenditStatusResponse.getAmount()));
                                         callbackReq.setBusinessId(xenditStatusResponse.getBusinessId());
-                                        callbackReq.setPaymentStatus(xenditStatusResponse.getStatus());
-                                        if (xenditStatusResponse.getTransactionDate() != null) {
-                                            callbackReq.setTransactionDate(xenditStatusResponse.getTransactionDate());
-                                        } else {
-                                            callbackReq.setTransactionDate(xenditStatusResponse.getExpirationDate());
-                                        }
-                                        callbackReq.setEwalletType(payment.getEwalletType());
-                                        callbackReq.setCallbackAuthenticationToken("");
+                                        callbackReq.getXenditDataDTORequest().setStatus(xenditStatusResponse.getStatus());
+                                            callbackReq.setCreated(xenditStatusResponse.getTransactionDate());
+                                        callbackReq.getXenditDataDTORequest().setChannelCode(payment.getEwalletType());
+                                        //callbackReq.setCallbackAuthenticationToken("");
                                         //Use callback method for DANA to update the status to DB & call HW to submit the order
                                         this.callbackStatusByXenditForDana(callbackReq);
                                         break;
                                     }
                                     case "LINKAJA": {
                                         XenditGeneralCallbackDTORequest callbackReq = new XenditGeneralCallbackDTORequest();
-                                        callbackReq.setExternalId(xenditStatusResponse.getExternalId());
-                                        callbackReq.setAmount(xenditStatusResponse.getAmount());
-                                        callbackReq.setStatus(xenditStatusResponse.getStatus());
-                                        callbackReq.setEwalletType(payment.getEwalletType());
-                                        callbackReq.setTransactionDate(xenditStatusResponse.getPaymentTimestamp());
-                                        callbackReq.setCallbackAuthenticationToken("");
+                                        callbackReq.getXenditDataDTORequest().setReferenceId(xenditStatusResponse.getExternalId());
+                                        callbackReq.getXenditDataDTORequest().setChargeAmount(new BigDecimal(xenditStatusResponse.getAmount()));
+                                        callbackReq.getXenditDataDTORequest().setStatus(xenditStatusResponse.getStatus());
+                                        callbackReq.getXenditDataDTORequest().setChannelCode(payment.getEwalletType());
+                                        callbackReq.setCreated(xenditStatusResponse.getPaymentTimestamp());
+                                        //callbackReq.setCallbackAuthenticationToken("");
                                         //Use callback method for LINKAJA to update the status to DB & call HW to submit the order
                                         this.callbackStatusByXenditForLinkAja(callbackReq);
                                         break;
@@ -2221,7 +2232,7 @@ public class PaymentServiceImpl implements PaymentService {
         payment.setChannelFraudStatus(null);
         if (res.getStatus().equals("PENDING")) {
             payment.setPaymentStatus("pending");
-        } else if (res.getStatus().equals("ACTIVE")) {
+        } else if (res.getStatus().equals("SUCCEEDED")) {
             payment.setPaymentStatus("settlement");
         }
 
@@ -2923,9 +2934,11 @@ public class PaymentServiceImpl implements PaymentService {
         Date oneHourBack = cal.getTime();
         List<Transaction> pendingPayments = crudService.getPaymentListByStatusAndTimeAndSendEmail(GlobalConstants.TRX_STATUS_UNDELIVERED, oneHourBack, null);
         for (Transaction pendingPayment : pendingPayments) {
-            pendingPayment.setSendEmail(Boolean.TRUE);
-            paymentRepo.save(pendingPayment);
-            reportController.doReport(pendingPayment.getOrderNo());
+            if (!pendingPayment.getErrorMessage().equals("404 : Order has already been used[W02]")) {
+                pendingPayment.setSendEmail(Boolean.TRUE);
+                paymentRepo.save(pendingPayment);
+                reportController.doReport(pendingPayment.getOrderNo());
+            }
         }
     }
 

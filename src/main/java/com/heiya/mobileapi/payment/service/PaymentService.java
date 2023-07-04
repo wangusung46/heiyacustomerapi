@@ -33,9 +33,9 @@ public interface PaymentService {
 
     public XenditCreatePaymentDTOResponse createXenditLinkAjaPayment(CreatePaymentDTORequest request) throws Exception;
 
-    public TrxStatusDTOResponse getXenditTrxStatus(String externalId, String ewalletType) throws Exception;
+//    public XenditResponse getXenditTrxStatus(String externalId, String ewalletType) throws Exception;
     
-    //public TrxStatusDTOResponse getNewXenditTrxStatus(String externalId) throws Exception;
+    public TrxStatusDTOResponse getNewXenditTrxStatus(String externalId) throws Exception;
 
     public TrxStatusDTOResponse getGopayTrxStatus(String externalId, String trigger) throws Exception;
 
